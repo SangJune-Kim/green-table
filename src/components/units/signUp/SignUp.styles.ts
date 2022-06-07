@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { IPropsButton } from "./SignUp.types";
 
 // 회원가입 전체
 
@@ -201,10 +202,6 @@ export const GenderSelect = styled.select`
   border: 1px solid #bfbfbf;
   color: #848484;
 `;
-
-interface IPropsButton {
-  isReady: boolean;
-}
 
 // 휴대폰 인증 버튼
 export const PhoneNumberCertify = styled.button`

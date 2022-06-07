@@ -1,10 +1,5 @@
 import styled from "@emotion/styled";
-
-interface IPropsVeganType {
-  isPicked?: boolean;
-  hover?: string;
-  image?: string;
-}
+import { IPropsVeganType } from "./TypeCheck.types";
 
 // 컨테이너 전체
 export const Container = styled.div`

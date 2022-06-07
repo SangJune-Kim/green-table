@@ -2,12 +2,7 @@ import Link from "next/link";
 import OutlineSubmitButton from "../../commons/buttons/outlineSubmit";
 import SubmitButton from "../../commons/buttons/submit";
 import * as Login from "./Login.styles";
-
-interface IPropsLogin {
-  onChangeLoginInputs: (event: string) => any;
-  onClickLogin: () => void;
-  onClickSignUp: () => void;
-}
+import { IPropsLogin } from "./Login.types";
 
 export default function LoginUI(props: IPropsLogin) {
   const isActive = true;

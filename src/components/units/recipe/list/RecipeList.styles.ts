@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { breakPoints } from "../../../../commons/styles/media";
+import { IPropsStyles } from "./RecipeList.types";
 
 export const Container = styled.div`
   width: 100%;
@@ -94,8 +95,8 @@ export const WholeList = styled.li`
   border-right: 1px solid black;
   padding-right: 1rem;
   margin-right: 1rem;
-  color: ${(props) =>
-    props?.name === props?.isPicked.wholeMenu ? "#0FBAA3" : "black"};
+  color: ${(props: IPropsStyles) =>
+    props?.name === props.isPicked?.wholeMenu ? "#0FBAA3" : "black"};
   &:last-of-type {
     border-right: 0;
     margin-right: 0;
@@ -111,8 +112,8 @@ export const ListSelect = styled.li`
   padding-right: 1rem;
   margin-right: 1rem;
   font-weight: 500;
-  color: ${(props) =>
-    props?.name === props?.isPicked.selectList
+  color: ${(props: IPropsStyles) =>
+    props?.name === props.isPicked?.selectList
       ? "#0FBAA3"
       : "rgba(0, 0, 0, 0.5)"};
   cursor: pointer;
