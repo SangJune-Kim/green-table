@@ -3,11 +3,7 @@ import * as SignUp from "../SignUp.styles";
 import { ChangeEvent, useEffect, useState } from "react";
 import SubmitButton from "../../../commons/buttons/submit";
 import CheckBox01 from "../../../commons/checkboxes/01";
-
-interface IPropsSignUpPolicy {
-  setAgreePolicy: (prev: any) => void;
-  setIsSubmit: (a: boolean) => void;
-}
+import { IPropsSignUpPolicy } from "../SignUp.types";
 
 export default function SignUpPolicy(props: IPropsSignUpPolicy) {
   const [checked, setChecked] = useState([true, true]);

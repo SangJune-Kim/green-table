@@ -1,10 +1,7 @@
 import { useState } from "react";
 import SubmitButton from "../../commons/buttons/submit";
 import * as Type from "./TypeCheck.styles";
-
-interface ITypeCheckQ2 {
-  onClickNextStep: () => void;
-}
+import { ITypeCheckQ2 } from "./TypeCheck.types";
 
 export default function TypeCheckQ2(props: ITypeCheckQ2) {
   const [isPicked, setIsPicked] = useState([false]);

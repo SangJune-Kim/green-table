@@ -1,6 +1,7 @@
 import * as List from "./RecipeList.styles";
+import { IPropsRecipeListItem } from "./RecipeList.types";
 
-export default function RecipeListItem(props) {
+export default function RecipeListItem(props: IPropsRecipeListItem) {
   const el = props.el;
 
   return (
@@ -8,14 +9,15 @@ export default function RecipeListItem(props) {
       <List.RecipeImg
         src={
           el.recipesImages
-            ? el.recipesImages.filter((e) => e.mainImage !== " ").length === 0
+            ? el.recipesImages.filter((e: any) => e.mainImage !== " ")
+                .length === 0
               ? "/img/bestRecipe/img-recipe-01.png"
               : `https://storage.googleapis.com/${el.recipesImages[0].mainImage}`
             : "/img/bestRecipe/img-recipe-01.png"
         }
       />
       <List.IconBookmark>
-        {props.myScraps.includes(el.id) ? (
+        {props.myScraps?.includes(el.id) ? (
           <img src="/img/bestRecipe/icon-bookmark-on.svg" />
         ) : (
           <img src="/img/bestRecipe/icon-bookmark-off.svg" />
