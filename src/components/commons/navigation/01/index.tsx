@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import * as Nav from "./Navigation.styles";
+import { INavigation01Props, IVeganType } from "./types";
 
-export default function Navigation01(props) {
+export default function Navigation01(props: INavigation01Props) {
   const VEGAN_TYPE = [
     {
       name: "전체",
@@ -55,7 +56,7 @@ export default function Navigation01(props) {
   ];
 
   const [isPicked, setIsPicked] = useState("All");
-  const onClickVeganType = (el) => () => {
+  const onClickVeganType = (el: IVeganType) => () => {
     setIsPicked(el.type);
     props.setSelectedTypes(el.type);
   };

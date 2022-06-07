@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import { useState } from "react";
 import * as Nav from "./Navigation.styles";
+import { IVeganType } from "./types";
 
 const Navigation04 = () => {
   const VEGAN_TYPE = [
@@ -57,7 +58,7 @@ const Navigation04 = () => {
   const router = useRouter();
   const [isPicked, setIsPicked] = useState("All");
 
-  const onClickVeganType = (el) => () => {
+  const onClickVeganType = (el: IVeganType) => () => {
     setIsPicked(el.enName);
     router.push(`/recipe/?type=${el.type}`, `/recipe`, {
       shallow: true,
