@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import LayoutBannerUI from "./Banner.presenter";
 
 export default function LayoutBanner() {
-  const [slideIndex, setSlideIndex] = useState(3);
+  const [slideIndex, setSlideIndex] = useState<number>(3);
   const settings = {
     dots: true,
     fade: true,
@@ -16,7 +16,7 @@ export default function LayoutBanner() {
     arrows: false,
     autoplay: true,
     cssEase: "linear",
-    beforeChange: (current, next) => setSlideIndex(next),
+    beforeChange: (current: number, next: number) => setSlideIndex(next),
   };
 
   useEffect(() => {

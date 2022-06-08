@@ -1,7 +1,8 @@
 import Slider from "react-slick";
 import * as Banner from "./Banner.styles";
+import { ILayoutBannerUI } from "./Banner.types";
 
-export default function LayoutBannerUI(props) {
+export default function LayoutBannerUI(props: ILayoutBannerUI) {
   return (
     <Banner.Container>
       <Banner.Wrapper>
@@ -46,7 +47,6 @@ export default function LayoutBannerUI(props) {
                   </div>
                 </Banner.TextGroup>
                 <Banner.ImageGroup
-                  num={el}
                   className={index === props.slideIndex ? "isActive" : ""}
                 >
                   {(el === 1 && (

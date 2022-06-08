@@ -53,7 +53,7 @@ export const SliderContainer = styled.div`
   overflow: hidden;
   display: flex;
   justify-content: center;
-  background-color: ${(props) =>
+  background-color: ${(props: { num: number }) =>
     props.num === 1 ? "#fcf7e1" : props.num === 2 ? "#A5E0E9" : "#F3E3FF"};
   @media ${breakPoints.tablet} {
     height: 494px;

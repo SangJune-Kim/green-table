@@ -34,7 +34,7 @@ const LOGOUT = gql`
 
 export default function LayoutHeader() {
   const router = useRouter();
-  const drawerRef = useRef(null);
+  const drawerRef = useRef<HTMLButtonElement>(null);
   const [accessToken] = useRecoilState(accessTokenState);
 
   // 모달
