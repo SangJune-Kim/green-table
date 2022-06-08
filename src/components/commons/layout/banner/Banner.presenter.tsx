@@ -1,8 +1,8 @@
 import Slider from "react-slick";
 import * as Banner from "./Banner.styles";
-import { ILayoutBannerUI } from "./Banner.types";
+import { ILayoutBannerUIProps } from "./Banner.types";
 
-export default function LayoutBannerUI(props: ILayoutBannerUI) {
+export default function LayoutBannerUI(props: ILayoutBannerUIProps) {
   return (
     <Banner.Container>
       <Banner.Wrapper>

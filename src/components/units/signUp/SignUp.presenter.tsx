@@ -6,35 +6,7 @@ import * as SignUp from "./SignUp.styles";
 import SignUpComplete from "./signUpComplete/SignUpComplete.container";
 import SignUpPolicy from "./signUpPolicy/SignUpPolicy.container";
 import CheckBox01 from "../../commons/checkboxes/01";
-import {
-  FieldValues,
-  FormState,
-  SubmitHandler,
-  UseFormHandleSubmit,
-  UseFormRegister,
-} from "react-hook-form";
-
-interface IPropsSignUp {
-  isSubmit: Boolean;
-  register: UseFormRegister<FieldValues>;
-  formState: FormState<FieldValues>;
-  handleSubmit: UseFormHandleSubmit<FieldValues>;
-  onClickSubmit: SubmitHandler<FieldValues>;
-  onChangeUserInputs: (event: string) => any;
-  userInputsErrors: {
-    genderError: String;
-    tokenError: String;
-  };
-  userInputs: {
-    gender: String;
-    phone: String;
-    token: String;
-    isValid: Boolean;
-  };
-  onClickGetToken: () => void;
-  onClickCheckValid: () => void;
-  setIsSubmit: () => void;
-}
+import { IPropsSignUp } from "./SignUp.types";
 
 export default function SignUpUI(props: IPropsSignUp) {
   const [checked, setChecked] = useState(true);

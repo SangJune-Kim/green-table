@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { INavigation02Style } from "./types";
 
 export const Wrapper = styled.div`
   display: grid;
@@ -6,12 +7,6 @@ export const Wrapper = styled.div`
   gap: 2.5rem;
   padding-top: 1.5rem;
 `;
-
-interface INavigation02Props {
-  isPicked: boolean;
-  hover: string;
-  image: string;
-}
 
 // prettier-ignore
 export const VeganType = styled.li`
@@ -21,7 +16,7 @@ export const VeganType = styled.li`
   width: 6.125rem;
   cursor: pointer;
   & > div {
-    border: 2px solid ${(props: INavigation02Props) => (props.isPicked ? "#0fbaa3" : "#7f7f7f")};
+    border: 2px solid ${(props: INavigation02Style) => (props.isPicked ? "#0fbaa3" : "#7f7f7f")};
   }
 
   & > div > div {

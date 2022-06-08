@@ -1,6 +1,6 @@
 import { useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { MouseEvent, useEffect, useState } from "react";
 import Navigation01 from "../../../commons/navigation/01";
 import Pagination02 from "../../../commons/pagination/02/Pagination02";
 import BestRecipeList from "./bestList/BestList.container";
@@ -18,12 +18,13 @@ import {
   SEARCH_RECIPES,
 } from "./RecipeList.queries";
 import * as List from "./RecipeList.styles";
+import { IPropsRecipeList } from "./RecipeList.types";
 
 export default function RecipeListUI() {
   const router = useRouter();
 
   const WHOLE_MENU_LIST = [{ name: "전체 메뉴" }, { name: "전문가 메뉴" }];
-  const [myScraps, setMyScraps] = useState([]);
+  const [myScraps, setMyScraps] = useState<Array<any>>([]);
   const MENU_LIST = [{ name: "최신순" }, { name: "인기순" }];
   const [isPicked, setIsPicked] = useState({
     wholeMenu: "전체 메뉴",
@@ -75,18 +76,18 @@ export default function RecipeListUI() {
     },
   });
 
-  const onClickWholeMenu = (el) => () => {
+  const onClickWholeMenu = (el: any) => () => {
     setIsPicked({ ...isPicked, wholeMenu: el.name });
   };
 
-  const onClickSelectList = (el) => () => {
+  const onClickSelectList = (el: any) => () => {
     setIsPicked({ ...isPicked, selectList: el.name });
   };
 
-  const onClickMoveToDetail = (el) => (e) => {
+  const onClickMoveToDetail = (el: any) => (e: MouseEvent<any>) => {
     router.push(`/recipe/${e.currentTarget.id}`);
     const recent = JSON.parse(sessionStorage.getItem("recent") || "[]");
-    const temp = recent.filter((recentEl) => recentEl.id === el.id);
+    const temp = recent.filter((recentEl: any) => recentEl.id === el.id);
     if (temp.length === 1) return;
     const { __typename, ...newEl } = el;
     recent.push(newEl);
@@ -94,19 +95,14 @@ export default function RecipeListUI() {
   };
 
   // 전체 > 전문가 필터
-  // const isProRecipes = data?.fetchRecipes.filter(
-  //   (e) => e.user.isPro === "PRO"
-  // ) || [""];
   const tempProRecipes = isProData?.fetchRecipeIsPro;
-  const aaa = [];
-  tempProRecipes?.map((el) => {
-    aaa.push(el);
-  });
+  const aaa: any = [];
+  tempProRecipes?.map((el: string) => aaa.push(el));
   const isProRecipes = aaa;
 
   // 타입 > 전문가 필터
   const isProRecipesType = typesData?.fetchRecipeTypes.filter(
-    (e) => e.user.isPro === "PRO"
+    (e: any) => e.user.isPro === "PRO"
   ) || [""];
 
   // 전체 > 전체 > 인기순
@@ -122,22 +118,22 @@ export default function RecipeListUI() {
   const typeWholePopular = typesPopularData?.fetchRecipeTypesPopular;
   // 타입 >  인기순 > 전문가
   const typePopularIsPro = typesPopularData?.fetchRecipeTypesPopular.filter(
-    (e) => e.user.isPro === "PRO"
+    (e: any) => e.user.isPro === "PRO"
   );
 
   // 최신순, 인기순 난이도순 필터
   useEffect(() => {
     if (router.query.type) {
-      const a = router.query.type;
+      const a: any = router.query.type;
       setSelectedTypes(a);
     }
     if (router.query.input) {
-      const b = router.query.input;
+      const b: any = router.query.input;
       setSearchInput(b);
     }
-    myScrapsData?.fetchMyScrapHistory.map((el) => {
+    myScrapsData?.fetchMyScrapHistory.map((el: IPropsRecipeList) => {
       const { __typename, ...newMyScraps } = el;
-      setMyScraps((prev) => [...prev, newMyScraps.id]);
+      return setMyScraps((prev: any) => [...prev, newMyScraps.id]);
     });
   }, [myScrapsData, router.query.type]);
 
@@ -201,7 +197,7 @@ export default function RecipeListUI() {
         {/* %%%%%%%%%%%%%%% 리스트 부분 %%%%%%%%%%%%%%% */}
         <List.ListWrapper>
           {searchData
-            ? searchData?.searchRecipes?.map((el, i) => (
+            ? searchData?.searchRecipes?.map((el: any, i: number) => (
                 <RecipeListItem
                   key={i}
                   userData={userData}
@@ -226,7 +222,7 @@ export default function RecipeListUI() {
                     />
                   ))
                 : // 전체 > 전문가 > 최신
-                  isProRecipes?.map((el, i) => (
+                  isProRecipes?.map((el: any, i: number) => (
                     <RecipeListItem
                       key={i}
                       userData={userData}
@@ -238,7 +234,7 @@ export default function RecipeListUI() {
               : // 전체 > 전체
               isPicked.selectList === "인기순"
               ? // 전체 > 전체 > 인기
-                wholeWholePopular?.map((el, i) => (
+                wholeWholePopular?.map((el: any, i: number) => (
                   <RecipeListItem
                     key={i}
                     userData={userData}
@@ -248,7 +244,7 @@ export default function RecipeListUI() {
                   />
                 ))
               : // 전체 > 전체 > 최신
-                data?.fetchRecipes.map((el, i) => (
+                data?.fetchRecipes.map((el: any, i: number) => (
                   <RecipeListItem
                     key={i}
                     userData={userData}
@@ -262,7 +258,7 @@ export default function RecipeListUI() {
             ? // 타입 > 전문가
               isPicked.selectList === "인기순"
               ? // 타입 > 전문가 > 인기
-                typePopularIsPro?.map((el, i) => (
+                typePopularIsPro?.map((el: any, i: number) => (
                   <RecipeListItem
                     key={i}
                     userData={userData}
@@ -272,7 +268,7 @@ export default function RecipeListUI() {
                   />
                 ))
               : // 타입 > 전문가 > 최신
-                isProRecipesType?.map((el, i) => (
+                isProRecipesType?.map((el: any, i: number) => (
                   <RecipeListItem
                     key={i}
                     userData={userData}
@@ -284,7 +280,7 @@ export default function RecipeListUI() {
             : // 타입 > 전체
             isPicked.selectList === "인기순"
             ? // 타입 > 전체 > 인기
-              typeWholePopular?.map((el, i) => (
+              typeWholePopular?.map((el: any, i: number) => (
                 <RecipeListItem
                   key={i}
                   userData={userData}
@@ -294,7 +290,7 @@ export default function RecipeListUI() {
                 />
               ))
             : // 타입 > 전체 > 최신
-              typesData?.fetchRecipeTypes.map((el, i) => (
+              typesData?.fetchRecipeTypes.map((el: any, i: number) => (
                 <RecipeListItem
                   key={i}
                   userData={userData}

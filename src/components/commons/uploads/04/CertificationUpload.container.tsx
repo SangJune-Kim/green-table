@@ -1,11 +1,12 @@
 import { useMutation } from "@apollo/client";
 import { ChangeEvent, useRef } from "react";
 import { useModal } from "../../hooks/useModal";
-import ProfileUploadUI from "./CertificationUpload.presenter";
+import CertificationUploadUI from "./CertificationUpload.presenter";
 import { UPLOAD_CERTIFICATION_IMAGE } from "./CertificationUpload.queries";
+import { ICertificationUploadProps } from "./CertificationUpload.types";
 import { checkValidationImage } from "./CertificationUpload.validation";
 
-export default function CertificationUpload(props) {
+export default function CertificationUpload(props: ICertificationUploadProps) {
   const fileRef = useRef<HTMLInputElement>(null);
   const [uploadCertificationImage] = useMutation(UPLOAD_CERTIFICATION_IMAGE);
   const { Info, ModalError } = useModal();
@@ -25,7 +26,7 @@ export default function CertificationUpload(props) {
         result.data.uploadCertificationImage.length
       );
       props.setUserInputs({
-        ...props.userInput,
+        ...props.userInputs,
         certImage: String(url),
       });
 
@@ -41,7 +42,7 @@ export default function CertificationUpload(props) {
   };
 
   return (
-    <ProfileUploadUI
+    <CertificationUploadUI
       onClickUpload={onClickUpload}
       onChangeFile={onChangeFile}
       fileRef={fileRef}

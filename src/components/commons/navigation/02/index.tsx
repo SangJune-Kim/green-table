@@ -1,10 +1,11 @@
 import { useState } from "react";
 import * as Nav from "./styles";
+import { INavigation02Props, IVeganType } from "./types";
 
-export default function Navigation02(props) {
+export default function Navigation02(props: INavigation02Props) {
   const [isPicked, setIsPicked] = useState("");
 
-  const onClickVeganType = (el) => () => {
+  const onClickVeganType = (el: IVeganType) => () => {
     setIsPicked(el.name);
     props.setUserInputs({ ...props.userInputs, type: el.En });
   };

@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { INavigation03Style } from "./types";
 
 export const Wrapper = styled.div`
   display: grid;
@@ -6,11 +7,6 @@ export const Wrapper = styled.div`
   gap: 2.5rem;
   padding-top: 1.5rem;
 `;
-
-interface INavigation02Props {
-  hover: string;
-  image: string;
-}
 
 // prettier-ignore
 export const VeganType = styled.li`
@@ -28,9 +24,9 @@ export const VeganType = styled.li`
   }
 
   & > div > div {
-    background-image: url(${(props: INavigation02Props) => props.image});
+    background-image: url(${(props: INavigation03Style) => props.image});
     &.type {
-      background-image: url(${(props: INavigation02Props) => props.hover});
+      background-image: url(${(props: INavigation03Style) => props.hover});
 
     }
   }

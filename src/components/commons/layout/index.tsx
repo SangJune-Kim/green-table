@@ -9,12 +9,10 @@ const Body = styled.div`
   width: 100%;
 `;
 
-// layout props type
 interface LayoutProps {
   children: ReactNode;
 }
 
-// 컴포넌트 hidden
 const HIDDEN_BANNER = [
   "/",
   "/login",
@@ -35,15 +33,14 @@ const HIDDEN_BANNER = [
   "/subscribe/complete",
 ];
 
-// 디테일 페이지 hidden
-const HIDDEN_PATHNAME = [`/recipe/[recipeId]`];
-const HIIDEN_LANDINGPAGE = ["/"];
+const HIDDEN_PATH_NAME = [`/recipe/[recipeId]`];
+const HIDDEN_LANDING_PAGE = ["/"];
 
 export default function Layout(props: LayoutProps) {
   const router = useRouter();
   const isHiddenBanner = HIDDEN_BANNER.includes(router.asPath);
-  const isHiddenPathname = HIDDEN_PATHNAME.includes(router.pathname);
-  const isHiddenLandingPage = HIIDEN_LANDINGPAGE.includes(router.asPath);
+  const isHiddenPathname = HIDDEN_PATH_NAME.includes(router.pathname);
+  const isHiddenLandingPage = HIDDEN_LANDING_PAGE.includes(router.asPath);
   return (
     <>
       {!isHiddenLandingPage && <LayoutHeader />}

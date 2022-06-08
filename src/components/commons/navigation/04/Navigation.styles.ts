@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { breakPoints } from "../../../../commons/styles/media";
+import { INavigation04Style } from "./types";
 
 // 전체
 export const Wrapper = styled.ul`
@@ -28,7 +29,7 @@ export const VeganType = styled.div`
   &:last-of-type {
     margin-right: 0;
   }
-  color: ${(props) => props.isPicked && "#0fbaa3"};
+  color: ${(props: INavigation04Style) => props.isPicked && "#0fbaa3"};
   :hover {
     color: #0fbaa3;
     & > div {
@@ -37,12 +38,12 @@ export const VeganType = styled.div`
   }
 `;
 
+// prettier-ignore
 export const VeganTypeImg = styled.div`
   width: 3.3rem;
   height: 3.3rem;
   margin-bottom: 15px;
-  background-image: url(${(props) =>
-    props.isPicked ? props.hover : props.image});
+  background-image: url(${(props: INavigation04Style) =>  props.isPicked ? props.hover : props.image});
   background-repeat: no-repeat;
   :hover {
     background-image: url(${(props) => props.hover});

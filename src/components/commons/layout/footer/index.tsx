@@ -1,5 +1,5 @@
 import * as Foot from "./Footer.styles";
-// 수정
+
 export default function LayoutFooter() {
   const onClickTopButton = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });

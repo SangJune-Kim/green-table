@@ -3,9 +3,10 @@ import { ChangeEvent, useRef } from "react";
 import { useModal } from "../../hooks/useModal";
 import ProfileUploadUI from "./ProfileUpload.presenter";
 import { UPLOAD_PROFILE_IMAGE } from "./ProfileUpload.queries";
+import { IProfileUploadProps } from "./ProfileUpload.types";
 import { checkValidationImage } from "./ProfileUpload.validation";
 
-export default function ProfileUpload(props) {
+export default function ProfileUpload(props: IProfileUploadProps) {
   const fileRef = useRef<HTMLInputElement>(null);
   const [uploadProfileImage] = useMutation(UPLOAD_PROFILE_IMAGE);
   const { ModalError } = useModal();
@@ -21,7 +22,7 @@ export default function ProfileUpload(props) {
     try {
       const result = await uploadProfileImage({ variables: { file } });
       props.setUserInputs({
-        ...props.userInput,
+        ...props.userInputs,
         profilePic: String(result.data.uploadProfileImage),
       });
     } catch (error) {

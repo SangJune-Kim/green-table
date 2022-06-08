@@ -5,8 +5,9 @@ import { useEffect } from "react";
 import NormalButton from "../../commons/buttons/normal";
 import { useInView } from "react-intersection-observer";
 import Head from "next/head";
+import { ISubscribeUIProps } from "./Subscribe.type";
 
-export default function SubscribeUI(props) {
+export default function SubscribeUI(props: ISubscribeUIProps) {
   const [ref, inView] = useInView({
     threshold: 0,
   });
