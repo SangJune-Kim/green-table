@@ -1,6 +1,11 @@
 import styled from "@emotion/styled";
 import Link from "next/link";
 
+interface IViewAllButtonProps {
+  href: string;
+  title: string;
+}
+
 const Button = styled.button`
   display: flex;
   justify-content: space-between;
@@ -17,7 +22,7 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
-export default function ViewAllButton(props) {
+export default function ViewAllButton(props: IViewAllButtonProps) {
   return (
     <Link href={props?.href}>
       <Button>
@@ -27,5 +32,3 @@ export default function ViewAllButton(props) {
     </Link>
   );
 }
-
-// title에 쓰고싶은거 넣어서 쓰시면 됩니다.

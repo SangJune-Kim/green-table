@@ -35,5 +35,3 @@ export default function OutlineSubmitButton(props: ISubmitButtonProps) {
     </Button>
   );
 }
-
-// title 은 원하는걸로 바꿔서 각 컴포넌트에서 쓰세용

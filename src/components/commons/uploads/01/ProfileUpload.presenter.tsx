@@ -1,5 +1,6 @@
 import * as My from "./ProfileUpload.styles";
-export default function ProfileUploadUI(props) {
+import { IProfileUploadUIProps } from "./ProfileUpload.types";
+export default function ProfileUploadUI(props: IProfileUploadUIProps) {
   return (
     <>
       {props.userInputs.profilePic !== " " ? (

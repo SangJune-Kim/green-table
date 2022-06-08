@@ -1,7 +1,5 @@
-import { MutableRefObject } from "react";
-
 export interface IDrawerUIProps {
-  drawerRef: MutableRefObject<null>;
+  drawerRef: any;
 }
 
 export interface IDrawerStylesProps {

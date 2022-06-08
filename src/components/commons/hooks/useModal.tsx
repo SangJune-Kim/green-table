@@ -61,23 +61,3 @@ export function useModal() {
     PromotionModal,
   };
 }
-
-// 사용 예제
-
-// import { useModal } from "../../../commons/hooks/useModal";
-
-// export default function MyPage() {
-//   const { Success, Error } = useModal();
-
-//   const onClickModal = () => {
-//     Success("제목","텍스트");
-//   };
-//   const onClickWarning = () => {
-//     Error("제목","텍스트");
-//   };
-
-//   return (
-// <button onClick={onClickModal}>모달시험</button>
-// <button onClick={onClickWarning}>모달시험2</button>
-//   );
-// }

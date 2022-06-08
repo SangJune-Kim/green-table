@@ -1,5 +1,9 @@
 import styled from "@emotion/styled";
 
+interface IMyPageTitleBarProps {
+  title: string;
+}
+
 const TitleWrapper = styled.div`
   display: flex;
   justify-content: space-between;
@@ -13,7 +17,7 @@ const Title = styled.span`
   padding-bottom: 1.5rem;
 `;
 
-export default function MyPageTitleBar(props) {
+export default function MyPageTitleBar(props: IMyPageTitleBarProps) {
   return (
     <TitleWrapper>
       <Title>{props.title}</Title>

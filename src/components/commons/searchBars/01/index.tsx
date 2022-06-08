@@ -1,15 +1,15 @@
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 import * as Search from "./styles";
 
 export default function SearchBar01() {
   const router = useRouter();
   const [searchInput, setSearchInput] = useState("");
 
-  const onChangeSearch = (e) => {
-    setSearchInput(e.target.value);
+  const onChangeSearch = (event: ChangeEvent<HTMLInputElement>) => {
+    setSearchInput(event.target.value);
   };
-  const onKeyupMoveList = (event) => {
+  const onKeyupMoveList = (event: any) => {
     if (event.keyCode === 13 && searchInput !== " ") {
       router.push(`/recipe/?input=${searchInput}`, `/recipe`, {
         shallow: true,

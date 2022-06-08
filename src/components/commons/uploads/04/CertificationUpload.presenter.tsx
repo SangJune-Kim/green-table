@@ -1,6 +1,9 @@
 import NormalButton from "../../buttons/normal";
 import * as My from "./CertificationUpload.styles";
-export default function CertificationUploadUI(props) {
+import { ICertificationUploadUIProps } from "./CertificationUpload.types";
+export default function CertificationUploadUI(
+  props: ICertificationUploadUIProps
+) {
   return (
     <>
       {props.userInputs.certImage ? (
