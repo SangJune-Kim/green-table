@@ -37,8 +37,11 @@ const SliderItem = styled.div`
   }
 `;
 
-export default function Slider01(props) {
-  console.log(props.mainImages);
+interface ISlider01Props {
+  mainImages: any;
+}
+
+export default function Slider01(props: ISlider01Props) {
   const settings = {
     dots: true,
     arrows: false,
@@ -46,7 +49,7 @@ export default function Slider01(props) {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    customPaging: function (i) {
+    customPaging: function (i: number) {
       return (
         props.mainImages[i] && (
           <a>
@@ -62,7 +65,7 @@ export default function Slider01(props) {
   return (
     <Wrapper>
       <Slider {...settings}>
-        {props.mainImages?.map((el) => (
+        {props.mainImages?.map((el: ISlider01Props) => (
           <SliderItem key={uuidv4()}>
             <img src={`https://storage.googleapis.com/${el}`} />
           </SliderItem>

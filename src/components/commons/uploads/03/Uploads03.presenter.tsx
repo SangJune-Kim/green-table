@@ -1,6 +1,7 @@
 import * as S from "./Uploads03.styles";
+import { IUploads03UIProps } from "./Uploads03.types";
 
-export default function Uploads03UI(props) {
+export default function Uploads03UI(props: IUploads03UIProps) {
   return (
     <>
       {props.descImage ? (

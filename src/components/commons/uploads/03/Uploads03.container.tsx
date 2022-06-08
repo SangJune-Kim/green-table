@@ -4,8 +4,9 @@ import { useMutation } from "@apollo/client";
 import { checkValidationImage } from "./Uploads03.validations";
 import { UPLOAD_PROFILE_IMAGE } from "./Uploads03.queries";
 import { useModal } from "../../hooks/useModal";
+import { IUploads03Props } from "./Uploads03.types";
 
-export default function Uploads03(props) {
+export default function Uploads03(props: IUploads03Props) {
   const { ModalError } = useModal();
   const fileRef = useRef<HTMLInputElement>(null);
   const [uploadFile] = useMutation(UPLOAD_PROFILE_IMAGE);
