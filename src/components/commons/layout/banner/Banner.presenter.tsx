@@ -47,7 +47,6 @@ export default function LayoutBannerUI(props: ILayoutBannerUIProps) {
                   </div>
                 </Banner.TextGroup>
                 <Banner.ImageGroup
-                  num={el}
                   className={index === props.slideIndex ? "isActive" : ""}
                 >
                   {(el === 1 && (

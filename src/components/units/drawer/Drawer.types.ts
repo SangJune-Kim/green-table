@@ -1,5 +1,7 @@
+import { LegacyRef } from "react";
+
 export interface IDrawerUIProps {
-  drawerRef: any;
+  drawerRef: LegacyRef<HTMLButtonElement> | undefined;
 }
 
 export interface IDrawerStylesProps {

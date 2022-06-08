@@ -1,5 +1,5 @@
 import MonthlyRecipeUI from "./MonthlyRecipe.presenter";
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 import { FETCH_POPULAR_RECIPES, FETCH_USER } from "./MonthlyRecipe.queries";
 import { useQuery } from "@apollo/client";
 
@@ -9,10 +9,9 @@ export default function MonthlyRecipe() {
   const [pickTag, setPickTag] = useState({
     pickTag: "#채식이 처음인 사람들을 위한 쉬운 레시피",
   });
-  const handleChange = (event) => {
-    const { name, value } = event.target;
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setPickTag({
-      [name]: value,
+      pickTag: event.target.value,
     });
   };
 

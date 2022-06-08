@@ -3,8 +3,9 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { v4 as uuidv4 } from "uuid";
+import { IMonthlyRecipeUIProps } from "./MonthlyRecipe.types";
 
-export default function MonthlyRecipeUI(props) {
+export default function MonthlyRecipeUI(props: IMonthlyRecipeUIProps) {
   return (
     <MonthlyRecipe.Container>
       <MonthlyRecipe.HeadText>
@@ -98,51 +99,53 @@ export default function MonthlyRecipeUI(props) {
       <MonthlyRecipe.RecommendRecipeItems>
         <MonthlyRecipe.SliderWrapper>
           <Slider {...props.settings}>
-            {props.popRecipes?.fetchPopularRecipes?.slice(13, 24).map((el) => (
-              <MonthlyRecipe.RecipeItem key={uuidv4()}>
-                <MonthlyRecipe.RecipeItemImageWrapper>
-                  <MonthlyRecipe.IconBookmark>
-                    {el.recipesScraps?.user?.user_id?.includes(
-                      props.userData.fetchUser.user_id
-                    ) ? (
-                      <img src="/img/bestRecipe/icon-bookmark-on.svg" />
-                    ) : (
-                      <img src="/img/bestRecipe/icon-bookmark-off.svg" />
-                    )}
-                    <span>{el.scrapCount}</span>
-                  </MonthlyRecipe.IconBookmark>
-                  <img
-                    src={`https://storage.googleapis.com/${el.recipesImages[0]?.mainImage}`}
-                  />
-                </MonthlyRecipe.RecipeItemImageWrapper>
-                <MonthlyRecipe.RecipeItemTextWrapper>
-                  <h1>{el.title}</h1>
-                  <p>{el.summary}</p>
-                  <MonthlyRecipe.Tags>
-                    {el.types === "VEGAN" && (
-                      <MonthlyRecipe.TagVegan>비건</MonthlyRecipe.TagVegan>
-                    )}
-                    {el.types === "LACTO" && (
-                      <MonthlyRecipe.TagLacto>락토</MonthlyRecipe.TagLacto>
-                    )}
-                    {el.types === "OVO" && (
-                      <MonthlyRecipe.TagOvo>오보</MonthlyRecipe.TagOvo>
-                    )}
-                    {el.types === "LACTO_OVO" && (
-                      <MonthlyRecipe.TagLactoOvo>
-                        락토오보
-                      </MonthlyRecipe.TagLactoOvo>
-                    )}
-                    {el.types === "PESCO" && (
-                      <MonthlyRecipe.TagPesco>페스코</MonthlyRecipe.TagPesco>
-                    )}
-                    {el.types === "POLLO" && (
-                      <MonthlyRecipe.TagPollo>폴로</MonthlyRecipe.TagPollo>
-                    )}
-                  </MonthlyRecipe.Tags>
-                </MonthlyRecipe.RecipeItemTextWrapper>
-              </MonthlyRecipe.RecipeItem>
-            ))}
+            {props.popRecipes?.fetchPopularRecipes
+              ?.slice(13, 24)
+              .map((el: any) => (
+                <MonthlyRecipe.RecipeItem key={uuidv4()}>
+                  <MonthlyRecipe.RecipeItemImageWrapper>
+                    <MonthlyRecipe.IconBookmark>
+                      {el.recipesScraps?.user?.user_id?.includes(
+                        props.userData.fetchUser.user_id
+                      ) ? (
+                        <img src="/img/bestRecipe/icon-bookmark-on.svg" />
+                      ) : (
+                        <img src="/img/bestRecipe/icon-bookmark-off.svg" />
+                      )}
+                      <span>{el.scrapCount}</span>
+                    </MonthlyRecipe.IconBookmark>
+                    <img
+                      src={`https://storage.googleapis.com/${el.recipesImages[0]?.mainImage}`}
+                    />
+                  </MonthlyRecipe.RecipeItemImageWrapper>
+                  <MonthlyRecipe.RecipeItemTextWrapper>
+                    <h1>{el.title}</h1>
+                    <p>{el.summary}</p>
+                    <MonthlyRecipe.Tags>
+                      {el.types === "VEGAN" && (
+                        <MonthlyRecipe.TagVegan>비건</MonthlyRecipe.TagVegan>
+                      )}
+                      {el.types === "LACTO" && (
+                        <MonthlyRecipe.TagLacto>락토</MonthlyRecipe.TagLacto>
+                      )}
+                      {el.types === "OVO" && (
+                        <MonthlyRecipe.TagOvo>오보</MonthlyRecipe.TagOvo>
+                      )}
+                      {el.types === "LACTO_OVO" && (
+                        <MonthlyRecipe.TagLactoOvo>
+                          락토오보
+                        </MonthlyRecipe.TagLactoOvo>
+                      )}
+                      {el.types === "PESCO" && (
+                        <MonthlyRecipe.TagPesco>페스코</MonthlyRecipe.TagPesco>
+                      )}
+                      {el.types === "POLLO" && (
+                        <MonthlyRecipe.TagPollo>폴로</MonthlyRecipe.TagPollo>
+                      )}
+                    </MonthlyRecipe.Tags>
+                  </MonthlyRecipe.RecipeItemTextWrapper>
+                </MonthlyRecipe.RecipeItem>
+              ))}
           </Slider>
         </MonthlyRecipe.SliderWrapper>
       </MonthlyRecipe.RecommendRecipeItems>

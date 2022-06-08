@@ -1,10 +1,10 @@
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { SetStateAction, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import LayoutBannerUI from "./Banner.presenter";
 
 export default function LayoutBanner() {
-  const [slideIndex, setSlideIndex] = useState(3);
+  const [slideIndex, setSlideIndex] = useState<number>(3);
   const settings = {
     dots: true,
     fade: true,
@@ -16,8 +16,7 @@ export default function LayoutBanner() {
     arrows: false,
     autoplay: true,
     cssEase: "linear",
-    beforeChange: (current: any, next: SetStateAction<number>) =>
-      setSlideIndex(next),
+    beforeChange: (current: number, next: number) => setSlideIndex(next),
   };
 
   useEffect(() => {
