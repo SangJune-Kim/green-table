@@ -224,7 +224,7 @@ export default function TemporaryDrawer(props: IDrawerUIProps) {
       ></button>
       <Drawer
         anchor={"right"}
-        open={state["right"]}
+        open={state.right}
         onClose={toggleDrawer("right", false)}
       >
         {list("right")}

@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import { breakPoints } from "../../../../commons/styles/media";
 
 export const Container = styled.div`
   background: rgba(196, 196, 196, 0.1);

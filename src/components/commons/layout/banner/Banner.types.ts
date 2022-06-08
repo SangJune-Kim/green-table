@@ -1,5 +1,3 @@
-import { SetStateAction } from "react";
-
 export interface ILayoutBannerUIProps {
   settings: {
     dots: boolean;
@@ -12,7 +10,7 @@ export interface ILayoutBannerUIProps {
     arrows: boolean;
     autoplay: boolean;
     cssEase: string;
-    beforeChange: (current: any, next: SetStateAction<number>) => void;
+    beforeChange: (current: number, next: number) => void;
   };
   slideIndex: number;
 }
