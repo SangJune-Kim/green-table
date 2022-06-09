@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../commons/styles/media";
 import { IPropsButton } from "./SignUp.types";
 
 // 회원가입 전체
@@ -46,7 +47,7 @@ export const BodyWrapper = styled.div`
   flex-direction: column;
   width: 100%;
   max-width: 770px;
-  padding: 20px 100px;
+  padding: 1.5rem 6.25rem;
   height: 65rem;
   justify-content: center;
   align-items: center;
@@ -77,23 +78,31 @@ export const BodyTitle = styled.ul`
   margin-bottom: 8px;
   width: 36rem;
   max-width: 770px;
+  @media ${breakPoints.mobile} {
+    width: 28rem;
+  }
 `;
 
 export const SignUpTitle = styled.li`
   width: 12rem;
   text-align: center;
   font-weight: 400;
+  @media ${breakPoints.mobile} {
+    width: 8rem;
+  }
 `;
 
 export const SignUpTitleOn = styled.li`
   width: 12rem;
   text-align: center;
   font-weight: 600;
+  @media ${breakPoints.mobile} {
+    width: 8rem;
+  }
 `;
 
 export const SignUpTitleUnderBarWrapper = styled.ul`
-  max-width: 36rem;
-  width: 100%;
+  width: 36rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -101,11 +110,17 @@ export const SignUpTitleUnderBarWrapper = styled.ul`
 
 export const SignUpTitleUnderBar = styled.li`
   border-bottom: 4px solid #c4c4c4;
-  min-width: 12rem;
+  width: 12rem;
+  @media ${breakPoints.mobile} {
+    width: 9rem;
+  }
 `;
 export const SignUpTitleUnderBarOn = styled.li`
   border-bottom: 6px solid #0fbaa3;
-  min-width: 12rem;
+  width: 12rem;
+  @media ${breakPoints.mobile} {
+    width: 9rem;
+  }
 `;
 
 // 약관 동의 부분

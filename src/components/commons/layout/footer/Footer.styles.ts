@@ -18,6 +18,9 @@ export const Wrapper = styled.div`
   margin: 2rem 0;
   display: flex;
   justify-content: space-between;
+  @media ${breakPoints.mobile} {
+    padding: 1rem;
+  }
 `;
 
 // Top button
@@ -64,6 +67,7 @@ export const LogoWrapper = styled.div`
   display: flex;
   flex-direction: column;
   color: white;
+  height: 100%;
 `;
 export const Logo = styled.img`
   margin-bottom: 20px;
@@ -76,8 +80,6 @@ export const LogoCopyWrite = styled.div`
   @media (max-width: 1050px) {
     padding-right: 10px;
   }
-  @media ${breakPoints.mobile} {
-  }
 `;
 
 // Footer Menu
@@ -86,6 +88,9 @@ export const MenuInfoWrapper = styled.div`
   flex-direction: column;
   color: white;
   word-break: word;
+  @media ${breakPoints.mobile} {
+    width: 100%;
+  }
 `;
 
 export const MenuWrapper = styled.ul`
@@ -113,11 +118,18 @@ export const Menu = styled.li`
       border: none;
     }
   }
+  @media ${breakPoints.mobile} {
+    font-size: 1rem;
+  }
 `;
 
 // 기업 정보
 export const InfoWrapper = styled.div`
   word-break: word;
+  @media ${breakPoints.mobile} {
+    margin-left: 1.5rem;
+    word-break: keep-all;
+  }
 `;
 export const Info = styled.div`
   margin-bottom: 10px;

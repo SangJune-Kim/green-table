@@ -28,9 +28,9 @@ export default function LayoutFooter() {
           <Foot.InfoWrapper>
             <Foot.Info>(주)채식한상 | 대표자: 홍예원</Foot.Info>
             <Foot.Info>
-              주소: 서울 중구 동호로 330 CJ제일제당 센터 (우) 04560 |
-              사업자등록번호: 000-00-00000
+              주소: 서울 중구 동호로 330 CJ제일제당 센터 (우) 04560
             </Foot.Info>
+            <Foot.Info>사업자등록번호: 000-00-00000</Foot.Info>
             <Foot.Info>
               통신판매업신고 중구 제00000호 | 개인정보보호책임자:오창모
             </Foot.Info>

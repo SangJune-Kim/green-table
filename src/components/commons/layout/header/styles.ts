@@ -30,6 +30,8 @@ export const MenuWrapper = styled.ul`
   padding-left: 5rem;
   @media ${breakPoints.mobile} {
     padding-left: calc(5%);
+    width: 70%;
+    margin-left: 3rem;
   }
 `;
 
@@ -42,7 +44,7 @@ export const MenuItem = styled.li`
   :hover {
   }
   @media ${breakPoints.mobile} {
-    margin-right: 2rem;
+    margin-right: 1rem;
   }
 `;
 
@@ -81,15 +83,24 @@ export const HeaderIconWrapper = styled.div`
   justify-content: center;
   align-items: center;
   height: 1.8rem;
+  @media ${breakPoints.mobile} {
+    height: 40px;
+    margin-right: 1rem;
+  }
 `;
 
 export const UserName = styled.li`
   margin-right: 1.5rem;
+  & :nth-of-type(1) {
+    @media ${breakPoints.mobile} {
+      display: none;
+    }
+  }
 `;
 
 export const WelcomeMent = styled.li`
   margin-right: 1.5rem;
-  @media (max-width: 500px) {
+  @media ${breakPoints.mobile} {
     display: none;
   }
 `;
