@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../../commons/styles/media";
 
 interface INormalButtonProps {
   title?: String;
@@ -15,7 +16,7 @@ export const Button = styled.button`
   border: none;
   border-radius: 2rem;
   padding: 20px;
-  margin: 0 20px;
+  margin: 0 15px;
   font-weight: 500;
   font-size: 1rem;
   color: ${(props: INormalButtonProps) =>
@@ -23,6 +24,10 @@ export const Button = styled.button`
   background-color: ${(props: INormalButtonProps) =>
     props.color === "green" ? "#0fbaa3" : "#c4c4c4"};
   cursor: pointer;
+
+  @media ${breakPoints.tablet} {
+    width: 35%;
+  }
 `;
 
 export default function NormalButton(props: INormalButtonProps) {

@@ -1,9 +1,14 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../../commons/styles/media";
 
 export const ImageWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media ${breakPoints.tablet} {
+    padding-bottom: 4rem;
+  }
 `;
 
 export const Image = styled.img`

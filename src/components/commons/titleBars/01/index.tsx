@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../../commons/styles/media";
 
 interface IMyPageTitleBarProps {
   title: string;
@@ -9,6 +10,10 @@ const TitleWrapper = styled.div`
   justify-content: space-between;
   width: 100%;
   border-bottom: 1px solid #c4c4c4;
+
+  @media ${breakPoints.tablet} {
+    display: none;
+  }
 `;
 
 const Title = styled.span`

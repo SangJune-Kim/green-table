@@ -1,7 +1,7 @@
 import DaumPostcode from "react-daum-postcode";
 import NormalButton from "../../../commons/buttons/normal";
 import SubmitButton from "../../../commons/buttons/submit";
-import UserInput from "../../../commons/inputs";
+import UserInput02 from "../../../commons/inputs/02";
 import Navigation02 from "../../../commons/navigation/02";
 import MyPageSidebar from "../../../commons/sideBars/01/MyPageSidebar.container";
 import ProfileUpload from "../../../commons/uploads/01/ProfileUpload.container";
@@ -38,13 +38,12 @@ export default function MyPageEditUI(props: IMyPageEditUIProps) {
                 <ProfileUpload
                   setUserInputs={props.setUserInputs}
                   userInputs={props.userInputs}
-                  onChangeUserInputs={props.onChangeUserInputs}
                 />
 
                 <My.FlexColumn>
-                  <My.InputWrapper>
+                  <My.InputWrapper className="nickname">
                     <My.Label>닉네임</My.Label>
-                    <UserInput
+                    <UserInput02
                       placeholder={"닉네임"}
                       inputSize={"medium"}
                       defaultValue={props.userData?.fetchUser.nickname}
@@ -67,7 +66,7 @@ export default function MyPageEditUI(props: IMyPageEditUIProps) {
               <div>
                 <My.InputWrapper>
                   <My.Label>이름</My.Label>
-                  <UserInput
+                  <UserInput02
                     defaultValue={props.userData?.fetchUser.name}
                     disabled={true}
                   />
@@ -76,7 +75,7 @@ export default function MyPageEditUI(props: IMyPageEditUIProps) {
 
                 <My.InputWrapper>
                   <My.Label>이메일</My.Label>
-                  <UserInput
+                  <UserInput02
                     defaultValue={props.userData?.fetchUser.email}
                     disabled={true}
                   />
@@ -85,7 +84,7 @@ export default function MyPageEditUI(props: IMyPageEditUIProps) {
 
                 <My.InputWrapper>
                   <My.Label>휴대폰 번호</My.Label>
-                  <UserInput
+                  <UserInput02
                     type={"number"}
                     placeholder={"-제외"}
                     defaultValue={props.userData?.fetchUser.phone}
@@ -101,7 +100,7 @@ export default function MyPageEditUI(props: IMyPageEditUIProps) {
                 </My.InputWrapper>
                 <My.InputWrapper>
                   <My.Label />
-                  <UserInput
+                  <UserInput02
                     type={"number"}
                     placeholder={"인증번호"}
                     onChange={props.onChangeUserInputs("token")}
@@ -116,7 +115,7 @@ export default function MyPageEditUI(props: IMyPageEditUIProps) {
                 </My.InputWrapper>
                 <My.InputWrapper>
                   <My.Label>주소</My.Label>
-                  <UserInput
+                  <UserInput02
                     placeholder={"주소"}
                     defaultValue={
                       props.userInputs?.address ||
@@ -134,7 +133,7 @@ export default function MyPageEditUI(props: IMyPageEditUIProps) {
                 </My.InputWrapper>
                 <My.InputWrapper>
                   <My.Label />
-                  <UserInput
+                  <UserInput02
                     placeholder={"상세주소"}
                     defaultValue={props.userData?.fetchUser.addressDetail}
                     onChange={props.onChangeUserInputs("addressDetail")}
@@ -155,7 +154,7 @@ export default function MyPageEditUI(props: IMyPageEditUIProps) {
                 </My.ExpertTitleWrapper>
                 <My.InputWrapper>
                   <My.Label>자격증 등록</My.Label>
-                  <UserInput
+                  <UserInput02
                     placeholder={"이미지 업로드"}
                     defaultValue={
                       props.userInputs.certImage ||
@@ -170,7 +169,7 @@ export default function MyPageEditUI(props: IMyPageEditUIProps) {
                 </My.InputWrapper>
                 <My.InputWrapper>
                   <My.Label>인증 링크 등록</My.Label>
-                  <UserInput
+                  <UserInput02
                     placeholder={"URL"}
                     defaultValue={
                       props.userInputs.certUrl ||
