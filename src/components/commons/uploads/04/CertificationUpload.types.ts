@@ -16,7 +16,16 @@ export interface ICertificationUploadProps {
 
   setUserInputs: Dispatch<
     SetStateAction<{
+      nickname: string;
+      type: string;
+      address: string;
+      addressDetail: string;
+      phone: string;
+      token: string;
+      valid: string;
+      profilePic: string;
       certImage: string;
+      certUrl: string;
     }>
   >;
 }

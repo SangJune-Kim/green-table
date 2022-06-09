@@ -1,11 +1,20 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../../commons/styles/media";
 import { INavigation02Style } from "./types";
 
 export const Wrapper = styled.div`
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 2.5rem;
   padding-top: 1.5rem;
+  padding-bottom: 2.5rem;
+
+  @media ${breakPoints.tablet} {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10%;
+  }
 `;
 
 // prettier-ignore
@@ -38,6 +47,7 @@ export const VeganType = styled.li`
       color: #0fbaa3;
     }
   }
+
 `;
 
 export const Circle = styled.div`
