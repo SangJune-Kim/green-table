@@ -48,18 +48,24 @@ export const BodyWrapper = styled.div`
   width: 100%;
   max-width: 770px;
   padding: 1.5rem 6.25rem;
-  height: 65rem;
+  height: auto;
   justify-content: center;
   align-items: center;
   background-color: white;
   border-radius: 2rem;
-  margin-bottom: 2rem auto;
+  margin-bottom: 2rem;
+  @media ${breakPoints.mobile} {
+    padding: 0;
+  }
 `;
 
 // form
 export const FormWrapper = styled.form`
   width: 100%;
   max-width: 770px;
+  @media ${breakPoints.mobile} {
+    width: 28rem;
+  }
 `;
 
 // 공통 회원가입 단계 부분
@@ -71,6 +77,9 @@ export const BodyTitleWrapper = styled.div`
   margin-bottom: 1rem;
   width: 100%;
   max-width: 770px;
+  @media ${breakPoints.mobile} {
+    width: 28rem;
+  }
 `;
 export const BodyTitle = styled.ul`
   display: flex;
@@ -106,6 +115,9 @@ export const SignUpTitleUnderBarWrapper = styled.ul`
   display: flex;
   justify-content: center;
   align-items: center;
+  @media ${breakPoints.mobile} {
+    width: 28rem;
+  }
 `;
 
 export const SignUpTitleUnderBar = styled.li`
@@ -130,12 +142,18 @@ export const BodyContents = styled.ul`
   flex-direction: column;
   align-items: center;
   margin-bottom: 3rem;
+  @media ${breakPoints.mobile} {
+    width: 28rem;
+  }
 `;
 
 export const PolicyTitleWrapper = styled.div`
   display: flex;
   align-items: center;
   width: 36rem;
+  @media ${breakPoints.mobile} {
+    width: 28rem;
+  }
 `;
 
 export const PolicyTitleEssential = styled.span`
@@ -156,6 +174,9 @@ export const PolicyContents = styled.div`
   width: 36rem;
   height: 17rem;
   margin-bottom: 10px;
+  @media ${breakPoints.mobile} {
+    width: 28rem;
+  }
 `;
 
 // 정보 입력 내용 전체 부분
@@ -164,6 +185,10 @@ export const InputContentsWrapper = styled.div`
   flex-direction: column;
   margin-top: 1.5rem;
   width: 36rem;
+  @media ${breakPoints.mobile} {
+    width: 28rem;
+    align-items: center;
+  }
 `;
 
 // 정보 입력 row 하나
@@ -172,6 +197,10 @@ export const InputContents = styled.ul`
   align-items: center;
   margin-bottom: 10px;
   width: 36rem;
+  @media ${breakPoints.mobile} {
+    width: 25rem;
+    margin-bottom: 0;
+  }
 `;
 
 // 정보 입력 카테고리 부분
@@ -189,6 +218,9 @@ export const InputTitleWrapper = styled.li`
 export const InputWrapper = styled.li`
   display: flex;
   width: 26rem;
+  @media ${breakPoints.mobile} {
+    width: 16rem;
+  }
 `;
 
 export const InputError = styled.div`
@@ -196,9 +228,17 @@ export const InputError = styled.div`
   height: 1rem;
   display: flex;
   margin-left: 11rem;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   font-weight: 400;
   font-size: 0.8rem;
+  :last-of-type {
+    margin-bottom: 0;
+  }
+  @media ${breakPoints.mobile} {
+    width: 15rem;
+    margin-left: 10rem;
+    word-break: keep-all;
+  }
 `;
 
 // 성별 선택
@@ -216,6 +256,20 @@ export const GenderSelect = styled.select`
   border-radius: 2rem;
   border: 1px solid #bfbfbf;
   color: #848484;
+  background-color: white;
+  @media ${breakPoints.mobile} {
+    border-radius: 0;
+    border: 0;
+    border-bottom: 2px solid #bfbfbf;
+    padding: 0;
+    margin-bottom: 1rem;
+    width: 5rem;
+    :focus {
+      outline: 0;
+      border-bottom: 2px solid #0fbaa3;
+      transition: 0.5s ease;
+    }
+  }
 `;
 
 // 휴대폰 인증 버튼
@@ -232,6 +286,10 @@ export const PhoneNumberCertify = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
+  @media ${breakPoints.mobile} {
+    width: 6rem;
+    font-size: 0.9rem;
+  }
 `;
 
 // 정보성 메일 체크박스 부분
@@ -257,6 +315,9 @@ export const CompleteWrapper = styled.div`
   background-color: white;
   border-radius: 2rem;
   margin-bottom: 2rem;
+  @media ${breakPoints.mobile} {
+    width: 28rem;
+  }
 `;
 
 export const CheckIcon = styled.img`
@@ -271,6 +332,10 @@ export const FlowerShower = styled.img`
   position: absolute;
   top: 18rem;
   animation-duration: 3s;
+  @media ${breakPoints.mobile} {
+    width: 28rem;
+    top: 16rem;
+  }
 `;
 
 export const CompleteTitle = styled.h2`

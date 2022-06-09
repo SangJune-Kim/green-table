@@ -86,15 +86,14 @@ export const HeaderIconWrapper = styled.div`
   @media ${breakPoints.mobile} {
     height: 40px;
     margin-right: 1rem;
+    margin-left: 2rem;
   }
 `;
 
 export const UserName = styled.li`
   margin-right: 1.5rem;
-  & :nth-of-type(1) {
-    @media ${breakPoints.mobile} {
-      display: none;
-    }
+  @media ${breakPoints.mobile} {
+    display: none;
   }
 `;
 

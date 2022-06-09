@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import { ChangeEvent } from "react";
 import { UseFormRegisterReturn } from "react-hook-form";
+import { breakPoints } from "../../../commons/styles/media";
 
 interface IUserInputProps {
   placeholder?: string | undefined;
@@ -20,6 +21,20 @@ const Input = styled.input`
   border: 1px solid #bfbfbf;
   border-radius: 2rem;
   padding: 1.7rem;
+  @media ${breakPoints.mobile} {
+    width: ${(props: IUserInputProps) =>
+      props?.inputSize === "medium" ? "10rem" : "16rem"};
+    border: 0px;
+    border-bottom: 2px solid #bfbfbf;
+    border-radius: 0;
+    margin-bottom: 1rem;
+    padding-left: 0.5rem;
+    :focus {
+      outline: none;
+      border-bottom: 2px solid #0fbaa3;
+      transition: 0.5s ease;
+    }
+  }
 `;
 
 export default function UserInput(props: IUserInputProps) {

@@ -58,7 +58,7 @@ export default function LayoutHeader() {
     try {
       await logout();
       Success("로그아웃 성공", "다음에도 건강한 한 끼를 약속할게요🥗");
-      router.push("/");
+      router.push("/main");
     } catch (error) {
       if (error instanceof Error) ModalError("로그아웃 실패", error.message);
     }

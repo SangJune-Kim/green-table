@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../commons/styles/media";
 import { IPropsVeganType } from "./TypeCheck.types";
 
 // 컨테이너 전체
@@ -18,6 +19,9 @@ export const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   margin: 4.0625rem auto;
+  @media ${breakPoints.mobile} {
+    width: 28rem;
+  }
 `;
 
 // 공통 제목 부분
@@ -33,12 +37,15 @@ export const BodyWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 40.75rem;
-  height: 59.9375rem;
+  height: auto;
   justify-content: center;
   align-items: center;
   background-color: white;
   border-radius: 2rem;
   margin-bottom: 2rem;
+  @media ${breakPoints.mobile} {
+    width: 28rem;
+  }
 `;
 
 // 체크 단계 표시
@@ -109,6 +116,11 @@ export const VeganTypeWrapper = styled.div`
   justify-content: center;
   width: 40.75rem;
   margin-bottom: 5rem;
+  @media ${breakPoints.mobile} {
+    width: 30rem;
+    grid-template-columns: 9rem 9rem 9rem;
+    row-gap: 3rem;
+  }
 `;
 
 // prettier-ignore
@@ -143,6 +155,10 @@ export const VeganType = styled.div`
     & > p {
       color: #0fbaa3;
     }
+  }
+  @media ${breakPoints.mobile} {
+    width: 9rem;
+    margin: 0;
   }
 `;
 
@@ -197,6 +213,9 @@ export const VeganKeywordContentsWrapper = styled.div`
   background-color: white;
   border-radius: 2rem;
   margin-bottom: 2rem;
+  @media ${breakPoints.mobile} {
+    width: 30rem;
+  }
 `;
 
 export const VeganKeywordWrapper = styled.div`
@@ -223,6 +242,11 @@ export const VeganKeyword = styled.li`
   padding: 1.5rem;
   margin-right: 1rem;
   cursor: pointer;
+  @media ${breakPoints.mobile} {
+    padding: 0rem;
+    width: 9rem;
+    margin-right: 0.5rem;
+  }
 `;
 
 export const VeganKeywordCheckIcon = styled.img`
@@ -242,6 +266,9 @@ export const AllergyContentsWrapper = styled.div`
   background-color: white;
   border-radius: 2rem;
   margin-bottom: 2rem;
+  @media ${breakPoints.mobile} {
+    width: 30rem;
+  }
 `;
 
 export const AllergyWrapper = styled.div`
@@ -268,4 +295,7 @@ export const AllergyKeyword = styled.li`
   padding: 1.5rem;
   margin-right: 1rem;
   cursor: pointer;
+  @media ${breakPoints.mobile} {
+    margin-right: 0.5rem;
+  }
 `;
