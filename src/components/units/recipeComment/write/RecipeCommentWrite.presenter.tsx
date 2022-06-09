@@ -1,6 +1,9 @@
 import * as CommentWrite from "./RecipeCommentWrite.styles";
+import { IRecipeCommentWriteUIProps } from "./RecipeCommentWrite.types";
 
-export default function RecipeCommentWriteUI(props) {
+export default function RecipeCommentWriteUI(
+  props: IRecipeCommentWriteUIProps
+) {
   return (
     <CommentWrite.Form onSubmit={props.handleSubmit(props.onClickSubmit)}>
       <CommentWrite.Container>

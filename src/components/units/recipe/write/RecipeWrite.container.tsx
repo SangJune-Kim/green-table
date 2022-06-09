@@ -1,9 +1,9 @@
 import RecipeWriteUI from "./RecipeWrite.presenter";
 import { useRouter } from "next/router";
-import { useForm } from "react-hook-form";
+import { FieldValues, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import { useRef, useState } from "react";
+import { ChangeEvent, useRef, useState } from "react";
 import { useMutation } from "@apollo/client";
 import { CREATE_RECIPE } from "./RecipeWrite.queries";
 import { useModal } from "../../../commons/hooks/useModal";
@@ -17,38 +17,60 @@ export default function RecipeWrite() {
   // 탭 Ref
   const ingredientTabRef = useRef<HTMLDivElement>(null);
   const cookOrderTabRef = useRef<HTMLDivElement>(null);
-  const [tabActive, setTabActive] = useState(["isActive", ""]);
+  const [tabActive, setTabActive] = useState<string[]>(["isActive", ""]);
   // 태그
-  const [hashArr, setHashArr] = useState([]);
+  const [hashArr, setHashArr] = useState<string[]>([]);
   // 재료Array
-  const [ingredientArr, setIngredientArr] = useState([]);
+  const [ingredientArr, setIngredientArr] = useState<
+    {
+      name: string;
+      amount: string;
+      unit: string;
+    }[]
+  >([]);
   // desc Array
-  const [descArr, setDescArr] = useState([]);
+  const [descArr, setDescArr] = useState<
+    {
+      step: number;
+      image: string;
+      desc: string;
+    }[]
+  >([]);
   // 재료
-  const [ingredient, setIngredient] = useState({
+  const [ingredient, setIngredient] = useState<{
+    name: string;
+    amount: string;
+    unit: string;
+  }>({
     name: "",
     amount: "",
     unit: "",
   });
   // description
-  const [desc, setDesc] = useState({
+  const [desc, setDesc] = useState<{
+    step: number;
+    image: string;
+    desc: string;
+  }>({
     step: 0,
     image: "",
     desc: "",
   });
-  const [selectType, setSelectType] = useState({ types: "Vegan" });
+  const [selectType, setSelectType] = useState<{
+    types: string;
+  }>({ types: "Vegan" });
   // 대표 이미지업로드
-  const [imageUrls, setImageUrls] = useState(["", "", "", ""]);
+  const [imageUrls, setImageUrls] = useState<string[]>(["", "", "", ""]);
   // 요리순서 이미지 업로드
-  const [descImage, setDescImage] = useState("");
+  const [descImage, setDescImage] = useState<string>("");
   // useForm
-  const { register, handleSubmit, formState } = useForm({
+  const { register, handleSubmit, formState } = useForm<FieldValues, any>({
     resolver: yupResolver(nonSchema),
     mode: "onChange",
   });
 
   // 재료 input 입력
-  const onChangeIngredient = (event) => {
+  const onChangeIngredient = (event: ChangeEvent<HTMLInputElement>) => {
     setIngredient((prev) => ({
       ...ingredient,
       [event.target.name]: event.target.value,
@@ -56,7 +78,7 @@ export default function RecipeWrite() {
   };
 
   // step 입력(description)
-  const onChangeTextArea = (event) => {
+  const onChangeTextArea = (event: ChangeEvent<HTMLTextAreaElement>) => {
     setDesc((prev) => ({
       ...desc,
       image: descImage,
@@ -80,7 +102,7 @@ export default function RecipeWrite() {
   };
 
   // step 삭제
-  const onClickDeleteDesc = (arg) => () => {
+  const onClickDeleteDesc = (arg: number) => () => {
     setDescArr(descArr.filter((el) => el.step !== arg));
   };
 
@@ -91,12 +113,16 @@ export default function RecipeWrite() {
   };
 
   // 재료 삭제
-  const onClickDeleteIngredient = (arg) => () => {
-    setIngredientArr(ingredientArr.filter((el) => el !== arg));
-  };
+  const onClickDeleteIngredient =
+    (arg: { name: string; amount: string; unit: string }) => () => {
+      setIngredientArr(ingredientArr.filter((el) => el !== arg));
+    };
 
   // 해쉬태그
-  const onKeyUpHash = (event) => {
+  const onKeyUpHash = (event: {
+    keyCode: number;
+    target: { value: string };
+  }) => {
     if (event.keyCode === 32 && event.target.value !== " ") {
       setHashArr([...hashArr, "#" + event.target.value.trim()]);
       event.target.value = "";
@@ -104,7 +130,7 @@ export default function RecipeWrite() {
   };
 
   // 해쉬태그 삭제
-  const onClickDeleteTag = (tag) => () => {
+  const onClickDeleteTag = (tag: string) => () => {
     setHashArr(hashArr.filter((el) => el !== `${tag}`));
   };
 
@@ -119,15 +145,14 @@ export default function RecipeWrite() {
   };
 
   // 채식유형선택
-  const handleChange = (event) => {
-    const { name, value } = event.target;
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setSelectType({
-      [name]: value,
+      types: event.target.value,
     });
   };
 
   // 레시피 등록하기
-  const onClickSubmit = async (data) => {
+  const onClickSubmit = async (data: any) => {
     try {
       const result = await createRecipe({
         variables: {

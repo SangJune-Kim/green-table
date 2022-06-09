@@ -1,7 +1,8 @@
 import * as DetailMenu from "./RecipeDetailMenu.styles";
 import { v4 as uuidv4 } from "uuid";
+import { IRecipeDetailMenuUIProps } from "./RecipeDetailMenu.types";
 
-export default function RecipeDetailMenuUI(props) {
+export default function RecipeDetailMenuUI(props: IRecipeDetailMenuUIProps) {
   return (
     <DetailMenu.Container>
       <DetailMenu.Wrapper>
@@ -68,7 +69,7 @@ export default function RecipeDetailMenuUI(props) {
         </DetailMenu.RecipeInfoWrapper>
 
         <DetailMenu.RecipeTags>
-          {props.recipeData?.fetchRecipe?.recipesTags.map((el) => (
+          {props.recipeData?.fetchRecipe?.recipesTags.map((el: any) => (
             <span key={uuidv4()}>#{el.name}</span>
           ))}
         </DetailMenu.RecipeTags>

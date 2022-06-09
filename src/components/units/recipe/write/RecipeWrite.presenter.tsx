@@ -4,8 +4,9 @@ import { v4 as uuidv4 } from "uuid";
 import DOMPurify from "dompurify";
 import Uploads02 from "../../../commons/uploads/02/Uploads02.container";
 import Uploads03 from "../../../commons/uploads/03/Uploads03.container";
+import { IRecipeWriteUIProps } from "./RecipeWrite.types";
 
-export default function RecipeWriteUI(props) {
+export default function RecipeWriteUI(props: IRecipeWriteUIProps) {
   return (
     <>
       <form onSubmit={props.handleSubmit(props.onClickSubmit)}>
@@ -43,7 +44,7 @@ export default function RecipeWriteUI(props) {
                   )}
                 </RecipeWrite.RepImage>
                 <RecipeWrite.UploadIconsWrapper>
-                  {props.imageUrls.map((el, index) => (
+                  {props.imageUrls.map((el: any, index: number) => (
                     <Uploads02
                       key={uuidv4()}
                       index={index}
@@ -78,7 +79,7 @@ export default function RecipeWriteUI(props) {
                   <span>필요한 재료를 입력하세요</span>
                 </RecipeWrite.InputGuideWrapper>
                 <RecipeWrite.IngredientArr>
-                  {props.ingredientArr.map((el) => (
+                  {props.ingredientArr.map((el: any) => (
                     <div
                       key={uuidv4()}
                       onClick={props.onClickDeleteIngredient(el)}
@@ -129,7 +130,7 @@ export default function RecipeWriteUI(props) {
               </RecipeWrite.IngredientsWrapper>
               <h2 ref={props.cookOrderTabRef}>요리순서</h2>
               <RecipeWrite.CookingOrderWrapper>
-                {props.descArr.map((el) => (
+                {props.descArr.map((el: any) => (
                   <RecipeWrite.CookingOrder key={uuidv4()}>
                     <span>STEP {el.step}</span>
                     {el.step ===

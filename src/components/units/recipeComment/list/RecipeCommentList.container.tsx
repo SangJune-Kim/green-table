@@ -2,8 +2,9 @@ import { useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 import RecipeCommentListUI from "./RecipeCommentList.presenter";
 import { FETCH_REPLIES } from "./RecipeCommentList.queries";
+import { IRecipeCommentListProps } from "./RecipeCommentList.types";
 
-export default function RecipeCommentList(props) {
+export default function RecipeCommentList(props: IRecipeCommentListProps) {
   const router = useRouter();
   const { data: fetchComment, fetchMore } = useQuery(FETCH_REPLIES, {
     variables: { id: String(router.query.recipeId) },

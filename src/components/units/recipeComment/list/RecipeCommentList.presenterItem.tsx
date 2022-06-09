@@ -1,7 +1,10 @@
 import * as CommentItem from "./RecipeCommentList.styles";
 import { timeForDay } from "../../../../commons/libraries/utils";
+import { IRecipeCommentListUIItemProps } from "./RecipeCommentList.types";
 
-export default function RecipeCommentListUIItem(props) {
+export default function RecipeCommentListUIItem(
+  props: IRecipeCommentListUIItemProps
+) {
   return (
     <CommentItem.Comment>
       <div>
