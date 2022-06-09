@@ -6,8 +6,9 @@ import { useRouter } from "next/router";
 import { v4 as uuidv4 } from "uuid";
 import DOMPurify from "dompurify";
 import RecipeCommentList from "../../recipeComment/list/RecipeCommentList.container";
+import { IRecipeDetailUIProps } from "./RecipeDetail.types";
 
-export default function RecipeDetailUI(props) {
+export default function RecipeDetailUI(props: IRecipeDetailUIProps) {
   const router = useRouter();
 
   return (
@@ -31,8 +32,8 @@ export default function RecipeDetailUI(props) {
             <RecipeDetail.SliderWrapper>
               <Slider01
                 mainImages={props.recipeData?.fetchRecipe?.recipesImages
-                  .map((el) => el.mainImage)
-                  .filter((el) => el !== " ")}
+                  .map((el: any) => el.mainImage)
+                  .filter((el: any) => el !== " ")}
               />
             </RecipeDetail.SliderWrapper>
           </RecipeDetail.TopWrapper>
@@ -62,33 +63,35 @@ export default function RecipeDetailUI(props) {
             <h2 ref={props.ingredientTabRef}>준비재료</h2>
             <RecipeDetail.Ingredient>
               {props.recipeData?.fetchRecipe?.ingredients
-                .map((el) => el.name)
-                .map((el) => (
+                .map((el: any) => el.name)
+                .map((el: any) => (
                   <span key={uuidv4()}>{el}</span>
                 ))}
             </RecipeDetail.Ingredient>
             <h2 ref={props.cookOrderTabRef}>요리순서</h2>
-            {props.recipeData?.fetchRecipe?.recipesImages.map((el, index) => (
-              <RecipeDetail.Order key={uuidv4()}>
-                <span>Step {index + 1}</span>
-                <RecipeDetail.ImageWrapper>
-                  {el.url !== "" ? (
-                    <img src={`https://storage.googleapis.com/${el.url}`} />
+            {props.recipeData?.fetchRecipe?.recipesImages.map(
+              (el: any, index: number) => (
+                <RecipeDetail.Order key={uuidv4()}>
+                  <span>Step {index + 1}</span>
+                  <RecipeDetail.ImageWrapper>
+                    {el.url !== "" ? (
+                      <img src={`https://storage.googleapis.com/${el.url}`} />
+                    ) : (
+                      <div></div>
+                    )}
+                  </RecipeDetail.ImageWrapper>
+                  {typeof window !== "undefined" ? (
+                    <p
+                      dangerouslySetInnerHTML={{
+                        __html: DOMPurify.sanitize(el.description),
+                      }}
+                    ></p>
                   ) : (
-                    <div></div>
+                    <p></p>
                   )}
-                </RecipeDetail.ImageWrapper>
-                {typeof window !== "undefined" ? (
-                  <p
-                    dangerouslySetInnerHTML={{
-                      __html: DOMPurify.sanitize(el.description),
-                    }}
-                  ></p>
-                ) : (
-                  <p></p>
-                )}
-              </RecipeDetail.Order>
-            ))}
+                </RecipeDetail.Order>
+              )
+            )}
           </RecipeDetail.Contents>
           <RecipeDetail.RecipeCommentListWrapper ref={props.reviewTabRef}>
             <RecipeCommentList

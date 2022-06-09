@@ -1,6 +1,7 @@
 import RecipeWriteMenuUI from "./RecipeWriteMenu.presenter";
+import { IRecipeWriteMenuProps } from "./RecipeWriteMenu.types";
 
-export default function RecipeWriteMenu(props) {
+export default function RecipeWriteMenu(props: IRecipeWriteMenuProps) {
   return (
     <RecipeWriteMenuUI
       register={props.register}

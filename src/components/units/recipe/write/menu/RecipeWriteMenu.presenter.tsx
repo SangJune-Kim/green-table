@@ -1,7 +1,8 @@
 import * as Menu from "./RecipeWriteMenu.styles";
 import { v4 as uuidv4 } from "uuid";
+import { IRecipeWriteMenuUIProps } from "./RecipeWriteMenu.types";
 
-export default function RecipeWriteMenuUI(props) {
+export default function RecipeWriteMenuUI(props: IRecipeWriteMenuUIProps) {
   return (
     <Menu.Container>
       <Menu.MenuName>
