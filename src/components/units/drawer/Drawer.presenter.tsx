@@ -44,18 +44,9 @@ export default function TemporaryDrawer(props: IDrawerUIProps) {
   const router = useRouter();
 
   // 모달 토글 단축키
-  const toggleDrawer =
-    (anchor: Anchor, open: boolean) => (event: KeyboardEvent | MouseEvent) => {
-      if (
-        event.type === "keydown" &&
-        ((event as KeyboardEvent).key === "Tab" ||
-          (event as KeyboardEvent).key === "Shift")
-      ) {
-        return;
-      }
-
-      setState({ [anchor]: open });
-    };
+  const toggleDrawer = (anchor: Anchor, open: boolean) => () => {
+    setState({ [anchor]: open });
+  };
 
   // 모달
   const { Success, ModalError } = useModal();
@@ -66,7 +57,7 @@ export default function TemporaryDrawer(props: IDrawerUIProps) {
     try {
       await logout();
       Success("로그아웃 성공", "다음에도 건강한 한 끼를 약속할게요🥗");
-      router.push("/");
+      router.push("/main");
     } catch (error) {
       if (error instanceof Error)
         ModalError("로그아웃 실패", "로그아웃에 실패했습니다.");
@@ -86,7 +77,7 @@ export default function TemporaryDrawer(props: IDrawerUIProps) {
                   <img src="/img/icon/Close.svg" alt="" />
                 </button>
               </div>
-              <div isPro={data?.fetchUser.isPro === "PRO"}>
+              <div>
                 {data?.fetchUser.isPro === "PRO" ? (
                   <span>전문가</span>
                 ) : (
@@ -176,6 +167,12 @@ export default function TemporaryDrawer(props: IDrawerUIProps) {
               </li>
 
               <li>
+                <Link href={"/myPage/edit"}>
+                  <a>회원 정보 수정</a>
+                </Link>
+              </li>
+
+              <li>
                 <Link href={"/myPage/subscribe"}>
                   <a>정기 구독 관리</a>
                 </Link>
@@ -184,12 +181,6 @@ export default function TemporaryDrawer(props: IDrawerUIProps) {
               <li>
                 <Link href={"/myPage/qna"}>
                   <a>문의 내역</a>
-                </Link>
-              </li>
-
-              <li>
-                <Link href={"/myPage/edit"}>
-                  <a>회원 정보 수정</a>
                 </Link>
               </li>
 
