@@ -173,7 +173,9 @@ export const Title = styled.span`
 `;
 
 export const Body = styled.ul`
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 0.5rem;
   padding: 2rem;
 
   @media ${breakPoints.tablet} {
@@ -185,13 +187,15 @@ export const TabletBody = styled.ul`
   display: none;
 
   @media ${breakPoints.tablet} {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.5rem;
     padding: 2rem;
   }
 `;
 
 export const Menu = styled.li`
-  width: 13.5rem;
+  width: 100%;
   margin-right: 0.8rem;
   cursor: pointer;
 
@@ -200,7 +204,7 @@ export const Menu = styled.li`
   }
 
   & > img {
-    width: 220px;
+    width: 100%;
     height: 207px;
     border-radius: 30px;
   }
@@ -215,5 +219,10 @@ export const Menu = styled.li`
 
   @media ${breakPoints.tablet} {
     width: 100%;
+
+    & > img {
+      width: 100%;
+      border-radius: 30px;
+    }
   }
 `;
