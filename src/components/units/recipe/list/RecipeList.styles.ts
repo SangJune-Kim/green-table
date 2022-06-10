@@ -44,6 +44,8 @@ export const BannerWrapper = styled.div`
       font-weight: 500;
       font-size: 1.5rem;
       word-break: keep-all;
+      width: 16rem;
+      text-align: center;
     }
   }
   @media ${breakPoints.tablet} {

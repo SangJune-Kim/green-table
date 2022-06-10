@@ -5,18 +5,14 @@ export default function Uploads03UI(props: IUploads03UIProps) {
   return (
     <>
       {props.descImage ? (
-        <S.RepImage2>
+        <S.RepImage2 onClick={props.onClickUpload}>
           <S.UploadedImage
-            onClick={props.onClickUpload}
             src={`https://storage.googleapis.com/${props.descImage}`}
           />
         </S.RepImage2>
       ) : (
-        <S.RepImage2>
-          <img
-            onClick={props.onClickUpload}
-            src="/img/icon/icon-upload-image.svg"
-          />
+        <S.RepImage2 onClick={props.onClickUpload}>
+          <img src="/img/icon/icon-upload-image.svg" />
           <span>사진을 넣어주세요</span>
         </S.RepImage2>
       )}

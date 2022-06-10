@@ -27,9 +27,15 @@ export const Wrapper = styled.div`
 // 공통 제목 부분
 export const HeaderWrapper = styled.div`
   margin-bottom: 2.1875rem;
+  @media ${breakPoints.mobile} {
+    margin-bottom: 3rem;
+  }
 `;
 export const HeaderTitle = styled.h1`
   font-size: 3.125rem;
+  @media ${breakPoints.mobile} {
+    font-size: 2.3rem;
+  }
 `;
 
 // 공통 제목 외 내용 부분
@@ -119,7 +125,8 @@ export const VeganTypeWrapper = styled.div`
   @media ${breakPoints.mobile} {
     width: 30rem;
     grid-template-columns: 9rem 9rem 9rem;
-    row-gap: 3rem;
+    row-gap: 2rem;
+    margin-bottom: 2rem;
   }
 `;
 
@@ -215,6 +222,7 @@ export const VeganKeywordContentsWrapper = styled.div`
   margin-bottom: 2rem;
   @media ${breakPoints.mobile} {
     width: 30rem;
+    height: auto;
   }
 `;
 
@@ -268,6 +276,7 @@ export const AllergyContentsWrapper = styled.div`
   margin-bottom: 2rem;
   @media ${breakPoints.mobile} {
     width: 30rem;
+    height: auto;
   }
 `;
 

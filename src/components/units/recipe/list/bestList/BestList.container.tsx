@@ -6,16 +6,29 @@ export default function BestRecipeList(props: IPropsExpertBestList) {
   const settings = {
     dots: false,
     arrows: true,
+    // toShow 갯수보다 적을 때 복사가 되는 거 인피니트 false로 하면 해결~
     infinite: true,
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 3,
+    responsive: [
+      {
+        breakpoint: 575,
+        settings: {
+          dots: false,
+          infinite: true,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
 
   const popularRecipes = props?.popularData?.fetchPopularRecipes.filter(
-    (el: any) => el.scrapCount >= 3
+    (el: any) => el.scrapCount >= 2
   );
 
+  console.log(popularRecipes);
   return (
     <Best.Container>
       <Best.Wrapper>
