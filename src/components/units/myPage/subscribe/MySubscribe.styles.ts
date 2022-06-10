@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../../commons/styles/media";
 
 export const Container = styled.div`
   display: flex;
@@ -6,12 +7,21 @@ export const Container = styled.div`
   align-items: center;
   width: 100%;
   padding: 6.25rem 15rem;
+
+  @media ${breakPoints.tablet} {
+    padding: 4.25rem 2em;
+  }
 `;
 
 export const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   width: 90rem;
+
+  @media ${breakPoints.tablet} {
+    flex-direction: column;
+    width: 90%;
+  }
 `;
 
 export const SubscribeWrapper = styled.div`
@@ -26,13 +36,20 @@ export const TitleWrapper = styled.div`
   align-items: center;
   border-bottom: 1px solid #c4c4c4;
   padding-bottom: 1.5rem;
-
   width: 100%;
+
+  @media ${breakPoints.tablet} {
+    border-bottom: none;
+  }
 `;
 
 export const Title = styled.span`
   font-size: 1.5rem;
   font-weight: 600;
+
+  @media ${breakPoints.tablet} {
+    display: none;
+  }
 `;
 
 export const Unsubscribe = styled.button`
@@ -41,6 +58,13 @@ export const Unsubscribe = styled.button`
   font-weight: 700;
   color: #848484;
   cursor: pointer;
+
+  @media ${breakPoints.tablet} {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 0.5rem;
+  }
 `;
 
 export const MySubscribe = styled.div`

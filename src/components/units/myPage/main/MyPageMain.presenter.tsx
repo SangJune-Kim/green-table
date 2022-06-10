@@ -130,6 +130,32 @@ export default function MyPageMainUI(props: IMyPageMainUIProps) {
                     </My.Menu>
                   ))}
               </My.Body>
+
+              <My.TabletBody>
+                {props.recentItems
+                  .slice(props.recentItems.length - 3, props.recentItems.length)
+                  .reverse()
+                  .map((el: any) => (
+                    <My.Menu
+                      key={el.id}
+                      onClick={props.onClickMoveToDetail}
+                      id={el.id}
+                    >
+                      <img
+                        src={
+                          el.recipesImages
+                            ? el.recipesImages.filter(
+                                (e: IRecipeImage) => e.mainImage !== " "
+                              ).length === 0
+                              ? "/img/bestRecipe/img-recipe-01.png"
+                              : `https://storage.googleapis.com/${el.recipesImages[0].mainImage}`
+                            : "/img/bestRecipe/img-recipe-01.png"
+                        }
+                      />
+                      <h2>{el.title}</h2>
+                    </My.Menu>
+                  ))}
+              </My.TabletBody>
             </My.Recipe>
 
             <My.Recipe>
@@ -162,6 +188,29 @@ export default function MyPageMainUI(props: IMyPageMainUIProps) {
                   </My.Menu>
                 ))}
               </My.Body>
+
+              <My.TabletBody>
+                {props.userRecipe?.fetchMyRecipe.slice(0, 3).map((el: any) => (
+                  <My.Menu
+                    key={el.id}
+                    onClick={props.onClickMoveToDetail}
+                    id={el.id}
+                  >
+                    <img
+                      src={
+                        el.recipesImages
+                          ? el.recipesImages.filter(
+                              (e: IRecipeImage) => e.mainImage !== " "
+                            ).length === 0
+                            ? "/img/bestRecipe/img-recipe-01.png"
+                            : `https://storage.googleapis.com/${el.recipesImages[0].mainImage}`
+                          : "/img/bestRecipe/img-recipe-01.png"
+                      }
+                    />
+                    <h2>{el.title}</h2>
+                  </My.Menu>
+                ))}
+              </My.TabletBody>
             </My.Recipe>
 
             <My.Recipe>
@@ -176,7 +225,11 @@ export default function MyPageMainUI(props: IMyPageMainUIProps) {
                 {props.userScrap?.fetchMyScrapHistory
                   .slice(0, 5)
                   .map((el: any) => (
-                    <My.Menu key={el.id}>
+                    <My.Menu
+                      key={el.id}
+                      onClick={props.onClickMoveToDetail}
+                      id={el.id}
+                    >
                       <img
                         src={
                           el.recipesImages
@@ -192,6 +245,31 @@ export default function MyPageMainUI(props: IMyPageMainUIProps) {
                     </My.Menu>
                   ))}
               </My.Body>
+
+              <My.TabletBody>
+                {props.userScrap?.fetchMyScrapHistory
+                  .slice(0, 3)
+                  .map((el: any) => (
+                    <My.Menu
+                      key={el.id}
+                      onClick={props.onClickMoveToDetail}
+                      id={el.id}
+                    >
+                      <img
+                        src={
+                          el.recipesImages
+                            ? el.recipesImages.filter(
+                                (e: IRecipeImage) => e.mainImage !== " "
+                              ).length === 0
+                              ? "/img/bestRecipe/img-recipe-01.png"
+                              : `https://storage.googleapis.com/${el.recipesImages[0].mainImage}`
+                            : "/img/bestRecipe/img-recipe-01.png"
+                        }
+                      />
+                      <h2>{el.title}</h2>
+                    </My.Menu>
+                  ))}
+              </My.TabletBody>
             </My.Recipe>
           </My.RecipeWrapper>
         </My.MainWrapper>

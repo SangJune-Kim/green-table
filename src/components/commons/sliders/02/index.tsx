@@ -4,11 +4,16 @@ import "slick-carousel/slick/slick-theme.css";
 import styled from "@emotion/styled";
 import { FETCH_USER } from "../../../units/myPage/main/MyPageMain.queries";
 import { useQuery } from "@apollo/client";
+import { breakPoints } from "../../../../commons/styles/media";
 
 const Wrapper = styled.div`
   width: 74.5625rem;
   height: 10.5625rem;
   padding-top: 1.5rem;
+
+  @media ${breakPoints.tablet} {
+    width: 100%;
+  }
 
   .slick-slide {
     width: 100%;
@@ -20,12 +25,6 @@ const Wrapper = styled.div`
     outline: none;
     cursor: pointer;
   }
-
-  .slick-initialized .slick-slide {
-    &:nth-of-type() {
-      padding-left: 20px;
-    }
-  }
 `;
 
 const SubsHistory = styled.div`
@@ -33,7 +32,7 @@ const SubsHistory = styled.div`
   flex-direction: column;
   justify-content: center;
   padding: 1rem;
-  width: 23.625rem;
+  width: 97%;
   height: 9.625rem;
   background-color: #f5f5f5;
   border-radius: 20px;
@@ -60,6 +59,15 @@ export default function Slider02() {
     slidesToShow: 3,
     slidesToScroll: 3,
     focusOnSelect: true,
+    responsive: [
+      {
+        breakpoint: 991,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        },
+      },
+    ],
   };
 
   return (
