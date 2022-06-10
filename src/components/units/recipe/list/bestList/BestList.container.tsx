@@ -28,7 +28,6 @@ export default function BestRecipeList(props: IPropsExpertBestList) {
     (el: any) => el.scrapCount >= 2
   );
 
-  console.log(popularRecipes);
   return (
     <Best.Container>
       <Best.Wrapper>
