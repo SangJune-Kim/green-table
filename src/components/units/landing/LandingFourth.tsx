@@ -15,11 +15,15 @@ const Wrapper = styled.div`
   position: relative;
   width: 90%;
   max-width: 1440px;
+  @media (max-width: 1250px) {
+    flex-direction: column;
+  }
 `;
 
 const Left = styled.div`
   display: flex;
   flex-direction: column;
+  word-break: keep-all;
   & > span:nth-of-type(1) {
     padding-bottom: 10px;
     font-size: 1.375rem;
@@ -42,6 +46,9 @@ const Left = styled.div`
     line-height: 1.68rem;
     letter-spacing: -0.05em;
   }
+  @media (max-width: 1250px) {
+    padding-bottom: 2rem;
+  }
 `;
 const Right = styled.div`
   display: flex;
@@ -55,9 +62,14 @@ const Card = styled.div`
   border: 4px solid #0fbaa3;
   border-radius: 2rem;
   background: #ffffff;
+  word-break: keep-all;
   filter: drop-shadow(5px 4px 12px rgba(0, 0, 0, 0.25));
   opacity: 0;
   transition: all 1.5s ease-in-out;
+
+  @media (max-width: 1400px) {
+    padding: 2.25rem;
+  }
 
   &:nth-of-type(1) {
     z-index: 3;

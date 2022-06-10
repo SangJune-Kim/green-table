@@ -48,6 +48,7 @@ const Container = styled.div`
       font-weight: 500;
       letter-spacing: -0.05em;
       text-align: center;
+      word-break: keep-all;
     }
 
     button {
@@ -108,6 +109,14 @@ const Container = styled.div`
     transition-delay: 1.5s;
     &.isActive {
       opacity: 1;
+    }
+  }
+
+  @media (max-width: 930px) {
+    & > div:nth-of-type(2) {
+      & > img:nth-of-type(2) {
+        width: 95vw;
+      }
     }
   }
 `;
