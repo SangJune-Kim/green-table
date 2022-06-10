@@ -22,7 +22,6 @@ import { IPropsRecipeList } from "./RecipeList.types";
 
 export default function RecipeListUI() {
   const router = useRouter();
-
   const WHOLE_MENU_LIST = [{ name: "전체 메뉴" }, { name: "전문가 메뉴" }];
   const [myScraps, setMyScraps] = useState<Array<any>>([]);
   const MENU_LIST = [{ name: "최신순" }, { name: "인기순" }];
@@ -38,14 +37,16 @@ export default function RecipeListUI() {
       page: 1,
     },
   });
+
   const { data: userData } = useQuery(FETCH_USER);
+
   const { data: typesData } = useQuery(FETCH_RECIPE_TYPES, {
     variables: {
       vegan_types: selectedTypes,
       page: 1,
     },
   });
-  console.log(typesData);
+
   const { data: myScrapsData } = useQuery(FETCH_MY_SCRAPS_HISTORY, {
     variables: { user_id: String(userData?.fetchUser?.user_id) },
   });
@@ -55,12 +56,14 @@ export default function RecipeListUI() {
       page: 1,
     },
   });
+
   const { data: typesPopularData } = useQuery(FETCH_RECIPE_TYPES_POPULAR, {
     variables: {
       vegan_types: selectedTypes,
       page: 1,
     },
   });
+
   const { data: recipesCount } = useQuery(FETCH_RECIPES_COUNT);
 
   const { data: isProData } = useQuery(FETCH_RECIPE_ISPRO, {
@@ -69,6 +72,7 @@ export default function RecipeListUI() {
       page: 1,
     },
   });
+
   const { data: searchData } = useQuery(SEARCH_RECIPES, {
     variables: {
       input: String(searchInput),

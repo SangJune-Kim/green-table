@@ -13,6 +13,16 @@ export default function BestRecipeList(props: IPropsExpertBestList) {
     slidesToScroll: 3,
     responsive: [
       {
+        breakpoint: 991,
+        settings: {
+          dots: false,
+          arrows: false,
+          infinite: true,
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        },
+      },
+      {
         breakpoint: 575,
         settings: {
           dots: false,
@@ -25,7 +35,7 @@ export default function BestRecipeList(props: IPropsExpertBestList) {
   };
 
   const popularRecipes = props?.popularData?.fetchPopularRecipes.filter(
-    (el: any) => el.scrapCount >= 2
+    (el: any) => el.scrapCount >= 1
   );
 
   return (

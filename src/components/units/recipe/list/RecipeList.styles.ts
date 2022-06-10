@@ -130,6 +130,9 @@ export const ListWrapper = styled.div`
   flex-wrap: wrap;
   width: 100%;
   margin-bottom: 3rem;
+  @media ${breakPoints.mobile} {
+    justify-content: center;
+  }
 `;
 
 export const RecipeBox = styled.div`
@@ -147,6 +150,14 @@ export const RecipeImg = styled.img`
   margin-bottom: 1.5rem;
   object-fit: cover;
   overflow: hidden;
+  @media ${breakPoints.tablet} {
+    width: 20rem;
+    height: 20rem;
+  }
+  @media ${breakPoints.mobile} {
+    width: 12rem;
+    height: 12rem;
+  }
 `;
 
 export const IconBookmark = styled.div`
@@ -161,6 +172,12 @@ export const IconBookmark = styled.div`
   & > span {
     color: #ffffff;
     font-size: 0.75rem;
+  }
+  img {
+    @media ${breakPoints.mobile} {
+      width: 2rem;
+      height: 2rem;
+    }
   }
 `;
 
@@ -179,12 +196,18 @@ export const RecipeRecommendSticker = styled.img`
   max-width: 5rem;
   width: 90%;
   height: auto;
+  @media ${breakPoints.mobile} {
+    width: 70%;
+  }
 `;
 export const RecipeLevelSticker = styled.img`
   max-width: 5rem;
   width: 90%;
   height: auto;
   transform: translateY(-30%);
+  @media ${breakPoints.mobile} {
+    width: 70%;
+  }
 `;
 
 export const RecipeTitle = styled.h3`
@@ -195,6 +218,9 @@ export const RecipeTitle = styled.h3`
   overflow: hidden;
   white-space: nowrap;
   max-width: 21.375rem;
+  @media ${breakPoints.mobile} {
+    font-size: 1.7rem;
+  }
 `;
 
 export const RecipeSummary = styled.p`
@@ -217,6 +243,10 @@ export const RecipeCommentIcon = styled.img`
   width: 2rem;
   height: 2rem;
   margin-right: 0.5rem;
+  @media ${breakPoints.mobile} {
+    width: 1.3rem;
+    height: 1.3rem;
+  }
 `;
 
 export const RecipeCommentsCount = styled.li`

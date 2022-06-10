@@ -89,7 +89,7 @@ export default function TypeCheck() {
   const [updateUser] = useMutation(UPDATE_USER);
   const { data: userData } = useQuery(FETCH_USER);
   const [isPicked, setIsPicked] = useState("");
-  const [pickedType, setPickedType] = useState("");
+  const [pickedType, setPickedType] = useState("NON_Vegan");
 
   const { ModalError } = useModal();
 

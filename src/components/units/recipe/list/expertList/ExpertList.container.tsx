@@ -13,9 +13,20 @@ export default function ExpertRecipeList(props: IPropsExpertBestList) {
     slidesToScroll: 3,
     responsive: [
       {
+        breakpoint: 991,
+        settings: {
+          dots: false,
+          arrows: false,
+          infinite: true,
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        },
+      },
+      {
         breakpoint: 575,
         settings: {
           dots: false,
+          arrows: false,
           infinite: true,
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -23,8 +34,6 @@ export default function ExpertRecipeList(props: IPropsExpertBestList) {
       },
     ],
   };
-
-  console.log(props.isProData?.fetchRecipeIsPro);
 
   return (
     <Expert.Container>

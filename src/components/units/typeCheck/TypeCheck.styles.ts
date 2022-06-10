@@ -44,6 +44,7 @@ export const BodyWrapper = styled.div`
   flex-direction: column;
   width: 40.75rem;
   height: auto;
+  padding: 3rem;
   justify-content: center;
   align-items: center;
   background-color: white;
@@ -51,6 +52,7 @@ export const BodyWrapper = styled.div`
   margin-bottom: 2rem;
   @media ${breakPoints.mobile} {
     width: 28rem;
+    padding: 0;
   }
 `;
 
