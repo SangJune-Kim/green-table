@@ -7,13 +7,14 @@ export const Wrapper = styled.div`
   grid-template-columns: 1fr 1fr 1fr;
   gap: 2.5rem;
   padding-top: 1.5rem;
-  padding-bottom: 2.5rem;
 
   @media ${breakPoints.tablet} {
     display: grid;
+    place-items: center;
     justify-content: center;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 10%;
+    padding-bottom: 2.5rem;
   }
 `;
 

@@ -33,13 +33,13 @@ export default function MySubscribeUI(props: IMySubscribeUIProps) {
             {props.data?.fetchUser.isSubs === "BASIC" && (
               <>
                 <My.UserSubs>베이직 구독중</My.UserSubs>
-                <p>다음 결제 예정일은 22.06.30 입니다.</p>
+                {/* <p>다음 결제 예정일은 22.06.30 입니다.</p> */}
               </>
             )}
             {props.data?.fetchUser.isSubs === "PREMIUM" && (
               <>
                 <My.UserSubs>프리미엄 구독중</My.UserSubs>
-                <p>다음 결제 예정일은 22.06.30 입니다.</p>
+                {/* <p>다음 결제 예정일은 22.06.30 입니다.</p> */}
               </>
             )}
           </My.MySubscribe>

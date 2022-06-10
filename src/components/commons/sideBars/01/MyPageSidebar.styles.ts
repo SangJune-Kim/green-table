@@ -99,7 +99,7 @@ export const MobileListWrapper = styled.div`
   @media ${breakPoints.tablet} {
     display: flex;
     justify-content: space-around;
-    width: 45.3%;
+    width: 45%;
     text-align: center;
   }
 `;

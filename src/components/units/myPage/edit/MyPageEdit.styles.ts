@@ -38,6 +38,15 @@ export const TitleWrapper = styled.div`
   width: 100%;
 
   @media ${breakPoints.tablet} {
+    border-bottom: none;
+  }
+`;
+
+export const Title = styled.span`
+  font-size: 1.5rem;
+  font-weight: 600;
+
+  @media ${breakPoints.tablet} {
     display: none;
   }
 `;
@@ -48,6 +57,13 @@ export const SignOut = styled.button`
   font-weight: 700;
   color: #848484;
   cursor: pointer;
+
+  @media ${breakPoints.tablet} {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 0.5rem;
+  }
 `;
 
 export const ExpertTitleWrapper = styled.div`
@@ -72,24 +88,20 @@ export const ExpertTitleWrapper = styled.div`
   }
 `;
 
-export const Title = styled.span`
-  font-size: 1.5rem;
-  font-weight: 600;
-`;
-
 export const ProfileWrapper = styled.div`
   display: flex;
   justify-content: center;
+  align-items: center;
   padding: 2.5rem;
   width: 100%;
   border-bottom: 1px solid #c4c4c4;
 
-  > div {
-    width: 100%;
-  }
-
   @media ${breakPoints.tablet} {
     padding: 2.5rem;
+
+    > div {
+      width: 100%;
+    }
   }
 `;
 
@@ -137,6 +149,7 @@ export const Label = styled.label`
   @media ${breakPoints.tablet} {
     word-break: keep-all;
     width: 22%;
+    font-size: 1.2rem;
   }
 `;
 

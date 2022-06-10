@@ -34,7 +34,7 @@ export default function Subscribe() {
         buyer_tel: userData?.fetchUser.phone,
         buyer_addr: userData.fetchUser.address,
         // buyer_postcode: "01181",
-        m_redirect_url: "http://localhost:3000",
+        m_redirect_url: "http://localhost:3000/subscribe/complete",
       },
       (rsp: any) => {
         if (rsp.success) {
@@ -48,6 +48,7 @@ export default function Subscribe() {
           }
         } else {
           ModalError("결제 실패", "결제에 실패했습니다! 다시 시도해주세요.");
+          router.push("/main");
         }
       }
     );
@@ -68,7 +69,7 @@ export default function Subscribe() {
         buyer_tel: userData?.fetchUser.phone,
         buyer_addr: userData.fetchUser.address,
         // buyer_postcode: "01181",
-        m_redirect_url: "http://localhost:3000/",
+        m_redirect_url: "http://localhost:3000/subscribe/complete",
       },
       async (rsp: any) => {
         if (rsp.success) {
@@ -83,6 +84,7 @@ export default function Subscribe() {
           }
         } else {
           ModalError("결제 실패", "결제에 실패했습니다! 다시 시도해주세요.");
+          router.push("/main");
         }
       }
     );
