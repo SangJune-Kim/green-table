@@ -3,7 +3,7 @@ import { breakPoints } from "../../../../../commons/styles/media";
 
 export const Container = styled.div`
   width: 100%;
-  max-height: 700px;
+  max-height: 730px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -136,9 +136,13 @@ export const RecipeBox = styled.div`
 export const RecipeImg = styled.img`
   border-radius: 2rem;
   width: 100%;
-  height: 100%;
+  height: 90%;
   object-fit: cover;
   margin-bottom: 1.5rem;
+  @media ${breakPoints.tablet} {
+    width: 100%;
+    height: 80%;
+  }
 `;
 
 export const IconBookmark = styled.div`

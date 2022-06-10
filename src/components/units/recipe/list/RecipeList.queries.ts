@@ -24,9 +24,6 @@ export const FETCH_RECIPES = gql`
       recipesImages {
         mainImage
       }
-      user {
-        isPro
-      }
       recipesScraps {
         scraped
       }
@@ -128,6 +125,7 @@ export const FETCH_RECIPE_ISPRO = gql`
     }
   }
 `;
+
 export const SEARCH_RECIPES = gql`
   query searchRecipes($input: String!, $page: Int) {
     searchRecipes(input: $input, page: $page) {

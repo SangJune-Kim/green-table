@@ -138,9 +138,13 @@ export const RecipeBox = styled.div`
 export const RecipeImg = styled.img`
   border-radius: 2rem;
   width: 100%;
-  height: 100%;
+  height: 90%;
   object-fit: cover;
   margin-bottom: 1.5rem;
+  @media ${breakPoints.tablet} {
+    width: 100%;
+    height: 80%;
+  }
 `;
 
 export const IconBookmark = styled.div`
