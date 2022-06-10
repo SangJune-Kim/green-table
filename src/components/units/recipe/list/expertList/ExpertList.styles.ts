@@ -3,12 +3,16 @@ import { breakPoints } from "../../../../../commons/styles/media";
 
 export const Container = styled.div`
   width: 100%;
+  max-height: 700px;
   display: flex;
   flex-direction: column;
   align-items: center;
   height: auto;
   padding: 5.5rem 0;
   overflow: hidden;
+  @media ${breakPoints.mobile} {
+    max-height: 730px;
+  }
 `;
 
 export const Wrapper = styled.div`

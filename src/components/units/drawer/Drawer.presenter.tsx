@@ -68,141 +68,139 @@ export default function TemporaryDrawer(props: IDrawerUIProps) {
 
   const list = (anchor: Anchor) => (
     <S.Container>
-      <S.Wrapper>
-        {accessToken ? (
-          <>
-            <S.DrawerHead isPro={data?.fetchUser.isPro === "PRO"}>
-              <div>
-                <button onClick={toggleDrawer("right", false)}>
-                  <img src="/img/icon/Close.svg" alt="" />
-                </button>
-              </div>
-              <div>
-                {data?.fetchUser.isPro === "PRO" ? (
-                  <span>전문가</span>
-                ) : (
-                  <span>회원</span>
-                )}
-              </div>
-              <div>
-                <span>
-                  안녕하세요 <b>{data?.fetchUser.name}</b>님 {":)"}
-                </span>
-              </div>
-            </S.DrawerHead>
-            <S.DrawerBody>
-              {data?.fetchUser.type === "NON_Vegan" && (
-                <S.VeganType>
-                  <img src="/img/navigation/icon-vegan-nonVegan.svg" alt="" />
-                  <span>채린이</span>
-                </S.VeganType>
+      {accessToken ? (
+        <S.Wrapper>
+          <S.DrawerHead isPro={data?.fetchUser.isPro === "PRO"}>
+            <div>
+              <button onClick={toggleDrawer("right", false)}>
+                <img src="/img/icon/Close.svg" alt="" />
+              </button>
+            </div>
+            <div>
+              {data?.fetchUser.isPro === "PRO" ? (
+                <span>전문가</span>
+              ) : (
+                <span>회원</span>
               )}
-              {data?.fetchUser.type === "Vegan" && (
-                <S.VeganType>
-                  <img src="/img/navigation/icon-vegan-vegan.svg" alt="" />
-                  <span>비건</span>
-                </S.VeganType>
+            </div>
+            <div>
+              <span>
+                안녕하세요 <b>{data?.fetchUser.name}</b>님 {":)"}
+              </span>
+            </div>
+          </S.DrawerHead>
+          <S.DrawerBody>
+            {data?.fetchUser.type === "NON_Vegan" && (
+              <S.VeganType>
+                <img src="/img/navigation/icon-vegan-nonVegan.svg" alt="" />
+                <span>채린이</span>
+              </S.VeganType>
+            )}
+            {data?.fetchUser.type === "Vegan" && (
+              <S.VeganType>
+                <img src="/img/navigation/icon-vegan-vegan.svg" alt="" />
+                <span>비건</span>
+              </S.VeganType>
+            )}
+            {data?.fetchUser.type === "Lacto" && (
+              <S.VeganType>
+                <img src="/img/navigation/icon-vegan-lacto.svg" alt="" />
+                <span>락토</span>
+              </S.VeganType>
+            )}
+            {data?.fetchUser.type === "Ovo" && (
+              <S.VeganType>
+                <img src="/img/navigation/icon-vegan-ovo.svg" alt="" />
+                <span>오보</span>
+              </S.VeganType>
+            )}
+            {data?.fetchUser.type === "Lacto_Ovo" && (
+              <S.VeganType>
+                <img src="/img/navigation/icon-vegan-lactoOvo.svg" alt="" />
+                <span>락토오보</span>
+              </S.VeganType>
+            )}
+            {data?.fetchUser.type === "Pesco" && (
+              <S.VeganType>
+                <img src="/img/navigation/icon-vegan-pesco.svg" alt="" />
+                <span>페스코</span>
+              </S.VeganType>
+            )}
+            {data?.fetchUser.type === "Pollo" && (
+              <S.VeganType>
+                <img src="/img/navigation/icon-vegan-pollo.svg" alt="" />
+                <span>폴로</span>
+              </S.VeganType>
+            )}
+            <S.SubsInfo>
+              {data?.fetchUser.isSubs === "NON_SUB" && (
+                <>
+                  <span>미구독</span>
+                  <span>채식한상 어떠세요?</span>
+                </>
               )}
-              {data?.fetchUser.type === "Lacto" && (
-                <S.VeganType>
-                  <img src="/img/navigation/icon-vegan-lacto.svg" alt="" />
-                  <span>락토</span>
-                </S.VeganType>
+              {data?.fetchUser.isSubs === "BASIC" && (
+                <>
+                  <span>베이직</span>
+                  <span>정기 구독 이용중</span>
+                </>
               )}
-              {data?.fetchUser.type === "Ovo" && (
-                <S.VeganType>
-                  <img src="/img/navigation/icon-vegan-ovo.svg" alt="" />
-                  <span>오보</span>
-                </S.VeganType>
+              {data?.fetchUser.isSubs === "PREMIUM" && (
+                <>
+                  <span>프리미엄</span>
+                  <span>정기 구독 이용중</span>
+                </>
               )}
-              {data?.fetchUser.type === "Lacto_Ovo" && (
-                <S.VeganType>
-                  <img src="/img/navigation/icon-vegan-lactoOvo.svg" alt="" />
-                  <span>락토오보</span>
-                </S.VeganType>
-              )}
-              {data?.fetchUser.type === "Pesco" && (
-                <S.VeganType>
-                  <img src="/img/navigation/icon-vegan-pesco.svg" alt="" />
-                  <span>페스코</span>
-                </S.VeganType>
-              )}
-              {data?.fetchUser.type === "Pollo" && (
-                <S.VeganType>
-                  <img src="/img/navigation/icon-vegan-pollo.svg" alt="" />
-                  <span>폴로</span>
-                </S.VeganType>
-              )}
-              <S.SubsInfo>
-                {data?.fetchUser.isSubs === "NON_SUB" && (
-                  <>
-                    <span>미구독</span>
-                    <span>채식한상 어떠세요?</span>
-                  </>
-                )}
-                {data?.fetchUser.isSubs === "BASIC" && (
-                  <>
-                    <span>베이직</span>
-                    <span>정기 구독 이용중</span>
-                  </>
-                )}
-                {data?.fetchUser.isSubs === "PREMIUM" && (
-                  <>
-                    <span>프리미엄</span>
-                    <span>정기 구독 이용중</span>
-                  </>
-                )}
-              </S.SubsInfo>
-            </S.DrawerBody>
-            <Link href={"/recipe/new"}>
-              <S.RegisterButton onClick={toggleDrawer("right", false)}>
-                <a>레시피 등록하기</a>
-              </S.RegisterButton>
-            </Link>
-            <S.DrawerNav onClick={toggleDrawer("right", false)}>
-              <li>
-                <Link href={"/myPage"}>
-                  <a>MY 홈</a>
-                </Link>
-              </li>
+            </S.SubsInfo>
+          </S.DrawerBody>
+          <Link href={"/recipe/new"}>
+            <S.RegisterButton onClick={toggleDrawer("right", false)}>
+              <a>레시피 등록하기</a>
+            </S.RegisterButton>
+          </Link>
+          <S.DrawerNav onClick={toggleDrawer("right", false)}>
+            <li>
+              <Link href={"/myPage"}>
+                <a>MY 홈</a>
+              </Link>
+            </li>
 
-              <li>
-                <Link href={"/myPage/edit"}>
-                  <a>회원 정보 수정</a>
-                </Link>
-              </li>
+            <li>
+              <Link href={"/myPage/edit"}>
+                <a>회원 정보 수정</a>
+              </Link>
+            </li>
 
-              <li>
-                <Link href={"/myPage/subscribe"}>
-                  <a>정기 구독 관리</a>
-                </Link>
-              </li>
+            <li>
+              <Link href={"/myPage/subscribe"}>
+                <a>정기 구독 관리</a>
+              </Link>
+            </li>
 
-              <li>
-                <Link href={"/myPage/qna"}>
-                  <a>문의 내역</a>
-                </Link>
-              </li>
+            <li>
+              <Link href={"/myPage/qna"}>
+                <a>문의 내역</a>
+              </Link>
+            </li>
 
-              <li onClick={onClickLogout} style={{ cursor: "pointer" }}>
-                <a>로그아웃</a>
-              </li>
-            </S.DrawerNav>
-          </>
-        ) : (
-          <S.NonLoginWrapper onClick={toggleDrawer("right", false)}>
-            <Link href={"/login"}>
-              <a>
-                <OutlineSubmitButton
-                  isActive={true}
-                  title={"로그인하기"}
-                  size={"medium"}
-                />
-              </a>
-            </Link>
-          </S.NonLoginWrapper>
-        )}
-      </S.Wrapper>
+            <li onClick={onClickLogout} style={{ cursor: "pointer" }}>
+              <a>로그아웃</a>
+            </li>
+          </S.DrawerNav>
+        </S.Wrapper>
+      ) : (
+        <S.NonLoginWrapper onClick={toggleDrawer("right", false)}>
+          <Link href={"/login"}>
+            <a>
+              <OutlineSubmitButton
+                isActive={true}
+                title={"로그인하기"}
+                size={"medium"}
+              />
+            </a>
+          </Link>
+        </S.NonLoginWrapper>
+      )}
     </S.Container>
   );
 
