@@ -6,6 +6,7 @@ export default function ExpertRecipeList(props: IPropsExpertBestList) {
   const settings = {
     dots: false,
     arrows: true,
+    // toShow 갯수보다 적을 때 복사가 되는 거 인피니트 false로 하면 해결~
     infinite: true,
     speed: 500,
     slidesToShow: 3,
@@ -22,6 +23,8 @@ export default function ExpertRecipeList(props: IPropsExpertBestList) {
       },
     ],
   };
+
+  console.log(props.isProData?.fetchRecipeIsPro);
 
   return (
     <Expert.Container>

@@ -7,7 +7,6 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: auto;
   padding: 5.5rem 0;
   overflow: hidden;
   @media ${breakPoints.mobile} {
