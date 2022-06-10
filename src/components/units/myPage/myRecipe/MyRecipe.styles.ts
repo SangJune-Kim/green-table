@@ -38,6 +38,14 @@ export const RecipeWrapper = styled.div`
   column-gap: 2.5rem;
   row-gap: 1.3rem;
   padding: 2.5rem 5rem;
+
+  @media ${breakPoints.tablet} {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 0.5rem;
+    padding: 2rem 0;
+  }
 `;
 
 export const Menu = styled.li`
@@ -67,5 +75,15 @@ export const Menu = styled.li`
 
   & .date {
     font-size: 0.875rem;
+  }
+
+  @media ${breakPoints.tablet} {
+    width: 100%;
+
+    & img {
+      width: 100%;
+      height: 15.5rem;
+      border-radius: 30px;
+    }
   }
 `;

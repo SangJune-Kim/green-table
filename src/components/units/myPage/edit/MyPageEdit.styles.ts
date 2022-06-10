@@ -39,6 +39,10 @@ export const TitleWrapper = styled.div`
 
   @media ${breakPoints.tablet} {
     border-bottom: none;
+
+    & .title01 {
+      display: none;
+    }
   }
 `;
 
@@ -47,7 +51,7 @@ export const Title = styled.span`
   font-weight: 600;
 
   @media ${breakPoints.tablet} {
-    display: none;
+    /* display: none; */
   }
 `;
 

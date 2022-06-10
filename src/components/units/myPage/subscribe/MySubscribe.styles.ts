@@ -40,16 +40,16 @@ export const TitleWrapper = styled.div`
 
   @media ${breakPoints.tablet} {
     border-bottom: none;
+
+    & .title01 {
+      display: none;
+    }
   }
 `;
 
 export const Title = styled.span`
   font-size: 1.5rem;
   font-weight: 600;
-
-  @media ${breakPoints.tablet} {
-    display: none;
-  }
 `;
 
 export const Unsubscribe = styled.button`
@@ -171,16 +171,18 @@ export const Subs = styled.div`
 
   width: 48.7%;
   height: 27.8125rem;
-  border-radius: 2rem;
+  border-radius: 1rem;
 
   &.basic {
     background-image: url("/img/myPage/img-subscribe.png");
     background-repeat: no-repeat;
+    background-size: 100% 100%;
   }
 
   &.premium {
     background-image: url("/img/myPage/img-subscribe.png");
     background-repeat: no-repeat;
+    background-size: 100% 100%;
   }
 
   & h1 {
@@ -205,5 +207,36 @@ export const Subs = styled.div`
     letter-spacing: -0.06rem;
     font-weight: 500;
     padding-bottom: 3.3125rem;
+  }
+
+  @media ${breakPoints.tablet} {
+    width: 48.5%;
+    height: 100%;
+    padding: 2.6rem 0;
+
+    & h1 {
+      padding-bottom: 1rem;
+      font-size: 1.7rem;
+    }
+    & .month {
+      color: #737373;
+      font-size: 1.5rem;
+      font-weight: 600;
+      padding-bottom: 0.8rem;
+    }
+
+    & .price {
+      color: #262626;
+      font-size: 2.5rem;
+      font-weight: 700;
+    }
+
+    & p {
+      color: #c4c4c4;
+      font-size: 1.3rem;
+      letter-spacing: -0.06rem;
+      font-weight: 500;
+      padding-bottom: 2rem;
+    }
   }
 `;

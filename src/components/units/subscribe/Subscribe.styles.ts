@@ -39,6 +39,7 @@ export const IntroTop1 = styled.div`
   & > img {
     position: relative;
     left: 10%;
+    z-index: -1;
   }
 `;
 
@@ -46,7 +47,6 @@ export const TopText1 = styled.div`
   position: relative;
   left: 14.8125rem;
   width: 100%;
-  z-index: 1;
 
   & > h1 {
     padding-bottom: 0;
