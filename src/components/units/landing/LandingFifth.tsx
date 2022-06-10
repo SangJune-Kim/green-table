@@ -29,12 +29,19 @@ const Container = styled.div`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -30%);
+    word-break: keep-all;
 
     & > span:nth-of-type(1) {
       padding-bottom: 2.8rem;
       font-weight: 700;
       font-size: 3.125rem;
       letter-spacing: -0.05em;
+
+      @media (max-width: 1250px) {
+        font-size: 2.5rem;
+        word-break: keep-all;
+        text-align: center;
+      }
     }
 
     & > span:nth-of-type(2) {
@@ -43,6 +50,10 @@ const Container = styled.div`
       font-size: 2.25rem;
       letter-spacing: -0.05em;
       color: #464646;
+      @media (max-width: 1250px) {
+        font-size: 2rem;
+        word-break: keep-all;
+      }
     }
 
     button {

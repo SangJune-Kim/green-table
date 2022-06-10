@@ -15,6 +15,9 @@ const Wrapper = styled.div`
   align-items: center;
   width: 90%;
   max-width: 1440px;
+  @media (max-width: 1250px) {
+    justify-content: center;
+  }
 `;
 
 const Left = styled.div`
@@ -42,6 +45,9 @@ const Left = styled.div`
     line-height: 1.68rem;
     letter-spacing: -0.05em;
   }
+  @media (max-width: 1250px) {
+    transform: translateY(-80%);
+  }
 `;
 
 const Right = styled.div`
@@ -55,6 +61,26 @@ const Right = styled.div`
   &.isActive {
     filter: blur(0px);
     transform: translateY(0.5%);
+  }
+
+  @media (max-width: 1543px) {
+    transform: translate(100%, 0%);
+    img {
+      width: 50vw;
+    }
+    &.isActive {
+      transform: translate(0%, 1%);
+    }
+  }
+
+  @media (max-width: 1250px) {
+    transform: translate(-50%, 90%);
+    img {
+      width: 50vw;
+    }
+    &.isActive {
+      transform: translate(-50%, 1%);
+    }
   }
 `;
 

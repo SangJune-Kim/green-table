@@ -18,7 +18,3 @@ export const Main = styled.main`
     height: 100vh;
   }
 `;
-
-export const Third = styled.div``;
-export const Fourth = styled.div``;
-export const Fifth = styled.div``;

@@ -15,6 +15,11 @@ const Wrapper = styled.div`
   position: relative;
   width: 90%;
   max-width: 1440px;
+
+  @media (max-width: 1250px) {
+    flex-direction: column;
+    justify-content: center;
+  }
 `;
 
 const Left = styled.div`
@@ -43,11 +48,26 @@ const Left = styled.div`
     line-height: 1.68rem;
     letter-spacing: -0.05em;
   }
+  @media (max-width: 1250px) {
+    transform: translateY(-80%);
+  }
 `;
 const Right = styled.div`
   position: absolute;
   top: 0;
   right: 40%;
+
+  @media (max-width: 1400px) {
+    right: 50%;
+  }
+  @media (max-width: 1250px) {
+    width: 220px;
+    top: 85%;
+    transform: translateX(50%);
+  }
+  @media (max-width: 650px) {
+    width: 200px;
+  }
 `;
 
 const Circle = styled.div`
@@ -61,6 +81,7 @@ const Circle = styled.div`
   border: 2px solid #0fbaa3;
   border-radius: 50%;
   opacity: 0;
+  word-break: keep-all;
   transition: all 2s ease;
 
   & > span {
@@ -88,6 +109,18 @@ const Circle = styled.div`
       opacity: 1;
       transform: translate(40%, 20%);
     }
+  }
+  @media (max-width: 1250px) {
+    width: 220px;
+    height: 220px;
+
+    & > span {
+      font-size: 1rem;
+    }
+  }
+  @media (max-width: 650px) {
+    width: 200px;
+    height: 200px;
   }
 `;
 
