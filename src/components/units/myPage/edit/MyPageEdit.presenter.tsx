@@ -27,7 +27,7 @@ export default function MyPageEditUI(props: IMyPageEditUIProps) {
 
           <My.EditWrapper>
             <My.TitleWrapper>
-              <My.Title>회원정보수정</My.Title>
+              <My.Title className="title01">회원정보수정</My.Title>
               <My.SignOut type={"button"} onClick={props.onClickSignOut}>
                 회원탈퇴
               </My.SignOut>

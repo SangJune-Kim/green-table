@@ -12,7 +12,7 @@ export default function MySubscribeUI(props: IMySubscribeUIProps) {
         <MyPageSidebar />
         <My.SubscribeWrapper>
           <My.TitleWrapper>
-            <My.Title>정기 구독 관리</My.Title>
+            <My.Title className="title01">정기 구독 관리</My.Title>
             <My.Unsubscribe>해지하기</My.Unsubscribe>
           </My.TitleWrapper>
 

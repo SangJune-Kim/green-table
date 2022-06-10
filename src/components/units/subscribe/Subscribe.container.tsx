@@ -40,7 +40,7 @@ export default function Subscribe() {
         if (rsp.success) {
           try {
             createBasicPayment({
-              variables: { impUid: String(rsp.imp_uid), amount: 29900 },
+              variables: { impUid: String(rsp.imp_uid), amount: 100 },
             });
             router.push("/subscribe/complete");
           } catch (error) {
@@ -75,7 +75,7 @@ export default function Subscribe() {
         if (rsp.success) {
           try {
             await createPremiumPayment({
-              variables: { impUid: String(rsp.imp_uid), amount: 39900 },
+              variables: { impUid: String(rsp.imp_uid), amount: 200 },
             });
 
             router.push("/subscribe/complete");
