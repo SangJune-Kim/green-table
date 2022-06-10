@@ -40,7 +40,7 @@ export default function BestRecipeUI(props: IBestRecipeUIProps) {
                         <span>{el.scrapCount}</span>
                       </BestRecipe.IconBookmark>
                       <img
-                        src={`https://storage.googleapis.com/${el.recipesImages[0].mainImage}`}
+                        src={`https://storage.googleapis.com/${el.recipesImages[0]?.mainImage}`}
                       />
                     </BestRecipe.RecipeItemImageWrapper>
                     <BestRecipe.RecipeItemTextWrapper>
