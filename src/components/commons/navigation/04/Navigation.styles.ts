@@ -48,12 +48,19 @@ export const VeganTypeImg = styled.div`
   :hover {
     background-image: url(${(props) => props.hover});
   }
+  @media ${breakPoints.mobile} {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
 `;
 
 export const VeganTypeName = styled.li`
   margin-bottom: 5px;
   font-size: 16px;
   font-weight: 700;
+  @media ${breakPoints.mobile} {
+    font-size: 1rem;
+  }
 `;
 
 export const VeganTypeEnName = styled.li`
@@ -61,4 +68,7 @@ export const VeganTypeEnName = styled.li`
   font-size: 14px;
   font-weight: 400;
   color: #c4c4c4;
+  @media ${breakPoints.mobile} {
+    font-size: 0.8rem;
+  }
 `;

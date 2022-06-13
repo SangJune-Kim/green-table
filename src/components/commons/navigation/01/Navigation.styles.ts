@@ -69,6 +69,6 @@ export const VeganTypeEnName = styled.li`
   font-weight: 400;
   color: #c4c4c4;
   @media ${breakPoints.mobile} {
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
 `;
