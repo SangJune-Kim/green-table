@@ -122,6 +122,13 @@ export default function SubscribeUI(props: ISubscribeUIProps) {
                 <img src="/img/subscribe/icon-arrow-right.svg" />
                 <img src="/img/subscribe/img-delivery-04.png" />
               </Subs.Delivery>
+
+              <Subs.TabletDelivery>
+                <img src="/img/subscribe/img-delivery-01.png" />
+                <img src="/img/subscribe/img-delivery-02.png" />
+                <img src="/img/subscribe/img-delivery-03.png" />
+                <img src="/img/subscribe/img-delivery-04.png" />
+              </Subs.TabletDelivery>
             </Subs.IntroBottom>
           </Subs.IntroWrapper>
 
@@ -132,9 +139,9 @@ export default function SubscribeUI(props: ISubscribeUIProps) {
               고객들의 솔직리뷰
             </Subs.Title>
             <Subs.Contents>
-              채식한상을
-              <br />
-              먼저 시작하고 계신 고객들의 <br /> 후기를 들어보세요.
+              <p>채식한상을</p>
+              <p>먼저 시작하고 계신 고객들의 </p>
+              <p>후기를 들어보세요.</p>
             </Subs.Contents>
             <Subs.ImageWrapper>
               <img
