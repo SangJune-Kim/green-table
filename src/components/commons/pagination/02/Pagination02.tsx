@@ -1,18 +1,20 @@
 import * as P from "./Pagination02.styles";
-import { useState } from "react";
+import { MouseEvent, useState } from "react";
+import { IPropsPagination02 } from "./Pagination02.types";
 
-export default function Pagination02(props) {
+export default function Pagination02(props: IPropsPagination02) {
   const [startPage, setStartPage] = useState(1);
   const [currentPage, setCurrentPage] = useState(1);
   const [isPrevActive, setIsPrevActive] = useState(false);
   const [isNextActive, setIsNextActive] = useState(true);
 
-  const onClickPage = (event) => {
-    props.refetch({ page: Number(event.target.id) });
-    setCurrentPage((prev) => Number(event.target.id));
+  const onClickPage = (event: MouseEvent<HTMLElement>) => {
+    props.refetch({ page: Number((event.target as Element).id) });
+    setCurrentPage((prev) => Number((event.target as Element).id));
     if (startPage !== 1) {
       setIsPrevActive(true);
     }
+
     if (startPage + 5 > props.lastPage) {
       setIsNextActive(false);
     }
