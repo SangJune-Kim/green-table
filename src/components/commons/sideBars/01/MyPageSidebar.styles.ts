@@ -9,6 +9,10 @@ export const Container = styled.div`
     padding-bottom: 3rem;
     border-bottom: 1px solid #c4c4c4;
   }
+
+  @media ${breakPoints.mobile} {
+    display: none;
+  }
 `;
 
 export const Wrapper = styled.div`
@@ -16,13 +20,13 @@ export const Wrapper = styled.div`
   flex-direction: column;
   width: 6.6875rem;
 
-  @media ${breakPoints.tablet} {
+  @media ${breakPoints.tablet}, ${breakPoints.mobile} {
     width: 100%;
   }
 `;
 
 export const MenuWrapper = styled.ul`
-  @media ${breakPoints.tablet} {
+  @media ${breakPoints.tablet}, ${breakPoints.mobile} {
     display: none;
   }
 `;
@@ -53,7 +57,7 @@ export const MenuItem2 = styled.li`
   }
 `;
 
-export const MobileMenuWrapper = styled.ul`
+export const TabletMenuWrapper = styled.ul`
   display: none;
 
   @media ${breakPoints.tablet} {
@@ -63,7 +67,18 @@ export const MobileMenuWrapper = styled.ul`
   }
 `;
 
-export const MobileMenuItem1 = styled.li`
+export const TabletListWrapper = styled.div`
+  display: none;
+
+  @media ${breakPoints.tablet} {
+    display: flex;
+    justify-content: space-around;
+    width: 45%;
+    text-align: center;
+  }
+`;
+
+export const TabletMenuItem1 = styled.li`
   @media ${breakPoints.tablet} {
     font-size: 1.25rem;
     font-weight: 500;
@@ -78,7 +93,7 @@ export const MobileMenuItem1 = styled.li`
   }
 `;
 
-export const MobileMenuItem2 = styled.li`
+export const TabletMenuItem2 = styled.li`
   @media ${breakPoints.tablet} {
     font-weight: 500;
     letter-spacing: -0.06rem;
@@ -90,16 +105,5 @@ export const MobileMenuItem2 = styled.li`
     &.isActive {
       color: #0fbaa3;
     }
-  }
-`;
-
-export const MobileListWrapper = styled.div`
-  display: none;
-
-  @media ${breakPoints.tablet} {
-    display: flex;
-    justify-content: space-around;
-    width: 45%;
-    text-align: center;
   }
 `;

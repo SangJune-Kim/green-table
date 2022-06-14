@@ -7,7 +7,7 @@ export default function MyPageSidebarUI() {
   const router = useRouter();
 
   const MY_PAGE_MENUS = [
-    { name: "MY 홈", page: "/myPage" },
+    { name: "MY 홈", page: "/myPage", mobile: true },
     {
       name: "최근 본 레시피",
       page: "/myPage/recent",
@@ -22,10 +22,16 @@ export default function MyPageSidebarUI() {
       recipe: true,
     },
     { name: "회원 정보", page: "/myPage/info" },
-    { name: "회원 정보 수정", page: "/myPage/edit", list: true, user: true },
+    {
+      name: "회원 정보 수정",
+      page: "/myPage/edit",
+      list: true,
+      user: true,
+      mobile: true,
+    },
     { name: "비밀번호 변경", page: "/myPage/editPW", list: true, user: true },
-    { name: "정기 구독 관리", page: "/myPage/subscribe" },
-    { name: "문의 내역", page: "/myPage/qna" },
+    { name: "정기 구독 관리", page: "/myPage/subscribe", mobile: true },
+    { name: "문의 내역", page: "/myPage/qna", mobile: true },
   ];
 
   return (
@@ -59,35 +65,35 @@ export default function MyPageSidebarUI() {
           ))}
         </My.MenuWrapper>
 
-        <My.MobileMenuWrapper>
+        <My.TabletMenuWrapper>
           {MY_PAGE_MENUS.map((el) => (
             <Fragment key={el.page}>
               {!el.list && (
                 <Link href={el.page}>
-                  <My.MobileMenuItem1
+                  <My.TabletMenuItem1
                     id={el.page}
                     className={router.asPath === el.page ? "isActive" : ""}
                   >
                     <a>{el.name}</a>
-                  </My.MobileMenuItem1>
+                  </My.TabletMenuItem1>
                 </Link>
               )}
             </Fragment>
           ))}
-        </My.MobileMenuWrapper>
+        </My.TabletMenuWrapper>
 
-        <My.MobileListWrapper>
+        <My.TabletListWrapper>
           <ul>
             {MY_PAGE_MENUS.map((el) => (
               <Fragment key={el.page}>
                 {el.recipe && (
                   <Link href={el.page}>
-                    <My.MobileMenuItem2
+                    <My.TabletMenuItem2
                       id={el.page}
                       className={router.asPath === el.page ? "isActive" : ""}
                     >
                       <a>{el.name}</a>
-                    </My.MobileMenuItem2>
+                    </My.TabletMenuItem2>
                   </Link>
                 )}
               </Fragment>
@@ -99,18 +105,18 @@ export default function MyPageSidebarUI() {
               <Fragment key={el.page}>
                 {el.user && (
                   <Link href={el.page}>
-                    <My.MobileMenuItem2
+                    <My.TabletMenuItem2
                       id={el.page}
                       className={router.asPath === el.page ? "isActive" : ""}
                     >
                       <a>{el.name}</a>
-                    </My.MobileMenuItem2>
+                    </My.TabletMenuItem2>
                   </Link>
                 )}
               </Fragment>
             ))}
           </ul>
-        </My.MobileListWrapper>
+        </My.TabletListWrapper>
       </My.Wrapper>
     </My.Container>
   );

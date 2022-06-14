@@ -21,9 +21,13 @@ const Input = styled.input`
   border: 1px solid #bfbfbf;
   border-radius: 2rem;
   padding: 1.7rem;
+
   @media ${breakPoints.mobile} {
     width: ${(props: IUserInputProps) =>
       props?.inputSize === "medium" ? "10rem" : "16rem"};
+    width: ${(props: IUserInputProps) =>
+      props?.inputSize === "large" && "292px"};
+
     border: 0px;
     border-bottom: 2px solid #bfbfbf;
     border-radius: 0;
