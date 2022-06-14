@@ -22,7 +22,7 @@ export default function CertificationUpload(props: ICertificationUploadProps) {
     try {
       const result = await uploadCertificationImage({ variables: { file } });
       const url = result.data.uploadCertificationImage.substr(
-        38,
+        40,
         result.data.uploadCertificationImage.length
       );
       props.setUserInputs({

@@ -9,6 +9,10 @@ export const ImageWrapper = styled.div`
   @media ${breakPoints.tablet} {
     padding-bottom: 4rem;
   }
+
+  @media ${breakPoints.mobile} {
+    padding-bottom: 3rem;
+  }
 `;
 
 export const Image = styled.img`
@@ -18,6 +22,13 @@ export const Image = styled.img`
   border: 1px solid #c4c4c4;
   border-radius: 50%;
   margin: 2rem;
+
+  @media ${breakPoints.mobile} {
+    width: 14.125rem;
+    height: 14.125rem;
+    margin: 0;
+    margin-bottom: 2rem;
+  }
 `;
 
 export const ImageButton = styled.button`

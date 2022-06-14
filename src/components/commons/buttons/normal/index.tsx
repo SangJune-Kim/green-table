@@ -28,6 +28,13 @@ export const Button = styled.button`
   @media ${breakPoints.tablet} {
     width: 35%;
   }
+
+  @media ${breakPoints.mobile} {
+    width: 7.5rem;
+    padding: 0px;
+    margin-left: 10px;
+    margin-right: 0;
+  }
 `;
 
 export default function NormalButton(props: INormalButtonProps) {

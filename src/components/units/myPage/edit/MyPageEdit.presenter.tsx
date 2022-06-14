@@ -51,6 +51,15 @@ export default function MyPageEditUI(props: IMyPageEditUIProps) {
                     />
                   </My.InputWrapper>
 
+                  <My.MobileInputWrapper className="nickname">
+                    <My.Label>닉네임</My.Label>
+                    <UserInput
+                      placeholder={"닉네임"}
+                      defaultValue={props.userData?.fetchUser.nickname}
+                      onChange={props.onChangeUserInputs("nickname")}
+                    />
+                  </My.MobileInputWrapper>
+
                   <My.VeganTypeWrapper>
                     <My.Label>채식타입</My.Label>
                     <Navigation02
@@ -98,6 +107,7 @@ export default function MyPageEditUI(props: IMyPageEditUIProps) {
                     disabled={!props.userInputs?.phone}
                   />
                 </My.InputWrapper>
+
                 <My.InputWrapper>
                   <My.Label />
                   <UserInput
@@ -113,6 +123,7 @@ export default function MyPageEditUI(props: IMyPageEditUIProps) {
                     disabled={!props.userInputs?.token}
                   />
                 </My.InputWrapper>
+
                 <My.InputWrapper>
                   <My.Label>주소</My.Label>
                   <UserInput
@@ -131,6 +142,7 @@ export default function MyPageEditUI(props: IMyPageEditUIProps) {
                     color={"green"}
                   />
                 </My.InputWrapper>
+
                 <My.InputWrapper>
                   <My.Label />
                   <UserInput
@@ -140,6 +152,88 @@ export default function MyPageEditUI(props: IMyPageEditUIProps) {
                   />
                   <My.Div />
                 </My.InputWrapper>
+
+                {/* 모바일 화면 */}
+
+                <My.MobileInputWrapper className="nickname">
+                  <My.Label>이름</My.Label>
+                  <UserInput
+                    defaultValue={props.userData?.fetchUser.name}
+                    disabled={true}
+                  />
+                </My.MobileInputWrapper>
+
+                <My.MobileInputWrapper>
+                  <My.Label>이메일</My.Label>
+                  <UserInput
+                    defaultValue={props.userData?.fetchUser.email}
+                    disabled={true}
+                  />
+                </My.MobileInputWrapper>
+
+                <My.MobileInputWrapper>
+                  <My.Label>휴대폰 번호</My.Label>
+                  <div>
+                    <UserInput
+                      type={"number"}
+                      placeholder={"-제외"}
+                      defaultValue={props.userData?.fetchUser.phone}
+                      onChange={props.onChangeUserInputs("phone")}
+                    />
+                    <NormalButton
+                      type={"button"}
+                      title={"인증받기"}
+                      onClick={props.onClickGetToken}
+                      color={props.userInputs?.phone && "green"}
+                      disabled={!props.userInputs?.phone}
+                    />
+                  </div>
+
+                  <div>
+                    <UserInput
+                      type={"number"}
+                      placeholder={"인증번호"}
+                      onChange={props.onChangeUserInputs("token")}
+                    />
+                    <NormalButton
+                      type={"button"}
+                      title={"확인"}
+                      onClick={props.onClickCheckValid}
+                      color={props.userInputs?.token && "green"}
+                      disabled={!props.userInputs?.token}
+                    />
+                  </div>
+                </My.MobileInputWrapper>
+
+                <My.MobileInputWrapper>
+                  <My.Label>주소</My.Label>
+                  <div>
+                    <UserInput
+                      placeholder={"주소"}
+                      defaultValue={
+                        props.userInputs?.address ||
+                        props.userData?.fetchUser.address
+                      }
+                      onChange={props.onChangeUserInputs("address")}
+                      readOnly
+                    />
+                    <NormalButton
+                      type={"button"}
+                      title={"찾기"}
+                      onClick={props.onClickAddressSearch}
+                      color={"green"}
+                    />
+                  </div>
+
+                  <div>
+                    <UserInput
+                      placeholder={"상세주소"}
+                      inputSize={"large"}
+                      defaultValue={props.userData?.fetchUser.addressDetail}
+                      onChange={props.onChangeUserInputs("addressDetail")}
+                    />
+                  </div>
+                </My.MobileInputWrapper>
               </div>
             </My.ProfileWrapper>
 
@@ -167,6 +261,7 @@ export default function MyPageEditUI(props: IMyPageEditUIProps) {
                     userInputs={props.userInputs}
                   />
                 </My.InputWrapper>
+
                 <My.InputWrapper>
                   <My.Label>인증 링크 등록</My.Label>
                   <UserInput
@@ -185,8 +280,50 @@ export default function MyPageEditUI(props: IMyPageEditUIProps) {
                     onClick={props.onClickUrlValid}
                   />
                 </My.InputWrapper>
+
+                {/* 모바일 */}
+
+                <My.MobileInputWrapper>
+                  <My.Label>자격증 등록</My.Label>
+                  <div>
+                    <UserInput
+                      placeholder={"이미지 업로드"}
+                      defaultValue={
+                        props.userInputs.certImage ||
+                        props.userData?.fetchUser.certImage
+                      }
+                      readOnly
+                    />
+                    <CertificationUpload
+                      setUserInputs={props.setUserInputs}
+                      userInputs={props.userInputs}
+                    />
+                  </div>
+                </My.MobileInputWrapper>
+
+                <My.MobileInputWrapper>
+                  <div>
+                    <My.Label>인증 링크 등록</My.Label>
+                    <UserInput
+                      placeholder={"URL"}
+                      defaultValue={
+                        props.userInputs.certUrl ||
+                        props.userData?.fetchUser.certUrl
+                      }
+                      onChange={props.onChangeUserInputs("certUrl")}
+                    />
+                    <NormalButton
+                      type={"button"}
+                      title={"등록하기"}
+                      color={props.userInputs?.certUrl && "green"}
+                      disabled={!props.userInputs?.certUrl}
+                      onClick={props.onClickUrlValid}
+                    />
+                  </div>
+                </My.MobileInputWrapper>
               </div>
             </My.ProfileWrapper>
+
             <My.ButtonWrapper>
               <SubmitButton
                 title={"회원정보수정"}

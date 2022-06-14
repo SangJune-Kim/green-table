@@ -9,12 +9,16 @@ export const Wrapper = styled.div`
   padding-top: 1.5rem;
 
   @media ${breakPoints.tablet} {
-    display: grid;
     place-items: center;
-    justify-content: center;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 10%;
     padding-bottom: 2.5rem;
+  }
+
+  @media ${breakPoints.mobile} {
+    gap: 7%;
+    padding-bottom: 4rem;
+    padding-top: 1rem;
   }
 `;
 
@@ -60,21 +64,31 @@ export const Circle = styled.div`
   border: 2px solid #7f7f7f;
   border-radius: 50%;
   margin-bottom: 1rem;
+
+  @media ${breakPoints.mobile} {
+    width: 6rem;
+    height: 6rem;
+  }
 `;
 
 export const VeganTypeImg = styled.div`
   width: 3.3rem;
   height: 3.3rem;
+
+  @media ${breakPoints.mobile} {
+    width: 3rem;
+    height: 3rem;
+  }
 `;
 
 export const VeganTypeName = styled.p`
   margin-bottom: 5px;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 700;
 `;
 
 export const VeganTypeEnName = styled.span`
-  font-size: 14px;
+  font-size: 0.9rem;
   font-weight: 400;
   color: #c4c4c4;
 `;
