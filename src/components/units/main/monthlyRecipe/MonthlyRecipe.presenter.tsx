@@ -4,8 +4,10 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { v4 as uuidv4 } from "uuid";
 import { IMonthlyRecipeUIProps } from "./MonthlyRecipe.types";
+import { useRouter } from "next/router";
 
 export default function MonthlyRecipeUI(props: IMonthlyRecipeUIProps) {
+  const router = useRouter();
   return (
     <MonthlyRecipe.Container>
       <MonthlyRecipe.HeadText>
@@ -99,10 +101,13 @@ export default function MonthlyRecipeUI(props: IMonthlyRecipeUIProps) {
       <MonthlyRecipe.RecommendRecipeItems>
         <MonthlyRecipe.SliderWrapper>
           <Slider {...props.settings}>
-            {/* {props.popRecipes?.fetchPopularRecipes
+            {props.popRecipes?.fetchPopularRecipes
               ?.slice(13, 24)
               .map((el: any) => (
-                <MonthlyRecipe.RecipeItem key={uuidv4()}>
+                <MonthlyRecipe.RecipeItem
+                  key={uuidv4()}
+                  onClick={() => router.push(`/recipe/${el.id}`)}
+                >
                   <MonthlyRecipe.RecipeItemImageWrapper>
                     <MonthlyRecipe.IconBookmark>
                       {el.recipesScraps?.user?.user_id?.includes(
@@ -114,9 +119,19 @@ export default function MonthlyRecipeUI(props: IMonthlyRecipeUIProps) {
                       )}
                       <span>{el.scrapCount}</span>
                     </MonthlyRecipe.IconBookmark>
-                    <img
-                      src={`https://storage.googleapis.com/${el.recipesImages[0]?.mainImage}`}
-                    />
+                    {(el?.recipesMainImage.filter(
+                      (e: any) => e.mainUrl !== ""
+                    )[0]?.mainUrl && (
+                      <img
+                        src={`https://storage.googleapis.com/${
+                          el?.recipesMainImage.filter(
+                            (e: any) => e.mainUrl !== ""
+                          )[0]?.mainUrl
+                        }`}
+                      />
+                    )) || (
+                      <img src="/img/monthlyRecipe/img-monthlyrecipe-item.png" />
+                    )}
                   </MonthlyRecipe.RecipeItemImageWrapper>
                   <MonthlyRecipe.RecipeItemTextWrapper>
                     <h1>{el.title}</h1>
@@ -145,7 +160,7 @@ export default function MonthlyRecipeUI(props: IMonthlyRecipeUIProps) {
                     </MonthlyRecipe.Tags>
                   </MonthlyRecipe.RecipeItemTextWrapper>
                 </MonthlyRecipe.RecipeItem>
-              ))} */}
+              ))}
           </Slider>
         </MonthlyRecipe.SliderWrapper>
       </MonthlyRecipe.RecommendRecipeItems>

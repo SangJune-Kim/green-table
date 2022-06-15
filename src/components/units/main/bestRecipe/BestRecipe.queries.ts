@@ -14,7 +14,7 @@ export const FETCH_POPULAR_RECIPES = gql`
       replyCount
       createdAt
       recipesMainImage {
-        MainUrl
+        mainUrl
       }
       recipesScraps {
         scraped
