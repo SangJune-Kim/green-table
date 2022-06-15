@@ -1,4 +1,6 @@
+import { useQuery } from "@apollo/client";
 import Slider from "react-slick";
+import { FETCH_POPULAR_RECIPES } from "../RecipeList.queries";
 import { IPropsExpertBestList } from "../RecipeList.types";
 import * as Best from "./BestList.styles";
 
@@ -34,7 +36,13 @@ export default function BestRecipeList(props: IPropsExpertBestList) {
     ],
   };
 
-  const popularRecipes = props?.popularData?.fetchPopularRecipes.filter(
+  const { data: popularData } = useQuery(FETCH_POPULAR_RECIPES, {
+    variables: {
+      page: 1,
+    },
+  });
+
+  const popularRecipes = popularData?.fetchPopularRecipes.filter(
     (el: any) => el.scrapCount >= 1
   );
 
@@ -58,12 +66,12 @@ export default function BestRecipeList(props: IPropsExpertBestList) {
                 >
                   <Best.RecipeImg
                     src={
-                      el.recipesImages
-                        ? el.recipesImages.filter(
-                            (e: any) => e.mainImage !== " "
+                      el.recipesMainImage
+                        ? el.recipesMainImage.filter(
+                            (e: any) => e.mainUrl !== " "
                           ).length === 0
                           ? "/img/bestRecipe/img-recipe-01.png"
-                          : `https://storage.googleapis.com/${el.recipesImages[0].mainImage}`
+                          : `https://storage.googleapis.com/${el.recipesMainImage[0].mainUrl}`
                         : "/img/bestRecipe/img-recipe-01.png"
                     }
                   />

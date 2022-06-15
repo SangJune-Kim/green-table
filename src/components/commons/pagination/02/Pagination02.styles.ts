@@ -16,12 +16,8 @@ export const PagePrevButton = styled.li`
   border: 0px;
   margin-left: 1rem;
   margin-right: 2rem;
-  &:first-of-type {
-    margin-left: 0;
-    margin-right: 0;
-  }
-  /* display: ${(props: IPropsPaginationStyled) =>
-    props.isPrevActive ? "y" : "none"}; */
+  display: ${(props: IPropsPaginationStyled) =>
+    props.isPrevActive ? "y" : "none"};
 `;
 
 export const PageNextButton = styled.li`
@@ -30,11 +26,8 @@ export const PageNextButton = styled.li`
   cursor: pointer;
   border: 0px;
   margin-right: 1rem;
-  &:last-of-type {
-    margin-right: 0;
-  }
-  /* display: ${(props: IPropsPaginationStyled) =>
-    props.isNextActive ? "y" : "none"}; */
+  display: ${(props: IPropsPaginationStyled) =>
+    props.isNextActive ? "y" : "none"};
 `;
 
 export const PageNumber = styled.li`

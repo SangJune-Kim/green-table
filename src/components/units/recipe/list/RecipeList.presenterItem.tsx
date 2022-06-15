@@ -3,16 +3,15 @@ import { IPropsRecipeListItem } from "./RecipeList.types";
 
 export default function RecipeListItem(props: IPropsRecipeListItem) {
   const el = props.el;
-
   return (
     <List.RecipeBox id={el.id} onClick={props?.onClickMoveToDetail}>
       <List.RecipeImg
         src={
-          el.recipesImages
-            ? el.recipesImages.filter((e: any) => e.mainImage !== " ")
+          el.recipesMainImage
+            ? el.recipesMainImage.filter((e: any) => e.mainUrl !== " ")
                 .length === 0
               ? "/img/bestRecipe/img-recipe-01.png"
-              : `https://storage.googleapis.com/${el.recipesImages[0].mainImage}`
+              : `https://storage.googleapis.com/${el.recipesMainImage[0].mainUrl}`
             : "/img/bestRecipe/img-recipe-01.png"
         }
       />
