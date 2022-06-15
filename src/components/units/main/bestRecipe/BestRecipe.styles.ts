@@ -96,6 +96,7 @@ export const RecommendRecipeItems = styled.div`
 `;
 
 export const RecipeItem = styled.div`
+  cursor: pointer;
   h1 {
     font-weight: 600;
   }

@@ -134,6 +134,7 @@ export const RecommendRecipeItems = styled.div`
 
 export const RecipeItem = styled.div`
   padding-right: 1.68rem;
+  cursor: pointer;
   &:last-of-type {
     padding-right: 0;
   }
