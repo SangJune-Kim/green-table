@@ -9,11 +9,11 @@ export const Container = styled.div`
   padding: 6.25rem 15rem;
 
   @media ${breakPoints.tablet} {
-    padding: 3.25rem 2rem;
+    padding: 3.25rem 3rem;
   }
 
   @media ${breakPoints.mobile} {
-    padding: 3rem 1.5rem;
+    padding: 3rem 2rem;
   }
 `;
 
@@ -23,7 +23,7 @@ export const Wrapper = styled.div`
 
   @media ${breakPoints.tablet}, ${breakPoints.mobile} {
     flex-direction: column;
-    width: 90%;
+    width: 100%;
   }
 `;
 

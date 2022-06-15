@@ -156,6 +156,32 @@ export default function MyPageMainUI(props: IMyPageMainUIProps) {
                     </My.Menu>
                   ))}
               </My.TabletBody>
+
+              <My.MobileBody>
+                {props.recentItems
+                  .slice(props.recentItems.length - 3, props.recentItems.length)
+                  .reverse()
+                  .map((el: any) => (
+                    <My.Menu
+                      key={el.id}
+                      onClick={props.onClickMoveToDetail}
+                      id={el.id}
+                    >
+                      <img
+                        src={
+                          el.recipesImages
+                            ? el.recipesImages.filter(
+                                (e: IRecipeImage) => e.mainImage !== " "
+                              ).length === 0
+                              ? "/img/bestRecipe/img-recipe-01.png"
+                              : `https://storage.googleapis.com/${el.recipesImages[0].mainImage}`
+                            : "/img/bestRecipe/img-recipe-01.png"
+                        }
+                      />
+                      <h2>{el.title}</h2>
+                    </My.Menu>
+                  ))}
+              </My.MobileBody>
             </My.Recipe>
 
             <My.Recipe>
@@ -211,6 +237,29 @@ export default function MyPageMainUI(props: IMyPageMainUIProps) {
                   </My.Menu>
                 ))}
               </My.TabletBody>
+
+              <My.MobileBody>
+                {props.userRecipe?.fetchMyRecipe.slice(0, 2).map((el: any) => (
+                  <My.Menu
+                    key={el.id}
+                    onClick={props.onClickMoveToDetail}
+                    id={el.id}
+                  >
+                    <img
+                      src={
+                        el.recipesImages
+                          ? el.recipesImages.filter(
+                              (e: IRecipeImage) => e.mainImage !== " "
+                            ).length === 0
+                            ? "/img/bestRecipe/img-recipe-01.png"
+                            : `https://storage.googleapis.com/${el.recipesImages[0].mainImage}`
+                          : "/img/bestRecipe/img-recipe-01.png"
+                      }
+                    />
+                    <h2>{el.title}</h2>
+                  </My.Menu>
+                ))}
+              </My.MobileBody>
             </My.Recipe>
 
             <My.Recipe>
@@ -270,6 +319,31 @@ export default function MyPageMainUI(props: IMyPageMainUIProps) {
                     </My.Menu>
                   ))}
               </My.TabletBody>
+
+              <My.MobileBody>
+                {props.userScrap?.fetchMyScrapHistory
+                  .slice(0, 2)
+                  .map((el: any) => (
+                    <My.Menu
+                      key={el.id}
+                      onClick={props.onClickMoveToDetail}
+                      id={el.id}
+                    >
+                      <img
+                        src={
+                          el.recipesImages
+                            ? el.recipesImages.filter(
+                                (e: IRecipeImage) => e.mainImage !== " "
+                              ).length === 0
+                              ? "/img/bestRecipe/img-recipe-01.png"
+                              : `https://storage.googleapis.com/${el.recipesImages[0].mainImage}`
+                            : "/img/bestRecipe/img-recipe-01.png"
+                        }
+                      />
+                      <h2>{el.title}</h2>
+                    </My.Menu>
+                  ))}
+              </My.MobileBody>
             </My.Recipe>
           </My.RecipeWrapper>
         </My.MainWrapper>
