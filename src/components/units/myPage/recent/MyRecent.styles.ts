@@ -13,7 +13,7 @@ export const Container = styled.div`
   }
 
   @media ${breakPoints.mobile} {
-    padding: 3rem 3rem;
+    padding: 3rem 2rem;
   }
 `;
 
@@ -34,9 +34,10 @@ export const RecentWrapper = styled.div`
   width: 100%;
 `;
 
-export const RecipeWrapper = styled.div`
+export const RecipeWrapper = styled.ul`
   display: grid;
   align-items: center;
+  justify-content: center;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   column-gap: 2.5rem;
   row-gap: 1.3rem;
@@ -50,6 +51,7 @@ export const RecipeWrapper = styled.div`
 
   @media ${breakPoints.mobile} {
     grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 0.5rem;
     padding: 1rem 0;
   }
 `;
@@ -98,13 +100,17 @@ export const Menu = styled.li`
     width: 100%;
 
     & img {
-      width: 8rem;
-      height: 8rem;
+      width: 100%;
+      height: 9rem;
       border-radius: 20px;
     }
 
     & h2 {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
+    }
+
+    & p {
+      font-size: 0.9rem;
     }
   }
 `;

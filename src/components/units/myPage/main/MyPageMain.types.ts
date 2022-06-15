@@ -5,9 +5,5 @@ export interface IMyPageMainUIProps {
   userData: any;
   userRecipe: any;
   userScrap: any;
-  onClickMoveToDetail: (event: MouseEvent<HTMLLIElement>) => void;
-}
-
-export interface IRecipeImage {
-  mainImage: string;
+  onClickMoveToDetail: (el: any) => (event: MouseEvent<HTMLLIElement>) => void;
 }

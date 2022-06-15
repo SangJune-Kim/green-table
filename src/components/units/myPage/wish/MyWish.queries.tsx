@@ -6,8 +6,8 @@ export const FETCH_MY_SCRAP_HISTORY = gql`
       id
       title
       summary
-      recipesImages {
-        mainImage
+      recipesMainImage {
+        mainUrl
       }
       createdAt
     }

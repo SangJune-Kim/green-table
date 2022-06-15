@@ -6,8 +6,8 @@ export const FETCH_MY_RECIPE = gql`
       id
       title
       summary
-      recipesImages {
-        mainImage
+      recipesMainImage {
+        mainUrl
       }
       createdAt
     }

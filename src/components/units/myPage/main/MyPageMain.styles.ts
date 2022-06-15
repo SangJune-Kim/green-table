@@ -51,9 +51,9 @@ export const UserWrapper = styled.div`
   }
 
   @media ${breakPoints.mobile} {
-    height: 9rem;
     justify-content: center;
-    padding: 0 0.8rem;
+    height: 7rem;
+    padding: 0;
   }
 `;
 
@@ -71,9 +71,8 @@ export const UserProfile = styled.div`
     background-color: #c2bfb9;
   }
 
-  @media ${breakPoints.tablet}, ${breakPoints.mobile} {
-    width: 45%;
-    padding: 0 0.5rem;
+  @media ${breakPoints.mobile} {
+    width: fit-content;
   }
 `;
 
@@ -120,7 +119,7 @@ export const UserName = styled.span`
   }
 
   @media ${breakPoints.mobile} {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
 `;
 
@@ -129,6 +128,10 @@ export const UserInfo = styled.ul`
   justify-content: center;
   align-items: center;
   text-align: center;
+
+  @media ${breakPoints.mobile} {
+    display: none;
+  }
 `;
 
 export const Info = styled.li`
@@ -158,11 +161,6 @@ export const Info = styled.li`
 export const TypeIcon = styled.img`
   width: 2.5rem;
   height: 2.5rem;
-
-  @media ${breakPoints.mobile} {
-    width: 1.9rem;
-    height: 1.9rem;
-  }
 `;
 
 export const Name = styled.span`
@@ -179,10 +177,6 @@ export const Subscribe = styled.span`
   color: #0fbaa3;
   font-weight: 600;
   font-size: 1.25rem;
-
-  @media ${breakPoints.mobile} {
-    font-size: 1.1rem;
-  }
 `;
 
 export const RecipeWrapper = styled.div`
@@ -241,6 +235,7 @@ export const MobileBody = styled.ul`
   @media ${breakPoints.mobile} {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.5rem;
     padding: 1rem 0;
   }
 `;
@@ -265,8 +260,8 @@ export const Menu = styled.li`
 
   @media ${breakPoints.mobile} {
     & > img {
-      width: 8rem;
-      height: 8rem;
+      width: 100%;
+      height: 9rem;
       border-radius: 20px;
     }
   }

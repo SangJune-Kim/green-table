@@ -11,6 +11,10 @@ export const Container = styled.div`
   @media ${breakPoints.tablet} {
     padding: 3.25rem 3em;
   }
+
+  @media ${breakPoints.mobile} {
+    padding: 3rem 2rem;
+  }
 `;
 
 export const Wrapper = styled.div`
@@ -18,7 +22,7 @@ export const Wrapper = styled.div`
   justify-content: center;
   width: 90rem;
 
-  @media ${breakPoints.tablet} {
+  @media ${breakPoints.tablet}, ${breakPoints.mobile} {
     flex-direction: column;
     width: 100%;
   }
