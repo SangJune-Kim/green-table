@@ -5,6 +5,11 @@ export interface IPropsPagination02 {
   refetch: (
     variables?: Partial<{ page: number }> | undefined
   ) => Promise<ApolloQueryResult<any>>;
+  selectedTypes: string;
+  isPicked: {
+    wholeMenu: string;
+    selectList: string;
+  };
 }
 
 export interface IPropsPaginationStyled {

@@ -1,4 +1,6 @@
+import { useQuery } from "@apollo/client";
 import Slider from "react-slick";
+import { FETCH_RECIPE_ISPRO } from "../RecipeList.queries";
 import { IPropsExpertBestList } from "../RecipeList.types";
 import * as Expert from "./ExpertList.styles";
 
@@ -35,6 +37,13 @@ export default function ExpertRecipeList(props: IPropsExpertBestList) {
     ],
   };
 
+  const { data: isProData } = useQuery(FETCH_RECIPE_ISPRO, {
+    variables: {
+      isPro: "PRO",
+      page: 1,
+    },
+  });
+
   return (
     <Expert.Container>
       <Expert.Wrapper>
@@ -47,7 +56,7 @@ export default function ExpertRecipeList(props: IPropsExpertBestList) {
         </Expert.TitleWrapper>
         <Expert.SliderWrapper>
           <Slider {...settings}>
-            {props.isProData?.fetchRecipeIsPro?.map((el: any, i: number) => (
+            {isProData?.fetchRecipeIsPro?.map((el: any, i: number) => (
               <Expert.ListWrapper key={i}>
                 <Expert.RecipeBox
                   id={el.id}
@@ -55,12 +64,12 @@ export default function ExpertRecipeList(props: IPropsExpertBestList) {
                 >
                   <Expert.RecipeImg
                     src={
-                      el.recipesImages
-                        ? el.recipesImages.filter(
-                            (e: any) => e.mainImage !== " "
+                      el.recipesMainImage
+                        ? el.recipesMainImage.filter(
+                            (e: any) => e.mainUrl !== " "
                           ).length === 0
                           ? "/img/bestRecipe/img-recipe-01.png"
-                          : `https://storage.googleapis.com/${el.recipesImages[0].mainImage}`
+                          : `https://storage.googleapis.com/${el.recipesMainImage[0].mainUrl}`
                         : "/img/bestRecipe/img-recipe-01.png"
                     }
                   />
