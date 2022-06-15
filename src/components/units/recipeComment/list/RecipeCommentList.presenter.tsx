@@ -14,7 +14,10 @@ export default function RecipeCommentListUI(props: IRecipeCommentListUIProps) {
             <span>댓글</span>
             <span>{props.replyCount}</span>
           </Comment.HeadText>
-          <RecipeCommentWrite fetchUser={props.fetchUser} />
+          <RecipeCommentWrite
+            fetchUser={props.fetchUser}
+            replyCount={props.replyCount}
+          />
         </Comment.Wrapper>
         <div style={{ height: "auto" }}>
           <InfiniteScroll

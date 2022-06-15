@@ -10,9 +10,11 @@ export const FETCH_RECIPE = gql`
       cookTime
       level
       serve
-      recipesImages {
-        mainImage
-        url
+      recipesMainImage {
+        mainUrl
+      }
+      recipesContentsImage {
+        contentsUrl
         description
       }
       user {

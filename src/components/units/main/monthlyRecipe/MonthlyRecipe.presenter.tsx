@@ -99,7 +99,7 @@ export default function MonthlyRecipeUI(props: IMonthlyRecipeUIProps) {
       <MonthlyRecipe.RecommendRecipeItems>
         <MonthlyRecipe.SliderWrapper>
           <Slider {...props.settings}>
-            {props.popRecipes?.fetchPopularRecipes
+            {/* {props.popRecipes?.fetchPopularRecipes
               ?.slice(13, 24)
               .map((el: any) => (
                 <MonthlyRecipe.RecipeItem key={uuidv4()}>
@@ -145,7 +145,7 @@ export default function MonthlyRecipeUI(props: IMonthlyRecipeUIProps) {
                     </MonthlyRecipe.Tags>
                   </MonthlyRecipe.RecipeItemTextWrapper>
                 </MonthlyRecipe.RecipeItem>
-              ))}
+              ))} */}
           </Slider>
         </MonthlyRecipe.SliderWrapper>
       </MonthlyRecipe.RecommendRecipeItems>

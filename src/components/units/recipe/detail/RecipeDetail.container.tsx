@@ -47,6 +47,7 @@ export default function RecipeDetail() {
       if (error instanceof Error) ModalError("스크랩 실패", error.message);
     }
   };
+  console.log(recipeData);
 
   return (
     <RecipeDetailUI

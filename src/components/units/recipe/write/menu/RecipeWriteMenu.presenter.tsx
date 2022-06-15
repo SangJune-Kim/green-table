@@ -123,6 +123,7 @@ export default function RecipeWriteMenuUI(props: IRecipeWriteMenuUIProps) {
                 style={{ textAlign: "center" }}
                 type="number"
                 placeholder="2"
+                defaultValue={3}
                 min={1}
                 {...props.register("cookTime")}
               />
@@ -138,7 +139,9 @@ export default function RecipeWriteMenuUI(props: IRecipeWriteMenuUIProps) {
           </Menu.RecipeInfoTop>
           <Menu.RecipeInfoBottom>
             <select {...props.register("level")}>
-              <option value="선택">선택</option>
+              <option value="선택" disabled>
+                선택
+              </option>
               <option value="SIMPLE">쉬움</option>
               <option value="NORMAL">보통</option>
               <option value="DIFFICULT">어려움</option>
@@ -155,7 +158,8 @@ export default function RecipeWriteMenuUI(props: IRecipeWriteMenuUIProps) {
             <Menu.RecipeInfoInput>
               <input
                 type="number"
-                placeholder="2"
+                placeholder="0"
+                defaultValue={1}
                 min={1}
                 {...props.register("serve")}
               />
