@@ -44,17 +44,13 @@ export const RecipeWrapper = styled.div`
   padding: 2.5rem 5rem;
 
   @media ${breakPoints.tablet} {
-    display: grid;
-    align-items: center;
     grid-template-columns: 1fr 1fr 1fr;
     column-gap: 0.5rem;
     padding: 2rem 0;
   }
 
   @media ${breakPoints.mobile} {
-    display: grid;
-    align-items: center;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     column-gap: 0.5rem;
     padding: 1rem 0;
   }
@@ -104,8 +100,16 @@ export const Menu = styled.li`
 
     & img {
       width: 100%;
-      height: 13rem;
+      height: 9rem;
       border-radius: 20px;
+    }
+
+    & h2 {
+      font-size: 1.1rem;
+    }
+
+    & p {
+      font-size: 0.9rem;
     }
   }
 `;

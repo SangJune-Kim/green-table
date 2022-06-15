@@ -57,6 +57,10 @@ export const TitleWrapper = styled.div`
 export const Title = styled.span`
   font-size: 1.5rem;
   font-weight: 600;
+
+  @media ${breakPoints.mobile} {
+    font-size: 1.3rem;
+  }
 `;
 
 export const SignOut = styled.button`
@@ -98,6 +102,7 @@ export const ExpertTitleWrapper = styled.div`
       padding-left: 0;
       padding-top: 0.5rem;
       text-align: center;
+      font-size: 0.9rem;
     }
   }
 `;
@@ -199,6 +204,7 @@ export const Label = styled.label`
     justify-content: center;
     padding-bottom: 1rem;
     width: 100%;
+    font-size: 1.2rem;
   }
 `;
 

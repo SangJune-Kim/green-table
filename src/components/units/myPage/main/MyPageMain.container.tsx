@@ -23,9 +23,17 @@ export default function MyPageMain() {
     setRecentItems(recent);
   }, []);
 
-  const onClickMoveToDetail = (event: MouseEvent<HTMLLIElement>) => {
-    router.push(`/recipe/${event.currentTarget.id}`);
-  };
+  const onClickMoveToDetail =
+    (el: any) => (event: MouseEvent<HTMLLIElement>) => {
+      router.push(`/recipe/${event.currentTarget.id}`);
+
+      const recent = JSON.parse(sessionStorage.getItem("recent") || "[]");
+      const temp = recent.filter((recentEl: any) => recentEl.id === el.id);
+      if (temp.length === 1) return;
+      const { __typename, ...newEl } = el;
+      recent.push(newEl);
+      sessionStorage.setItem("recent", JSON.stringify(recent));
+    };
 
   return (
     <MyPageMainUI

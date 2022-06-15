@@ -1,9 +1,14 @@
 import ViewAllButton from "../../../commons/buttons/viewAll";
 import MyPageSidebar from "../../../commons/sideBars/01/MyPageSidebar.container";
 import * as My from "./MyPageMain.styles";
-import { IMyPageMainUIProps, IRecipeImage } from "./MyPageMain.types";
+import { IMyPageMainUIProps } from "./MyPageMain.types";
 
 export default function MyPageMainUI(props: IMyPageMainUIProps) {
+  console.log(
+    props.recentItems
+      .slice(props.recentItems.length - 3, props.recentItems.length)
+      .reverse()
+  );
   return (
     <My.Container>
       <My.Wrapper>
@@ -112,20 +117,19 @@ export default function MyPageMainUI(props: IMyPageMainUIProps) {
                   .map((el: any) => (
                     <My.Menu
                       key={el.id}
-                      onClick={props.onClickMoveToDetail}
+                      onClick={props.onClickMoveToDetail(el)}
                       id={el.id}
                     >
                       <img
                         src={
-                          el.recipesImages
-                            ? el.recipesImages.filter(
-                                (e: IRecipeImage) => e.mainImage !== " "
-                              ).length === 0
-                              ? "/img/bestRecipe/img-recipe-01.png"
-                              : `https://storage.googleapis.com/${el.recipesImages[0].mainImage}`
+                          el.recipesMainImage &&
+                          el.recipesMainImage?.mainUrl !== " " &&
+                          el.recipesMainImage?.length !== 0
+                            ? `https://storage.googleapis.com/${el.recipesMainImage[0]?.mainUrl}`
                             : "/img/bestRecipe/img-recipe-01.png"
                         }
                       />
+
                       <h2>{el.title}</h2>
                     </My.Menu>
                   ))}
@@ -138,17 +142,15 @@ export default function MyPageMainUI(props: IMyPageMainUIProps) {
                   .map((el: any) => (
                     <My.Menu
                       key={el.id}
-                      onClick={props.onClickMoveToDetail}
+                      onClick={props.onClickMoveToDetail(el)}
                       id={el.id}
                     >
                       <img
                         src={
-                          el.recipesImages
-                            ? el.recipesImages.filter(
-                                (e: IRecipeImage) => e.mainImage !== " "
-                              ).length === 0
-                              ? "/img/bestRecipe/img-recipe-01.png"
-                              : `https://storage.googleapis.com/${el.recipesImages[0].mainImage}`
+                          el.recipesMainImage &&
+                          el.recipesMainImage?.mainUrl !== " " &&
+                          el.recipesMainImage.length !== 0
+                            ? `https://storage.googleapis.com/${el.recipesMainImage[0]?.mainUrl}`
                             : "/img/bestRecipe/img-recipe-01.png"
                         }
                       />
@@ -164,17 +166,15 @@ export default function MyPageMainUI(props: IMyPageMainUIProps) {
                   .map((el: any) => (
                     <My.Menu
                       key={el.id}
-                      onClick={props.onClickMoveToDetail}
+                      onClick={props.onClickMoveToDetail(el)}
                       id={el.id}
                     >
                       <img
                         src={
-                          el.recipesImages
-                            ? el.recipesImages.filter(
-                                (e: IRecipeImage) => e.mainImage !== " "
-                              ).length === 0
-                              ? "/img/bestRecipe/img-recipe-01.png"
-                              : `https://storage.googleapis.com/${el.recipesImages[0].mainImage}`
+                          el.recipesMainImage &&
+                          el.recipesMainImage?.mainUrl !== " " &&
+                          el.recipesMainImage.length !== 0
+                            ? `https://storage.googleapis.com/${el.recipesMainImage[0]?.mainUrl}`
                             : "/img/bestRecipe/img-recipe-01.png"
                         }
                       />
@@ -192,24 +192,24 @@ export default function MyPageMainUI(props: IMyPageMainUIProps) {
                 </My.Title>
                 <ViewAllButton href={"/myPage/myRecipe"} title={"전체보기"} />
               </My.Head>
+
               <My.Body>
                 {props.userRecipe?.fetchMyRecipe.slice(0, 5).map((el: any) => (
                   <My.Menu
                     key={el.id}
-                    onClick={props.onClickMoveToDetail}
+                    onClick={props.onClickMoveToDetail(el)}
                     id={el.id}
                   >
                     <img
                       src={
-                        el.recipesImages
-                          ? el.recipesImages.filter(
-                              (e: IRecipeImage) => e.mainImage !== " "
-                            ).length === 0
-                            ? "/img/bestRecipe/img-recipe-01.png"
-                            : `https://storage.googleapis.com/${el.recipesImages[0].mainImage}`
+                        el.recipesMainImage &&
+                        el.recipesMainImage?.mainUrl !== " " &&
+                        el.recipesMainImage.length !== 0
+                          ? `https://storage.googleapis.com/${el.recipesMainImage[0]?.mainUrl}`
                           : "/img/bestRecipe/img-recipe-01.png"
                       }
                     />
+
                     <h2>{el.title}</h2>
                   </My.Menu>
                 ))}
@@ -219,17 +219,15 @@ export default function MyPageMainUI(props: IMyPageMainUIProps) {
                 {props.userRecipe?.fetchMyRecipe.slice(0, 3).map((el: any) => (
                   <My.Menu
                     key={el.id}
-                    onClick={props.onClickMoveToDetail}
+                    onClick={props.onClickMoveToDetail(el)}
                     id={el.id}
                   >
                     <img
                       src={
-                        el.recipesImages
-                          ? el.recipesImages.filter(
-                              (e: IRecipeImage) => e.mainImage !== " "
-                            ).length === 0
-                            ? "/img/bestRecipe/img-recipe-01.png"
-                            : `https://storage.googleapis.com/${el.recipesImages[0].mainImage}`
+                        el.recipesMainImage &&
+                        el.recipesMainImage?.mainUrl !== " " &&
+                        el.recipesMainImage.length !== 0
+                          ? `https://storage.googleapis.com/${el.recipesMainImage[0]?.mainUrl}`
                           : "/img/bestRecipe/img-recipe-01.png"
                       }
                     />
@@ -239,20 +237,18 @@ export default function MyPageMainUI(props: IMyPageMainUIProps) {
               </My.TabletBody>
 
               <My.MobileBody>
-                {props.userRecipe?.fetchMyRecipe.slice(0, 2).map((el: any) => (
+                {props.userRecipe?.fetchMyRecipe.slice(0, 3).map((el: any) => (
                   <My.Menu
                     key={el.id}
-                    onClick={props.onClickMoveToDetail}
+                    onClick={props.onClickMoveToDetail(el)}
                     id={el.id}
                   >
                     <img
                       src={
-                        el.recipesImages
-                          ? el.recipesImages.filter(
-                              (e: IRecipeImage) => e.mainImage !== " "
-                            ).length === 0
-                            ? "/img/bestRecipe/img-recipe-01.png"
-                            : `https://storage.googleapis.com/${el.recipesImages[0].mainImage}`
+                        el.recipesMainImage &&
+                        el.recipesMainImage?.mainUrl !== " " &&
+                        el.recipesMainImage.length !== 0
+                          ? `https://storage.googleapis.com/${el.recipesMainImage[0]?.mainUrl}`
                           : "/img/bestRecipe/img-recipe-01.png"
                       }
                     />
@@ -276,17 +272,15 @@ export default function MyPageMainUI(props: IMyPageMainUIProps) {
                   .map((el: any) => (
                     <My.Menu
                       key={el.id}
-                      onClick={props.onClickMoveToDetail}
+                      onClick={props.onClickMoveToDetail(el)}
                       id={el.id}
                     >
                       <img
                         src={
-                          el.recipesImages
-                            ? el.recipesImages.filter(
-                                (e: IRecipeImage) => e.mainImage !== " "
-                              ).length === 0
-                              ? "/img/bestRecipe/img-recipe-01.png"
-                              : `https://storage.googleapis.com/${el.recipesImages[0].mainImage}`
+                          el.recipesMainImage &&
+                          el.recipesMainImage?.mainUrl !== " " &&
+                          el.recipesMainImage.length !== 0
+                            ? `https://storage.googleapis.com/${el.recipesMainImage[0]?.mainUrl}`
                             : "/img/bestRecipe/img-recipe-01.png"
                         }
                       />
@@ -301,17 +295,15 @@ export default function MyPageMainUI(props: IMyPageMainUIProps) {
                   .map((el: any) => (
                     <My.Menu
                       key={el.id}
-                      onClick={props.onClickMoveToDetail}
+                      onClick={props.onClickMoveToDetail(el)}
                       id={el.id}
                     >
                       <img
                         src={
-                          el.recipesImages
-                            ? el.recipesImages.filter(
-                                (e: IRecipeImage) => e.mainImage !== " "
-                              ).length === 0
-                              ? "/img/bestRecipe/img-recipe-01.png"
-                              : `https://storage.googleapis.com/${el.recipesImages[0].mainImage}`
+                          el.recipesMainImage &&
+                          el.recipesMainImage?.mainUrl !== " " &&
+                          el.recipesMainImage.length !== 0
+                            ? `https://storage.googleapis.com/${el.recipesMainImage[0]?.mainUrl}`
                             : "/img/bestRecipe/img-recipe-01.png"
                         }
                       />
@@ -326,17 +318,15 @@ export default function MyPageMainUI(props: IMyPageMainUIProps) {
                   .map((el: any) => (
                     <My.Menu
                       key={el.id}
-                      onClick={props.onClickMoveToDetail}
+                      onClick={props.onClickMoveToDetail(el)}
                       id={el.id}
                     >
                       <img
                         src={
-                          el.recipesImages
-                            ? el.recipesImages.filter(
-                                (e: IRecipeImage) => e.mainImage !== " "
-                              ).length === 0
-                              ? "/img/bestRecipe/img-recipe-01.png"
-                              : `https://storage.googleapis.com/${el.recipesImages[0].mainImage}`
+                          el.recipesMainImage &&
+                          el.recipesMainImage?.mainUrl !== " " &&
+                          el.recipesMainImage.length !== 0
+                            ? `https://storage.googleapis.com/${el.recipesMainImage[0]?.mainUrl}`
                             : "/img/bestRecipe/img-recipe-01.png"
                         }
                       />

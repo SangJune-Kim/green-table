@@ -2,5 +2,5 @@ import { MouseEvent } from "react";
 
 export interface IMyRecentUIProps {
   recentItems: any;
-  onClickMoveToDetail: (event: MouseEvent<HTMLLIElement>) => void;
+  onClickMoveToDetail: (el: any) => (event: MouseEvent<HTMLLIElement>) => void;
 }
