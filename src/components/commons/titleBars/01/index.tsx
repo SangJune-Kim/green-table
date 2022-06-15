@@ -14,12 +14,21 @@ const TitleWrapper = styled.div`
   @media ${breakPoints.tablet} {
     display: none;
   }
+
+  @media ${breakPoints.mobile} {
+    justify-content: center;
+  }
 `;
 
 const Title = styled.span`
   font-size: 1.5rem;
   font-weight: 600;
   padding-bottom: 1.5rem;
+
+  @media ${breakPoints.mobile} {
+    font-size: 1.3rem;
+    padding-bottom: 1rem;
+  }
 `;
 
 export default function MyPageTitleBar(props: IMyPageTitleBarProps) {

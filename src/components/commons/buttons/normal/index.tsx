@@ -30,7 +30,7 @@ export const Button = styled.button`
   }
 
   @media ${breakPoints.mobile} {
-    width: 7.5rem;
+    width: 8rem;
     padding: 0px;
     margin-left: 10px;
     margin-right: 0;

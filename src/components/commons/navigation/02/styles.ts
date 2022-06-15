@@ -10,12 +10,12 @@ export const Wrapper = styled.div`
 
   @media ${breakPoints.tablet} {
     place-items: center;
-    grid-template-columns: 1fr 1fr 1fr;
     gap: 10%;
     padding-bottom: 2.5rem;
   }
 
   @media ${breakPoints.mobile} {
+    place-items: center;
     gap: 7%;
     padding-bottom: 4rem;
     padding-top: 1rem;

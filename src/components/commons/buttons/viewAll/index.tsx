@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import Link from "next/link";
+import { breakPoints } from "../../../../commons/styles/media";
 
 interface IViewAllButtonProps {
   href: string;
@@ -20,6 +21,11 @@ const Button = styled.button`
   width: 13.75rem;
   height: 3.5rem;
   cursor: pointer;
+
+  @media ${breakPoints.mobile} {
+    width: 10.5rem;
+    height: 3rem;
+  }
 `;
 
 export default function ViewAllButton(props: IViewAllButtonProps) {
