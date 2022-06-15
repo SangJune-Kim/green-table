@@ -153,6 +153,12 @@ export default function RecipeWrite() {
 
   // 레시피 등록하기
   const onClickSubmit = async (data: any) => {
+    if (data.title === "") return alert("제목을 입력해 주세요!");
+    if (data.summary === "") return alert("한줄요약을 작성해 주세요!");
+    if (descArr.length === 0) return alert("요리순서를 작성해 주세요!");
+    if (data.cookTime === "") return alert("조리시간을 입력해 주세요!");
+    if (data.level === "선택") return alert("난이도를 선택해 주세요!");
+    if (data.serve === "") return alert("인분을 입력해 주세요!");
     try {
       const result = await createRecipe({
         variables: {
@@ -160,8 +166,8 @@ export default function RecipeWrite() {
             title: data.title,
             summary: data.summary,
             types: String(selectType.types),
-            mainImage: imageUrls,
-            url: descArr.map((el) => el.image),
+            mainUrl: imageUrls,
+            contentsUrl: descArr.map((el) => el.image),
             description: descArr.map((el) => `${el.desc}`),
             cookTime: Number(data.cookTime),
             level: data.level,

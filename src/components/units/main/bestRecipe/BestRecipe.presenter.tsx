@@ -24,7 +24,7 @@ export default function BestRecipeUI(props: IBestRecipeUIProps) {
         <BestRecipe.RecommendRecipeItems>
           <BestRecipe.SliderWrapper>
             <Slider {...props.settings}>
-              {props.popRecipes?.fetchPopularRecipes
+              {/* {props.popRecipes?.fetchPopularRecipes
                 ?.slice(0, 12)
                 .map((el: any) => (
                   <BestRecipe.RecipeItem key={uuidv4()}>
@@ -70,7 +70,7 @@ export default function BestRecipeUI(props: IBestRecipeUIProps) {
                       </BestRecipe.Tags>
                     </BestRecipe.RecipeItemTextWrapper>
                   </BestRecipe.RecipeItem>
-                ))}
+                ))} */}
             </Slider>
           </BestRecipe.SliderWrapper>
         </BestRecipe.RecommendRecipeItems>

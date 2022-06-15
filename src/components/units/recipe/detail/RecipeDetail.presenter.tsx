@@ -10,7 +10,11 @@ import { IRecipeDetailUIProps } from "./RecipeDetail.types";
 
 export default function RecipeDetailUI(props: IRecipeDetailUIProps) {
   const router = useRouter();
-
+  console.log(
+    props.recipeData?.fetchRecipe?.recipesMainImage
+      .map((el: any) => el.mainUrl)
+      .filter((el: any) => el !== " " || el !== "")
+  );
   return (
     <>
       <RecipeDetail.Container>
@@ -31,9 +35,9 @@ export default function RecipeDetailUI(props: IRecipeDetailUIProps) {
             </RecipeDetail.BackButton>
             <RecipeDetail.SliderWrapper>
               <Slider01
-                mainImages={props.recipeData?.fetchRecipe?.recipesImages
-                  .map((el: any) => el.mainImage)
-                  .filter((el: any) => el !== " " || el !== "")}
+                mainImages={props.recipeData?.fetchRecipe?.recipesMainImage
+                  .map((el: any) => el.mainUrl)
+                  .filter((el: any) => el !== "")}
               />
             </RecipeDetail.SliderWrapper>
           </RecipeDetail.TopWrapper>
@@ -69,13 +73,15 @@ export default function RecipeDetailUI(props: IRecipeDetailUIProps) {
                 ))}
             </RecipeDetail.Ingredient>
             <h2 ref={props.cookOrderTabRef}>요리순서</h2>
-            {props.recipeData?.fetchRecipe?.recipesImages.map(
+            {props.recipeData?.fetchRecipe?.recipesContentsImage.map(
               (el: any, index: number) => (
                 <RecipeDetail.Order key={uuidv4()}>
                   <span>Step {index + 1}</span>
                   <RecipeDetail.ImageWrapper>
-                    {el.url !== "" ? (
-                      <img src={`https://storage.googleapis.com/${el.url}`} />
+                    {el.contentsUrl !== "" ? (
+                      <img
+                        src={`https://storage.googleapis.com/${el.contentsUrl}`}
+                      />
                     ) : (
                       <div></div>
                     )}

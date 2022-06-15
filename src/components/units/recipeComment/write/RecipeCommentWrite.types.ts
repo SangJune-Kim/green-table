@@ -6,6 +6,7 @@ import {
 
 export interface IRecipeCommentWriteProps {
   fetchUser: any;
+  replyCount: number;
 }
 export interface IRecipeCommentWriteUIProps {
   register: UseFormRegister<FieldValues>;
