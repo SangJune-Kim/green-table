@@ -12,6 +12,13 @@ export default function Pagination02(props: IPropsPagination02) {
     setCurrentPage(1);
   }, [props.refetch, props.selectedTypes, props.isPicked]);
 
+  useEffect(() => {
+    if (startPage !== 1) setIsPrevActive(true);
+    if (startPage + 5 > props.lastPage) setIsNextActive(false);
+    if (startPage === 1) setIsPrevActive(false);
+    if (startPage + 5 <= props.lastPage) setIsNextActive(true);
+  }, [currentPage, startPage, props.lastPage]);
+
   const onClickPage = (event: MouseEvent<HTMLElement>) => {
     props.refetch({ page: Number((event.target as Element).id) });
     setCurrentPage((prev) => Number((event.target as Element).id));
@@ -43,14 +50,11 @@ export default function Pagination02(props: IPropsPagination02) {
 
   const onClickNextPage = () => {
     setIsPrevActive(true);
-    if (startPage >= props.lastPage - 9) setIsNextActive(false);
-    if (startPage + 10 > props.lastPage) {
-      setIsNextActive(false);
-      return;
-    }
+    if (startPage >= props.lastPage - 4) setIsNextActive(false);
     setStartPage((prev) => prev + 5);
-    props.refetch({ page: startPage + 5 });
     setCurrentPage((prev) => startPage + 5);
+    props.refetch({ page: startPage + 5 });
+    if (startPage + 5 > props.lastPage) setIsNextActive(false);
   };
 
   return (
