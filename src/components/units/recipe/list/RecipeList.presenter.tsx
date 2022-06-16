@@ -20,8 +20,8 @@ import {
   FETCH_USER,
   SEARCH_RECIPES,
 } from "./RecipeList.queries";
-import * as List from "./RecipeList.styles";
 import { IPropsRecipeList } from "./RecipeList.types";
+import * as List from "./RecipeList.styles";
 
 export default function RecipeListUI() {
   const router = useRouter();
@@ -40,7 +40,6 @@ export default function RecipeListUI() {
       page: 1,
     },
   });
-
   let allRefetch = refetch;
 
   const { data: userData } = useQuery(FETCH_USER);
@@ -220,7 +219,6 @@ export default function RecipeListUI() {
         </div>
       </List.BannerWrapper>
       <ExpertRecipeList
-        userData={userData}
         myScraps={myScraps}
         onClickMoveToDetail={onClickMoveToDetail}
       />
@@ -230,11 +228,11 @@ export default function RecipeListUI() {
       />
       <List.NavigationWrapper>
         <List.NavigationTitle>고객님 맞춤 레시피</List.NavigationTitle>
+        <Navigation01
+          setSelectedTypes={setSelectedTypes}
+          selectedTypes={selectedTypes}
+        />
       </List.NavigationWrapper>
-      <Navigation01
-        setSelectedTypes={setSelectedTypes}
-        selectedTypes={selectedTypes}
-      />
       <List.Wrapper>
         <List.MenuWrapper>
           <List.WholeListBox>

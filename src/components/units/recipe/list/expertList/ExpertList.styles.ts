@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { breakPoints } from "../../../../../commons/styles/media";
 
-export const Container = styled.div`
+export const ExpertListContainer = styled.div`
   width: 100%;
   max-height: 730px;
   display: flex;
@@ -9,6 +9,20 @@ export const Container = styled.div`
   align-items: center;
   padding: 5.5rem 0;
   overflow: hidden;
+  @media ${breakPoints.mobile} {
+    max-height: 730px;
+  }
+`;
+
+export const BestListContainer = styled.div`
+  width: 100%;
+  max-height: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5.5rem 0;
+  background-color: rgba(177, 198, 134, 0.1);
+  margin-bottom: 5.5rem;
   @media ${breakPoints.mobile} {
     max-height: 730px;
   }
@@ -68,7 +82,6 @@ export const SubTitle = styled.p`
 // 리스트 부분
 export const SliderWrapper = styled.div`
   width: 75%;
-
   .slick-slide {
     padding-right: 20px;
   }
@@ -91,7 +104,11 @@ export const SliderWrapper = styled.div`
     right: -3rem;
   }
 
-  .slick-prev:before,
+  .slick-prev:before {
+    font-size: 2rem;
+    color: #000000;
+  }
+
   .slick-next:before {
     font-size: 2rem;
     color: #000000;
@@ -117,9 +134,6 @@ export const SliderWrapper = styled.div`
     width: 90%;
     margin: 0 auto;
   }
-`;
-export const ListWrapper = styled.div`
-  display: flex;
 `;
 
 export const RecipeBox = styled.div`

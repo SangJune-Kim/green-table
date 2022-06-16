@@ -4,8 +4,8 @@ import { IPropsExpertBestList } from "../RecipeList.types";
 import * as Expert from "./ExpertList.styles";
 
 const FETCH_RECIPE_EXPERT = gql`
-  query fetchRecipeIsPro {
-    fetchRecipeIsPro {
+  query fetchRecipeIsPro($page: Int) {
+    fetchRecipeIsPro(page: $page) {
       id
       title
       summary
@@ -30,11 +30,11 @@ export default function ExpertRecipeList(props: IPropsExpertBestList) {
   const settings = {
     dots: false,
     arrows: true,
-    // toShow 갯수보다 적을 때 복사가 되는 거 인피니트 false로 하면 해결~
     infinite: true,
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 3,
+    initialSlide: 0,
     responsive: [
       {
         breakpoint: 991,
@@ -59,18 +59,14 @@ export default function ExpertRecipeList(props: IPropsExpertBestList) {
     ],
   };
 
-  const { data: expertData } = useQuery(FETCH_RECIPE_EXPERT);
-
-  const tempExpertPopular = expertData?.fetchRecipeIsPro;
-  const ccc: any = [];
-  tempExpertPopular?.map((el: any) => ccc.push(el));
-  const tempExpertPopularData = [...ccc];
-  const expertPopularData = tempExpertPopularData?.sort(
-    (a, b) => b.scrapCount - a.scrapCount
-  );
+  const { data: expertData } = useQuery(FETCH_RECIPE_EXPERT, {
+    variables: {
+      page: 1,
+    },
+  });
 
   return (
-    <Expert.Container>
+    <Expert.ExpertListContainer>
       <Expert.Wrapper>
         <Expert.TitleWrapper>
           <Expert.TitleBar />
@@ -81,62 +77,61 @@ export default function ExpertRecipeList(props: IPropsExpertBestList) {
         </Expert.TitleWrapper>
         <Expert.SliderWrapper>
           <Slider {...settings}>
-            {expertPopularData?.map((el: any, i: number) => (
-              <Expert.ListWrapper key={i}>
-                <Expert.RecipeBox
-                  id={el.id}
-                  onClick={props?.onClickMoveToDetail(el)}
-                >
-                  <Expert.RecipeImg
-                    src={
-                      el.recipesMainImage
-                        ? el.recipesMainImage.filter(
-                            (e: any) => e.mainUrl !== " "
-                          ).length === 0
-                          ? "/img/bestRecipe/img-recipe-01.png"
-                          : `https://storage.googleapis.com/${el.recipesMainImage[0].mainUrl}`
-                        : "/img/bestRecipe/img-recipe-01.png"
-                    }
-                  />
-                  <Expert.IconBookmark>
-                    {props.myScraps.includes(el.id) ? (
-                      <img src="/img/bestRecipe/icon-bookmark-on.svg" />
-                    ) : (
-                      <img src="/img/bestRecipe/icon-bookmark-off.svg" />
-                    )}
-                    <span>{el.scrapCount}</span>
-                  </Expert.IconBookmark>
-                  <Expert.StickerWrapper>
-                    {el.scrapCount >= 1 && (
-                      <Expert.RecipeRecommendSticker src="/img/icon/recommend.svg" />
-                    )}
-                    {el.scrapCount === 0 && (
-                      <Expert.RecipeRecommendStickerHidden src="/img/icon/recommend.svg" />
-                    )}
-                    {el.level === "SIMPLE" && (
-                      <Expert.RecipeLevelSticker src="/img/icon/level1.svg" />
-                    )}
-                    {el.level === "NORMAL" && (
-                      <Expert.RecipeLevelSticker src="/img/icon/level2.svg" />
-                    )}
-                    {el.level === "DIFFICULT" && (
-                      <Expert.RecipeLevelSticker src="/img/icon/level3.svg" />
-                    )}
-                  </Expert.StickerWrapper>
-                  <Expert.RecipeTitle>{el.title}</Expert.RecipeTitle>
-                  <Expert.RecipeSubtitle>{el.summary}</Expert.RecipeSubtitle>
-                  <Expert.RecipeCommentBox>
-                    <Expert.RecipeCommentIcon src="/img/icon/comment.svg" />
-                    <Expert.RecipeCommentsCount>
-                      {el.replyCount}
-                    </Expert.RecipeCommentsCount>
-                  </Expert.RecipeCommentBox>
-                </Expert.RecipeBox>
-              </Expert.ListWrapper>
+            {expertData?.fetchRecipeIsPro?.map((el: any, i: number) => (
+              <Expert.RecipeBox
+                key={i}
+                id={el.id}
+                onClick={props?.onClickMoveToDetail(el)}
+              >
+                <Expert.RecipeImg
+                  src={
+                    el.recipesMainImage
+                      ? el.recipesMainImage.filter(
+                          (e: any) => e.mainUrl !== " "
+                        ).length === 0
+                        ? "/img/bestRecipe/img-recipe-01.png"
+                        : `https://storage.googleapis.com/${el.recipesMainImage[0].mainUrl}`
+                      : "/img/bestRecipe/img-recipe-01.png"
+                  }
+                />
+                <Expert.IconBookmark>
+                  {props.myScraps.includes(el.id) ? (
+                    <img src="/img/bestRecipe/icon-bookmark-on.svg" />
+                  ) : (
+                    <img src="/img/bestRecipe/icon-bookmark-off.svg" />
+                  )}
+                  <span>{el.scrapCount}</span>
+                </Expert.IconBookmark>
+                <Expert.StickerWrapper>
+                  {el.scrapCount >= 1 && (
+                    <Expert.RecipeRecommendSticker src="/img/icon/recommend.svg" />
+                  )}
+                  {el.scrapCount === 0 && (
+                    <Expert.RecipeRecommendStickerHidden src="/img/icon/recommend.svg" />
+                  )}
+                  {el.level === "SIMPLE" && (
+                    <Expert.RecipeLevelSticker src="/img/icon/level1.svg" />
+                  )}
+                  {el.level === "NORMAL" && (
+                    <Expert.RecipeLevelSticker src="/img/icon/level2.svg" />
+                  )}
+                  {el.level === "DIFFICULT" && (
+                    <Expert.RecipeLevelSticker src="/img/icon/level3.svg" />
+                  )}
+                </Expert.StickerWrapper>
+                <Expert.RecipeTitle>{el.title}</Expert.RecipeTitle>
+                <Expert.RecipeSubtitle>{el.summary}</Expert.RecipeSubtitle>
+                <Expert.RecipeCommentBox>
+                  <Expert.RecipeCommentIcon src="/img/icon/comment.svg" />
+                  <Expert.RecipeCommentsCount>
+                    {el.replyCount}
+                  </Expert.RecipeCommentsCount>
+                </Expert.RecipeCommentBox>
+              </Expert.RecipeBox>
             ))}
           </Slider>
         </Expert.SliderWrapper>
       </Expert.Wrapper>
-    </Expert.Container>
+    </Expert.ExpertListContainer>
   );
 }
