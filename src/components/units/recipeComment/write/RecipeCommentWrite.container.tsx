@@ -17,7 +17,6 @@ export default function RecipeCommentWrite(props: IRecipeCommentWriteProps) {
   const { register, handleSubmit, setValue } = useForm<FieldValues, any>({
     mode: "onChange",
   });
-  console.log(props.replyCount);
   // 댓글 작성하기
   const onClickSubmit = async (data: any) => {
     if (!data.contents) return Warning("등록 실패", "댓글을 입력해주세요.");

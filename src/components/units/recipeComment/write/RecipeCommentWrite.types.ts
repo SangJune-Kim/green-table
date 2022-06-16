@@ -1,3 +1,4 @@
+import { Dispatch, SetStateAction } from "react";
 import {
   FieldValues,
   UseFormHandleSubmit,
@@ -5,6 +6,8 @@ import {
 } from "react-hook-form";
 
 export interface IRecipeCommentWriteProps {
+  isEdit: boolean;
+  setIsEdit: Dispatch<SetStateAction<Boolean>>;
   fetchUser: any;
   replyCount: number;
 }
