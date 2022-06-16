@@ -63,6 +63,7 @@ export const Menu = styled.li`
   & img {
     width: 15.5rem;
     height: 15.5rem;
+    object-fit: cover;
     border-radius: 30px;
   }
   & h2 {
