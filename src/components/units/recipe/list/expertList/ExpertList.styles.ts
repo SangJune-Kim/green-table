@@ -15,7 +15,7 @@ export const Container = styled.div`
 `;
 
 export const Wrapper = styled.div`
-  max-width: 1438px;
+  max-width: 1440px;
   width: 95%;
   display: flex;
   @media ${breakPoints.tablet} {
@@ -67,7 +67,7 @@ export const SubTitle = styled.p`
 
 // 리스트 부분
 export const SliderWrapper = styled.div`
-  width: 80%;
+  width: 75%;
 
   .slick-slide {
     padding-right: 20px;
@@ -120,7 +120,6 @@ export const SliderWrapper = styled.div`
 `;
 export const ListWrapper = styled.div`
   display: flex;
-  width: 100%;
 `;
 
 export const RecipeBox = styled.div`

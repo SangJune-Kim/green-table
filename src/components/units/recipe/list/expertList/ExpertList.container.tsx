@@ -1,8 +1,30 @@
-import { useQuery } from "@apollo/client";
+import { gql, useQuery } from "@apollo/client";
 import Slider from "react-slick";
-import { FETCH_RECIPE_ISPRO } from "../RecipeList.queries";
 import { IPropsExpertBestList } from "../RecipeList.types";
 import * as Expert from "./ExpertList.styles";
+
+const FETCH_RECIPE_EXPERT = gql`
+  query fetchRecipeIsPro {
+    fetchRecipeIsPro {
+      id
+      title
+      summary
+      types
+      level
+      scrapCount
+      replyCount
+      recipesMainImage {
+        mainUrl
+      }
+      recipesContentsImage {
+        contentsUrl
+      }
+      recipesScraps {
+        scraped
+      }
+    }
+  }
+`;
 
 export default function ExpertRecipeList(props: IPropsExpertBestList) {
   const settings = {
@@ -37,12 +59,15 @@ export default function ExpertRecipeList(props: IPropsExpertBestList) {
     ],
   };
 
-  const { data: isProData } = useQuery(FETCH_RECIPE_ISPRO, {
-    variables: {
-      isPro: "PRO",
-      page: 1,
-    },
-  });
+  const { data: expertData } = useQuery(FETCH_RECIPE_EXPERT);
+
+  const tempExpertPopular = expertData?.fetchRecipeIsPro;
+  const ccc: any = [];
+  tempExpertPopular?.map((el: any) => ccc.push(el));
+  const tempExpertPopularData = [...ccc];
+  const expertPopularData = tempExpertPopularData?.sort(
+    (a, b) => b.scrapCount - a.scrapCount
+  );
 
   return (
     <Expert.Container>
@@ -56,7 +81,7 @@ export default function ExpertRecipeList(props: IPropsExpertBestList) {
         </Expert.TitleWrapper>
         <Expert.SliderWrapper>
           <Slider {...settings}>
-            {isProData?.fetchRecipeIsPro?.map((el: any, i: number) => (
+            {expertPopularData?.map((el: any, i: number) => (
               <Expert.ListWrapper key={i}>
                 <Expert.RecipeBox
                   id={el.id}
