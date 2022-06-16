@@ -11,8 +11,9 @@ const Wrapper = styled.div`
   height: 10.5625rem;
   padding-top: 1.5rem;
 
-  @media ${breakPoints.tablet} {
+  @media ${breakPoints.tablet}, ${breakPoints.mobile} {
     width: 100%;
+    text-align: center;
   }
 
   .slick-slide {
@@ -46,6 +47,10 @@ const SubsHistory = styled.div`
   & > p {
     color: #737373;
   }
+
+  @media ${breakPoints.mobile} {
+    font-size: 1.2rem;
+  }
 `;
 
 export default function Slider02() {
@@ -65,6 +70,13 @@ export default function Slider02() {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
+        },
+      },
+      {
+        breakpoint: 575,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
         },
       },
     ],

@@ -106,76 +106,162 @@ export default function MyPageMainUI(props: IMyPageMainUIProps) {
                 <ViewAllButton href={"/myPage/recent"} title={"전체보기"} />
               </My.Head>
               <My.Body>
-                {props.recentItems
-                  .filter((_: any, index: number) => index <= 4)
-                  .reverse()
-                  .map((el: any) => (
-                    <My.Menu
-                      key={el.id}
-                      onClick={props.onClickMoveToDetail(el)}
-                      id={el.id}
-                    >
-                      <img
-                        src={
-                          el.recipesMainImage &&
-                          el.recipesMainImage?.mainUrl !== " " &&
-                          el.recipesMainImage?.length !== 0
-                            ? `https://storage.googleapis.com/${el.recipesMainImage[0]?.mainUrl}`
-                            : "/img/bestRecipe/img-recipe-01.png"
-                        }
-                      />
+                {props.recentItems.length <= 5 &&
+                  props.recentItems
+                    .slice()
+                    .reverse()
+                    .map((el: any) => (
+                      <My.Menu
+                        key={el.id}
+                        onClick={props.onClickMoveToDetail(el)}
+                        id={el.id}
+                      >
+                        <img
+                          src={
+                            el.recipesMainImage &&
+                            el.recipesMainImage?.mainUrl !== " " &&
+                            el.recipesMainImage?.length !== 0
+                              ? `https://storage.googleapis.com/${el.recipesMainImage[0]?.mainUrl}`
+                              : "/img/bestRecipe/img-recipe-01.png"
+                          }
+                        />
 
-                      <h2>{el.title}</h2>
-                    </My.Menu>
-                  ))}
+                        <h2>{el.title}</h2>
+                      </My.Menu>
+                    ))}
+
+                {props.recentItems.length > 5 &&
+                  props.recentItems
+                    .slice(
+                      props.recentItems.length - 5,
+                      props.recentItems.length
+                    )
+                    .reverse()
+                    .map((el: any) => (
+                      <My.Menu
+                        key={el.id}
+                        onClick={props.onClickMoveToDetail(el)}
+                        id={el.id}
+                      >
+                        <img
+                          src={
+                            el.recipesMainImage &&
+                            el.recipesMainImage?.mainUrl !== " " &&
+                            el.recipesMainImage?.length !== 0
+                              ? `https://storage.googleapis.com/${el.recipesMainImage[0]?.mainUrl}`
+                              : "/img/bestRecipe/img-recipe-01.png"
+                          }
+                        />
+
+                        <h2>{el.title}</h2>
+                      </My.Menu>
+                    ))}
               </My.Body>
 
               <My.TabletBody>
-                {props.recentItems
-                  .filter((_: any, index: number) => index <= 2)
-                  .reverse()
-                  .map((el: any) => (
-                    <My.Menu
-                      key={el.id}
-                      onClick={props.onClickMoveToDetail(el)}
-                      id={el.id}
-                    >
-                      <img
-                        src={
-                          el.recipesMainImage &&
-                          el.recipesMainImage?.mainUrl !== " " &&
-                          el.recipesMainImage.length !== 0
-                            ? `https://storage.googleapis.com/${el.recipesMainImage[0]?.mainUrl}`
-                            : "/img/bestRecipe/img-recipe-01.png"
-                        }
-                      />
-                      <h2>{el.title}</h2>
-                    </My.Menu>
-                  ))}
+                {props.recentItems.length <= 3 &&
+                  props.recentItems
+                    .slice()
+                    .reverse()
+                    .map((el: any) => (
+                      <My.Menu
+                        key={el.id}
+                        onClick={props.onClickMoveToDetail(el)}
+                        id={el.id}
+                      >
+                        <img
+                          src={
+                            el.recipesMainImage &&
+                            el.recipesMainImage?.mainUrl !== " " &&
+                            el.recipesMainImage?.length !== 0
+                              ? `https://storage.googleapis.com/${el.recipesMainImage[0]?.mainUrl}`
+                              : "/img/bestRecipe/img-recipe-01.png"
+                          }
+                        />
+
+                        <h2>{el.title}</h2>
+                      </My.Menu>
+                    ))}
+
+                {props.recentItems.length > 3 &&
+                  props.recentItems
+                    .slice(
+                      props.recentItems.length - 3,
+                      props.recentItems.length
+                    )
+                    .reverse()
+                    .map((el: any) => (
+                      <My.Menu
+                        key={el.id}
+                        onClick={props.onClickMoveToDetail(el)}
+                        id={el.id}
+                      >
+                        <img
+                          src={
+                            el.recipesMainImage &&
+                            el.recipesMainImage?.mainUrl !== " " &&
+                            el.recipesMainImage?.length !== 0
+                              ? `https://storage.googleapis.com/${el.recipesMainImage[0]?.mainUrl}`
+                              : "/img/bestRecipe/img-recipe-01.png"
+                          }
+                        />
+
+                        <h2>{el.title}</h2>
+                      </My.Menu>
+                    ))}
               </My.TabletBody>
 
               <My.MobileBody>
-                {props.recentItems
-                  .filter((_: any, index: number) => index <= 2)
-                  .reverse()
-                  .map((el: any) => (
-                    <My.Menu
-                      key={el.id}
-                      onClick={props.onClickMoveToDetail(el)}
-                      id={el.id}
-                    >
-                      <img
-                        src={
-                          el.recipesMainImage &&
-                          el.recipesMainImage?.mainUrl !== " " &&
-                          el.recipesMainImage.length !== 0
-                            ? `https://storage.googleapis.com/${el.recipesMainImage[0]?.mainUrl}`
-                            : "/img/bestRecipe/img-recipe-01.png"
-                        }
-                      />
-                      <h2>{el.title}</h2>
-                    </My.Menu>
-                  ))}
+                {props.recentItems.length <= 3 &&
+                  props.recentItems
+                    .slice()
+                    .reverse()
+                    .map((el: any) => (
+                      <My.Menu
+                        key={el.id}
+                        onClick={props.onClickMoveToDetail(el)}
+                        id={el.id}
+                      >
+                        <img
+                          src={
+                            el.recipesMainImage &&
+                            el.recipesMainImage?.mainUrl !== " " &&
+                            el.recipesMainImage?.length !== 0
+                              ? `https://storage.googleapis.com/${el.recipesMainImage[0]?.mainUrl}`
+                              : "/img/bestRecipe/img-recipe-01.png"
+                          }
+                        />
+
+                        <h2>{el.title}</h2>
+                      </My.Menu>
+                    ))}
+
+                {props.recentItems.length > 3 &&
+                  props.recentItems
+                    .slice(
+                      props.recentItems.length - 3,
+                      props.recentItems.length
+                    )
+                    .reverse()
+                    .map((el: any) => (
+                      <My.Menu
+                        key={el.id}
+                        onClick={props.onClickMoveToDetail(el)}
+                        id={el.id}
+                      >
+                        <img
+                          src={
+                            el.recipesMainImage &&
+                            el.recipesMainImage?.mainUrl !== " " &&
+                            el.recipesMainImage?.length !== 0
+                              ? `https://storage.googleapis.com/${el.recipesMainImage[0]?.mainUrl}`
+                              : "/img/bestRecipe/img-recipe-01.png"
+                          }
+                        />
+
+                        <h2>{el.title}</h2>
+                      </My.Menu>
+                    ))}
               </My.MobileBody>
             </My.Recipe>
 

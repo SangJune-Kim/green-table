@@ -11,6 +11,10 @@ export const Container = styled.div`
   @media ${breakPoints.tablet} {
     padding: 3.25rem 3rem;
   }
+
+  @media ${breakPoints.mobile} {
+    padding: 3rem 2rem;
+  }
 `;
 
 export const Wrapper = styled.div`
@@ -18,7 +22,7 @@ export const Wrapper = styled.div`
   justify-content: center;
   width: 90rem;
 
-  @media ${breakPoints.tablet} {
+  @media ${breakPoints.tablet}, ${breakPoints.mobile} {
     flex-direction: column;
     width: 100%;
   }
@@ -45,11 +49,21 @@ export const TitleWrapper = styled.div`
       display: none;
     }
   }
+
+  @media ${breakPoints.mobile} {
+    justify-content: center;
+  }
 `;
 
 export const Title = styled.span`
   font-size: 1.5rem;
   font-weight: 600;
+
+  @media ${breakPoints.mobile} {
+    display: flex;
+    justify-content: center;
+    font-size: 1.3rem;
+  }
 `;
 
 export const Unsubscribe = styled.button`
@@ -64,6 +78,10 @@ export const Unsubscribe = styled.button`
     display: flex;
     justify-content: flex-end;
     padding-top: 0.5rem;
+  }
+
+  @media ${breakPoints.mobile} {
+    display: none;
   }
 `;
 
@@ -98,6 +116,10 @@ export const UserSubs = styled.strong`
   color: #0fbaa3;
   font-size: 2rem;
   padding: 1rem;
+
+  @media ${breakPoints.mobile} {
+    font-size: 1.7rem;
+  }
 `;
 
 export const PayHistory = styled.div``;
@@ -118,6 +140,10 @@ export const Pay = styled.div`
   & .cardNumber {
     padding-left: 2rem;
   }
+
+  @media ${breakPoints.mobile} {
+    font-size: 1.2rem;
+  }
 `;
 
 export const Contents = styled.div`
@@ -129,6 +155,12 @@ export const FlexRow = styled.div`
   display: flex;
   justify-content: space-between;
   padding-top: 2rem;
+
+  @media ${breakPoints.mobile} {
+    flex-direction: column;
+    padding-top: 0;
+    align-items: center;
+  }
 `;
 
 export const FlexColumn = styled.div`
@@ -212,30 +244,46 @@ export const Subs = styled.div`
   @media ${breakPoints.tablet} {
     width: 48.5%;
     height: 100%;
-    padding: 2.6rem 0;
+    padding: 3rem 0;
 
     & h1 {
       padding-bottom: 1rem;
       font-size: 1.7rem;
     }
     & .month {
-      color: #737373;
       font-size: 1.5rem;
-      font-weight: 600;
-      padding-bottom: 0.8rem;
     }
 
     & .price {
-      color: #262626;
       font-size: 2.5rem;
-      font-weight: 700;
     }
 
     & p {
-      color: #c4c4c4;
       font-size: 1.3rem;
-      letter-spacing: -0.06rem;
-      font-weight: 500;
+      padding-bottom: 2rem;
+    }
+  }
+
+  @media ${breakPoints.mobile} {
+    width: 90%;
+    height: 100%;
+    margin-top: 2rem;
+    padding: 2rem;
+
+    & h1 {
+      padding-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+    & .month {
+      font-size: 1.3rem;
+    }
+
+    & .price {
+      font-size: 2.2rem;
+    }
+
+    & p {
+      font-size: 1.2rem;
       padding-bottom: 2rem;
     }
   }
