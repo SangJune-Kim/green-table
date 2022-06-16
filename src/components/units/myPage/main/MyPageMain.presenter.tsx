@@ -4,11 +4,6 @@ import * as My from "./MyPageMain.styles";
 import { IMyPageMainUIProps } from "./MyPageMain.types";
 
 export default function MyPageMainUI(props: IMyPageMainUIProps) {
-  console.log(
-    props.recentItems
-      .slice(props.recentItems.length - 3, props.recentItems.length)
-      .reverse()
-  );
   return (
     <My.Container>
       <My.Wrapper>
@@ -112,7 +107,7 @@ export default function MyPageMainUI(props: IMyPageMainUIProps) {
               </My.Head>
               <My.Body>
                 {props.recentItems
-                  .slice(props.recentItems.length - 5, props.recentItems.length)
+                  .filter((_: any, index: number) => index <= 4)
                   .reverse()
                   .map((el: any) => (
                     <My.Menu
@@ -137,7 +132,7 @@ export default function MyPageMainUI(props: IMyPageMainUIProps) {
 
               <My.TabletBody>
                 {props.recentItems
-                  .slice(props.recentItems.length - 3, props.recentItems.length)
+                  .filter((_: any, index: number) => index <= 2)
                   .reverse()
                   .map((el: any) => (
                     <My.Menu
@@ -161,7 +156,7 @@ export default function MyPageMainUI(props: IMyPageMainUIProps) {
 
               <My.MobileBody>
                 {props.recentItems
-                  .slice(props.recentItems.length - 3, props.recentItems.length)
+                  .filter((_: any, index: number) => index <= 2)
                   .reverse()
                   .map((el: any) => (
                     <My.Menu

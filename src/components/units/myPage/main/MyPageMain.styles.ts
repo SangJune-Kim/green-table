@@ -247,6 +247,7 @@ export const Menu = styled.li`
   & > img {
     width: 100%;
     height: 207px;
+    object-fit: cover;
     border-radius: 30px;
   }
 
