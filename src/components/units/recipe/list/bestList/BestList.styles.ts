@@ -68,7 +68,7 @@ export const SubTitle = styled.p`
 
 // 리스트 부분
 export const SliderWrapper = styled.div`
-  width: 80%;
+  width: 75%;
 
   .slick-slide {
     padding-right: 20px;

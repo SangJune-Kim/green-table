@@ -16,6 +16,7 @@ import {
   FETCH_RECIPE_ISPRO,
   FETCH_RECIPE_TYPES,
   FETCH_RECIPE_TYPES_POPULAR,
+  FETCH_SEARCH_RESULT_COUNT,
   FETCH_USER,
   SEARCH_RECIPES,
 } from "./RecipeList.queries";
@@ -96,7 +97,6 @@ export default function RecipeListUI() {
     FETCH_RECIPE_ISPRO,
     {
       variables: {
-        isPro: "PRO",
         page: 1,
       },
     }
@@ -104,13 +104,6 @@ export default function RecipeListUI() {
   if (selectedTypes === "NON_CHECKED" && isPicked.wholeMenu === "전문가 메뉴") {
     allRefetch = isProRefetch;
   }
-
-  const { data: searchData } = useQuery(SEARCH_RECIPES, {
-    variables: {
-      input: String(searchInput),
-      page: 1,
-    },
-  });
 
   const { data: typesIsProData, refetch: typesIsProRefetch } = useQuery(
     FETCH_RECIPES_TYPES_ISPRO,
@@ -124,6 +117,25 @@ export default function RecipeListUI() {
   if (selectedTypes !== "NON_CHECKED" && isPicked.wholeMenu === "전문가 메뉴") {
     allRefetch = typesIsProRefetch;
   }
+
+  const { data: searchData, refetch: searchRefetch } = useQuery(
+    SEARCH_RECIPES,
+    {
+      variables: {
+        input: String(searchInput),
+        page: 1,
+      },
+    }
+  );
+  if (searchInput !== "") {
+    allRefetch = searchRefetch;
+  }
+  const { data: searchResultCount } = useQuery(FETCH_SEARCH_RESULT_COUNT, {
+    variables: {
+      input: String(searchInput),
+      page: 1,
+    },
+  });
 
   const onClickWholeMenu = (el: any) => () => {
     setIsPicked({ ...isPicked, wholeMenu: el.name });
@@ -145,16 +157,18 @@ export default function RecipeListUI() {
     sessionStorage.setItem("recent", JSON.stringify(recent));
   };
 
+  // 데이터 필터링 =============================================================
+
   // 전체 > 전문가 필터
   const tempProRecipes = isProData?.fetchRecipeIsPro;
   const aaa: any = [];
-  tempProRecipes?.map((el: string) => aaa.push(el));
+  tempProRecipes?.map((el: any) => aaa.push(el));
   const isProRecipes = aaa;
 
   // 타입 > 전문가 필터
   const tempIsProRecipesType = typesIsProData?.fetchRecipesTypeIsPro;
   const bbb: any = [];
-  tempIsProRecipesType?.map((el: string) => bbb.push(el));
+  tempIsProRecipesType?.map((el: any) => bbb.push(el));
   const isProRecipesType = bbb;
 
   // 전체 > 전체 > 인기순
@@ -164,8 +178,6 @@ export default function RecipeListUI() {
   const wholeProPopular = tempWholeProPopular?.sort(
     (a, b) => b.scrapCount - a.scrapCount
   );
-
-  // ===========================================================================
 
   // 타입 > 전체 > 인기순
   const typeWholePopular = typesPopularData?.fetchRecipeTypesPopular;
@@ -192,9 +204,11 @@ export default function RecipeListUI() {
   }, [myScrapsData, router.query.type]);
 
   const lastPage =
-    selectedTypes === "NON_CHECKED"
-      ? Math.ceil(recipesCount?.fetchRecipesCount / 12)
-      : Math.ceil(recipesTypesCount?.fetchRecipesTypesCount / 12);
+    searchInput === ""
+      ? selectedTypes === "NON_CHECKED"
+        ? Math.ceil(recipesCount?.fetchRecipesCount / 12)
+        : Math.ceil(recipesTypesCount?.fetchRecipesTypesCount / 12)
+      : Math.ceil(searchResultCount?.fetchSearchResultCount / 12);
 
   return (
     <List.Container>

@@ -116,8 +116,8 @@ export const FETCH_RECIPES_TYPES_COUNT = gql`
 `;
 
 export const FETCH_RECIPE_ISPRO = gql`
-  query fetchRecipeIsPro($isPro: String!, $page: Int) {
-    fetchRecipeIsPro(isPro: $isPro, page: $page) {
+  query fetchRecipeIsPro($page: Int) {
+    fetchRecipeIsPro(page: $page) {
       id
       title
       summary
@@ -133,9 +133,6 @@ export const FETCH_RECIPE_ISPRO = gql`
       }
       recipesScraps {
         scraped
-      }
-      user {
-        isPro
       }
     }
   }
@@ -198,5 +195,11 @@ export const SEARCH_RECIPES = gql`
         isPro
       }
     }
+  }
+`;
+
+export const FETCH_SEARCH_RESULT_COUNT = gql`
+  query fetchSearchResultCount($input: String!, $page: Int) {
+    fetchSearchResultCount(input: $input, page: $page)
   }
 `;
