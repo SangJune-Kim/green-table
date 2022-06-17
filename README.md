@@ -5,7 +5,7 @@
 또한 친환경 농가에서 재배한 신선한 채소를 채식한상 만의 특별한 레시피와 함께 보내주는 구독 서비스를 제공합니다. <br>   
 나를 위해서, 그리고 지구를 위해서 지금 바로 채식한상을 시작하세요!
 
-![title](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/bfe19854-c1d8-4a70-8e92-bce2e2d571ed/68747470733a2f2f73332e75732d776573742d322e616d617a6f6e6177732e636f6d2f7365637572652e6e6f74696f6e2d7374617469632e636f6d2f65616137653530302d323464622d343036382d383761302d3237326136666134323065352f556e7469746c65642e706e673f582d416d7a2d416c676f.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220614%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220614T051934Z&X-Amz-Expires=86400&X-Amz-Signature=fca7d50d5266c4cbca0b4ad164db75ef7178551edbbbeb12225ca0f1fc8677a0&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%2268747470733a2f2f73332e75732d776573742d322e616d617a6f6e6177732e636f6d2f7365637572652e6e6f74696f6e2d7374617469632e636f6d2f65616137653530302d323464622d343036382d383761302d3237326136666134323065352f556e7469746c65642e706e673f582d416d7a2d416c676f.png%22&x-id=GetObject)   
+![title](https://user-images.githubusercontent.com/99472362/174255799-504dcece-301b-45e3-b918-d7dc5a18d505.png)   
 
 <br>
 
@@ -21,7 +21,7 @@
 
 # 💻 FrontEnd 팀원 역할
 ## 김상준
-📧 ghfmsgldl@gmail.com
+📧 ghfnsgldl@gmail.com
 <br>
 📝 https://walkingkim.tistory.com/
 <br> 
@@ -62,76 +62,78 @@
 
 
 # 🛠 Flow Chart
-![flowChart](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/e46f44d1-a8dc-4668-9ed6-5b423ae885fe/flow_chart.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220614%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220614T051757Z&X-Amz-Expires=86400&X-Amz-Signature=8c8e7760174ca26052d2e0c9d3269a2baca3212154e27154b67ddcc0192cc2ca&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22flow%2520chart.png%22&x-id=GetObject)   
+![flowChart](https://user-images.githubusercontent.com/99472362/174255994-b46b6cb7-ecee-4ba6-beea-a9e4cb575ca2.png)
+
 
 
 <br>
 
 # 🛠 서비스 시연
 ## 🥗 랜딩 페이지
-![landing](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/648fa4a3-671d-47f7-94d7-8bc43c64bfb1/%E1%84%85%E1%85%A2%E1%86%AB%E1%84%83%E1%85%B5%E1%86%BC%E1%84%91%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%8C%E1%85%B51.5.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220614%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220614T050438Z&X-Amz-Expires=86400&X-Amz-Signature=0792177bce03ec2a5e7d98bc71fe6938429e13f0d0b23b92b242e1b8c98ffea7&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22%25E1%2584%2585%25E1%2585%25A2%25E1%2586%25AB%25E1%2584%2583%25E1%2585%25B5%25E1%2586%25BC%25E1%2584%2591%25E1%2585%25A6%25E1%2584%258B%25E1%2585%25B5%25E1%2584%258C%25E1%2585%25B51.5.gif%22&x-id=GetObject)   
+![landingPage](https://user-images.githubusercontent.com/99472362/174257746-7c251886-a232-4321-b993-f3427d2f3219.gif)
+
 
 <br>
 
 ## 🥗 메인 페이지
-![main](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/b2c25623-fad9-43fd-8fd8-d4f244c7f832/%E1%84%86%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%91%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%8C%E1%85%B5.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220614%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220614T050911Z&X-Amz-Expires=86400&X-Amz-Signature=4082cb57958f79685d3eeb5522248fc15068b10b4c265c1ef56a16d55e4d8bcb&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22%25E1%2584%2586%25E1%2585%25A6%25E1%2584%258B%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2591%25E1%2585%25A6%25E1%2584%258B%25E1%2585%25B5%25E1%2584%258C%25E1%2585%25B5.gif%22&x-id=GetObject)   
+![main](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F0644fe1b-933e-4aa3-9427-ba07ca1b690e%2F%E1%84%86%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%91%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%8C%E1%85%B5.gif?table=block&id=07ba359a-7a72-450b-92df-182203c11369&spaceId=9c9b02bc-6cb6-4924-bf38-dad25e0fe77b&userId=a8740886-17e4-406d-9d23-16d571bc2c09&cache=v2)   
 
 <br>
    
 
 ## 🥗 회원가입 페이지
-![signUp](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/3e541768-9d30-4cb8-9825-d6742753a25a/%E1%84%92%E1%85%AC%E1%84%8B%E1%85%AF%E1%86%AB%E1%84%80%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%B8.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220614%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220614T051607Z&X-Amz-Expires=86400&X-Amz-Signature=61fa0fa0b25802c7be91eed6e585360d4c46e4f4e11e9fbcfc604085f1202a02&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22%25E1%2584%2592%25E1%2585%25AC%25E1%2584%258B%25E1%2585%25AF%25E1%2586%25AB%25E1%2584%2580%25E1%2585%25A1%25E1%2584%258B%25E1%2585%25B5%25E1%2586%25B8.gif%22&x-id=GetObject)   
+![signUp](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Facc5fd11-9927-4716-bcd7-15029a4263f3%2F%E1%84%92%E1%85%AC%E1%84%8B%E1%85%AF%E1%86%AB%E1%84%80%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%B8.gif?table=block&id=0303001f-b500-4332-85cc-de50bc75a272&spaceId=9c9b02bc-6cb6-4924-bf38-dad25e0fe77b&userId=a8740886-17e4-406d-9d23-16d571bc2c09&cache=v2)   
 
 
 <br>
 
 
 ## 🥗 채식 유형 체크 페이지
-![typeCheck](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/ccae9ea4-44ff-4251-b916-150c66cde2ae/%E1%84%92%E1%85%AC%E1%84%8B%E1%85%AF%E1%86%AB%E1%84%80%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%B8_%E1%84%90%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%B8%E1%84%8E%E1%85%A6%E1%84%8F%E1%85%B3.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220614%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220614T051328Z&X-Amz-Expires=86400&X-Amz-Signature=cce8b08a6717cddf35097ea7322d6e24aa781f916916b4558fde62692943b5fe&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22%25E1%2584%2592%25E1%2585%25AC%25E1%2584%258B%25E1%2585%25AF%25E1%2586%25AB%25E1%2584%2580%25E1%2585%25A1%25E1%2584%258B%25E1%2585%25B5%25E1%2586%25B8_%25E1%2584%2590%25E1%2585%25A1%25E1%2584%258B%25E1%2585%25B5%25E1%2586%25B8%25E1%2584%258E%25E1%2585%25A6%25E1%2584%258F%25E1%2585%25B3.gif%22&x-id=GetObject)   
+![typeCheck](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F543bba6b-fa51-4626-b312-73b399a540d5%2F%E1%84%92%E1%85%AC%E1%84%8B%E1%85%AF%E1%86%AB%E1%84%80%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%B8_%E1%84%90%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%B8%E1%84%8E%E1%85%A6%E1%84%8F%E1%85%B3.gif?table=block&id=fdaa542c-e06a-4d20-aa15-15719e0b4723&spaceId=9c9b02bc-6cb6-4924-bf38-dad25e0fe77b&userId=a8740886-17e4-406d-9d23-16d571bc2c09&cache=v2)   
 <br>
 
 ## 🥗 로그인 페이지
-![login](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/51516a5b-16b6-444d-aa39-5b8f42d98872/%E1%84%85%E1%85%A9%E1%84%80%E1%85%B3%E1%84%8B%E1%85%B5%E1%86%AB.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220614%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220614T050722Z&X-Amz-Expires=86400&X-Amz-Signature=0ef519a918cd05a82713758370d91891847e4fddbaf0f49b95f52c0d23787e6d&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22%25E1%2584%2585%25E1%2585%25A9%25E1%2584%2580%25E1%2585%25B3%25E1%2584%258B%25E1%2585%25B5%25E1%2586%25AB.gif%22&x-id=GetObject)   
+![login](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fb96221b9-19c5-4d5e-93ac-ac9e1070aaaa%2F%E1%84%85%E1%85%A9%E1%84%80%E1%85%B3%E1%84%8B%E1%85%B5%E1%86%AB.gif?table=block&id=aa81485c-af85-4149-a6b7-2365a67221da&spaceId=9c9b02bc-6cb6-4924-bf38-dad25e0fe77b&userId=a8740886-17e4-406d-9d23-16d571bc2c09&cache=v2)   
 
 <br>
 
 ## 🥗 소셜 로그인 페이지
-![socialLogin](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/c7af9cc4-8644-48fd-9be9-993433fda4c3/%E1%84%89%E1%85%A9%E1%84%89%E1%85%A7%E1%86%AF%E1%84%85%E1%85%A9%E1%84%80%E1%85%B3%E1%84%8B%E1%85%B5%E1%86%AB.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220614%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220614T051021Z&X-Amz-Expires=86400&X-Amz-Signature=24c6b93d660ce1dbababbd91787deb055b6e7ccef20f0ebaac2bd717e696afb3&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22%25E1%2584%2589%25E1%2585%25A9%25E1%2584%2589%25E1%2585%25A7%25E1%2586%25AF%25E1%2584%2585%25E1%2585%25A9%25E1%2584%2580%25E1%2585%25B3%25E1%2584%258B%25E1%2585%25B5%25E1%2586%25AB.gif%22&x-id=GetObject)   
+![socialLogin](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fd363811d-0864-47b3-bf74-0ff17aa56693%2F%E1%84%89%E1%85%A9%E1%84%89%E1%85%A7%E1%86%AF%E1%84%85%E1%85%A9%E1%84%80%E1%85%B3%E1%84%8B%E1%85%B5%E1%86%AB.gif?table=block&id=04d75539-2338-449f-9f19-1cd48f244304&spaceId=9c9b02bc-6cb6-4924-bf38-dad25e0fe77b&userId=a8740886-17e4-406d-9d23-16d571bc2c09&cache=v2)   
 
 <br>
 
 ## 🥗 레시피 리스트 페이지
-![list](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/0bfdd332-d484-4667-a059-6b74de3765f6/%E1%84%85%E1%85%A6%E1%84%89%E1%85%B5%E1%84%91%E1%85%B5%E1%84%85%E1%85%B5%E1%84%89%E1%85%B3%E1%84%90%E1%85%B31.5.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220614%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220614T050544Z&X-Amz-Expires=86400&X-Amz-Signature=ae46837666bbf1626b54dadba776bee35a99a90b2c8093b0bd74d2e57a235263&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22%25E1%2584%2585%25E1%2585%25A6%25E1%2584%2589%25E1%2585%25B5%25E1%2584%2591%25E1%2585%25B5%25E1%2584%2585%25E1%2585%25B5%25E1%2584%2589%25E1%2585%25B3%25E1%2584%2590%25E1%2585%25B31.5.gif%22&x-id=GetObject)   
+![list](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F71baa8fa-049d-475d-bc92-71cf68e4cd5b%2F%E1%84%85%E1%85%A6%E1%84%89%E1%85%B5%E1%84%91%E1%85%B5%E1%84%85%E1%85%B5%E1%84%89%E1%85%B3%E1%84%90%E1%85%B31.5.gif?table=block&id=47b81e0b-7738-485d-b344-738d64746072&spaceId=9c9b02bc-6cb6-4924-bf38-dad25e0fe77b&userId=a8740886-17e4-406d-9d23-16d571bc2c09&cache=v2)   
 
 <br>
 
 ## 🥗 레시피 등록하기 페이지
-![create](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/4060c4a0-2ad0-4f56-b6cb-299c873f8916/%E1%84%80%E1%85%A6%E1%84%89%E1%85%B5%E1%84%80%E1%85%B3%E1%86%AF%E1%84%83%E1%85%B3%E1%86%BC%E1%84%85%E1%85%A9%E1%86%A81.5.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220614%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220614T050058Z&X-Amz-Expires=86400&X-Amz-Signature=ddad14174ad99e692b8ae43ae1cd860c5e323d83a27edd849f9bebfb789205a1&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22%25E1%2584%2580%25E1%2585%25A6%25E1%2584%2589%25E1%2585%25B5%25E1%2584%2580%25E1%2585%25B3%25E1%2586%25AF%25E1%2584%2583%25E1%2585%25B3%25E1%2586%25BC%25E1%2584%2585%25E1%2585%25A9%25E1%2586%25A81.5.gif%22&x-id=GetObject)   
+![create](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F3f10ac5e-b6cb-4cd2-9419-67696bc50331%2F%E1%84%80%E1%85%A6%E1%84%89%E1%85%B5%E1%84%80%E1%85%B3%E1%86%AF%E1%84%83%E1%85%B3%E1%86%BC%E1%84%85%E1%85%A9%E1%86%A81.5.gif?table=block&id=154326f5-1d9d-43d6-a175-ee128ae28035&spaceId=9c9b02bc-6cb6-4924-bf38-dad25e0fe77b&userId=a8740886-17e4-406d-9d23-16d571bc2c09&cache=v2)   
 
 <br>
 
 ## 🥗 댓글, 찜하기 기능
-![commentAndLike](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/38829438-a7c9-4f1f-8cfd-56115c680a8f/%E1%84%83%E1%85%A2%E1%86%BA%E1%84%80%E1%85%B3%E1%86%AF_%E1%84%8D%E1%85%B5%E1%86%B7%E1%84%92%E1%85%A1%E1%84%80%E1%85%B5.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220614%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220614T050336Z&X-Amz-Expires=86400&X-Amz-Signature=b1d9580c064646f7dec6410af56fc0d7b5d27e3e51e7da5530534c8f331dcc40&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22%25E1%2584%2583%25E1%2585%25A2%25E1%2586%25BA%25E1%2584%2580%25E1%2585%25B3%25E1%2586%25AF_%25E1%2584%258D%25E1%2585%25B5%25E1%2586%25B7%25E1%2584%2592%25E1%2585%25A1%25E1%2584%2580%25E1%2585%25B5.gif%22&x-id=GetObject)   
+![commentAndLike](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fe6c5c3cc-9e2d-41b3-b4c6-aef532f3f944%2F%E1%84%83%E1%85%A2%E1%86%BA%E1%84%80%E1%85%B3%E1%86%AF_%E1%84%8D%E1%85%B5%E1%86%B7%E1%84%92%E1%85%A1%E1%84%80%E1%85%B5.gif?table=block&id=d37cf335-3ae2-4ab7-ae7c-e19e14bdb9c2&spaceId=9c9b02bc-6cb6-4924-bf38-dad25e0fe77b&userId=a8740886-17e4-406d-9d23-16d571bc2c09&cache=v2)   
 
 <br>
 
 ## 🥗 구독 페이지
-![subs](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/fcdc61e1-2242-4f06-99ef-1a80204b1dcf/%E1%84%80%E1%85%AE%E1%84%83%E1%85%A9%E1%86%A8.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220614%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220614T050236Z&X-Amz-Expires=86400&X-Amz-Signature=98f224497613ac04636552d68e5dd27e907bdd20b1d0545278a2f46fdbdab3a1&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22%25E1%2584%2580%25E1%2585%25AE%25E1%2584%2583%25E1%2585%25A9%25E1%2586%25A8.gif%22&x-id=GetObject)   
+![subs](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F45405b19-1e9f-47c7-be83-874b81a8e18b%2F%E1%84%80%E1%85%AE%E1%84%83%E1%85%A9%E1%86%A8.gif?table=block&id=42449322-7ef9-40e5-a1b2-b29258cd9430&spaceId=9c9b02bc-6cb6-4924-bf38-dad25e0fe77b&userId=a8740886-17e4-406d-9d23-16d571bc2c09&cache=v2)   
 
 <br>
 
 ## 🥗 최근 본 레시피, 내가 스크랩한 레시피 페이지
-![recentAndScraped](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/5ba83249-5948-4482-b0cd-03ed453ba324/%E1%84%8E%E1%85%AC%E1%84%80%E1%85%B3%E1%86%AB_%E1%84%87%E1%85%A9%E1%86%AB_%E1%84%85%E1%85%A6%E1%84%89%E1%85%B5%E1%84%91%E1%85%B5_%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%A2%E1%86%B81.5.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220614%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220614T051227Z&X-Amz-Expires=86400&X-Amz-Signature=4bd95b710cdad0ab619832bc20872a0b138f800d3c6910a02ed90183df1de40c&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22%25E1%2584%258E%25E1%2585%25AC%25E1%2584%2580%25E1%2585%25B3%25E1%2586%25AB_%25E1%2584%2587%25E1%2585%25A9%25E1%2586%25AB_%25E1%2584%2585%25E1%2585%25A6%25E1%2584%2589%25E1%2585%25B5%25E1%2584%2591%25E1%2585%25B5_%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25A2%25E1%2586%25B81.5.gif%22&x-id=GetObject)   
+![recentAndScraped](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F4694d324-2d07-4dea-8219-a318fccf7491%2F%E1%84%8E%E1%85%AC%E1%84%80%E1%85%B3%E1%86%AB_%E1%84%87%E1%85%A9%E1%86%AB_%E1%84%85%E1%85%A6%E1%84%89%E1%85%B5%E1%84%91%E1%85%B5_%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%A2%E1%86%B81.5.gif?table=block&id=13ed602f-67c8-46ef-95b9-352e97ae05b3&spaceId=9c9b02bc-6cb6-4924-bf38-dad25e0fe77b&userId=a8740886-17e4-406d-9d23-16d571bc2c09&cache=v2)   
 
 <br>
 
 ## 🥗 마이 페이지
-![myPage](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/dee96d5c-377c-40fd-988a-c10735a53485/%E1%84%86%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%91%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%8C%E1%85%B51.5.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220614%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220614T050807Z&X-Amz-Expires=86400&X-Amz-Signature=6a129f863305dafbb0cad7c624b44fb049b7d2035a23cccb45c2d978b6b338cc&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22%25E1%2584%2586%25E1%2585%25A1%25E1%2584%258B%25E1%2585%25B5%25E1%2584%2591%25E1%2585%25A6%25E1%2584%258B%25E1%2585%25B5%25E1%2584%258C%25E1%2585%25B51.5.gif%22&x-id=GetObject)   
+![myPage](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F0940747e-c90a-4fb9-b17f-f0952edc2fda%2F%E1%84%86%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%91%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%8C%E1%85%B51.5.gif?table=block&id=f40b75f1-dab5-4a95-8304-901487f778b2&spaceId=9c9b02bc-6cb6-4924-bf38-dad25e0fe77b&userId=a8740886-17e4-406d-9d23-16d571bc2c09&cache=v2)   
 
 <br>
 
 ## 🥗 전문가 등록 페이지
-![regist](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/acea550b-b8ba-48ac-ba21-ab4449097a31/%E1%84%8C%E1%85%A5%E1%86%AB%E1%84%86%E1%85%AE%E1%86%AB%E1%84%80%E1%85%A1_%E1%84%83%E1%85%B3%E1%86%BC%E1%84%85%E1%85%A9%E1%86%A8.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220614%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220614T051126Z&X-Amz-Expires=86400&X-Amz-Signature=74f3fa21ed383fb3d3409ff10d520f3efed0aa8bdd7b12172634a53c06b154ae&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22%25E1%2584%258C%25E1%2585%25A5%25E1%2586%25AB%25E1%2584%2586%25E1%2585%25AE%25E1%2586%25AB%25E1%2584%2580%25E1%2585%25A1_%25E1%2584%2583%25E1%2585%25B3%25E1%2586%25BC%25E1%2584%2585%25E1%2585%25A9%25E1%2586%25A8.gif%22&x-id=GetObject)   
+![regist](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F2f9a0d54-91ac-4114-908d-638ee1ea4d9a%2F%E1%84%8C%E1%85%A5%E1%86%AB%E1%84%86%E1%85%AE%E1%86%AB%E1%84%80%E1%85%A1_%E1%84%83%E1%85%B3%E1%86%BC%E1%84%85%E1%85%A9%E1%86%A8.gif?table=block&id=8f03f78b-3d98-44a2-9a96-9b9010d9fe86&spaceId=9c9b02bc-6cb6-4924-bf38-dad25e0fe77b&userId=a8740886-17e4-406d-9d23-16d571bc2c09&cache=v2)   
 
 <br>
 
