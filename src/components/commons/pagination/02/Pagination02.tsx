@@ -10,14 +10,16 @@ export default function Pagination02(props: IPropsPagination02) {
 
   useEffect(() => {
     setCurrentPage(1);
-  }, [props.refetch, props.selectedTypes, props.isPicked]);
+    setStartPage(1);
+  }, [props.selectedTypes, props.isPicked, props.lastPage]);
 
   useEffect(() => {
     if (startPage !== 1) setIsPrevActive(true);
     if (startPage + 5 > props.lastPage) setIsNextActive(false);
     if (startPage === 1) setIsPrevActive(false);
     if (startPage + 5 <= props.lastPage) setIsNextActive(true);
-  }, [currentPage, startPage, props.lastPage]);
+    props.refetch({ page: Number(currentPage) });
+  }, [currentPage, props.lastPage, props.selectedTypes, props.isPicked]);
 
   const onClickPage = (event: MouseEvent<HTMLElement>) => {
     props.refetch({ page: Number((event.target as Element).id) });
