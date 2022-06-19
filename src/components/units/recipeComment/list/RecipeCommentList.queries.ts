@@ -16,3 +16,17 @@ export const FETCH_REPLIES = gql`
     }
   }
 `;
+
+export const DELETE_REPLY = gql`
+  mutation deleteReply($reply_id: String!, $recipe_id: String!) {
+    deleteReply(reply_id: $reply_id, recipe_id: $recipe_id)
+  }
+`;
+
+export const FETCH_RECIPE = gql`
+  query fetchRecipe($recipes_id: String!) {
+    fetchRecipe(recipes_id: $recipes_id) {
+      replyCount
+    }
+  }
+`;

@@ -27,7 +27,11 @@ export default function RecipeCommentListUI(props: IRecipeCommentListUIProps) {
           >
             {props.fetchComment?.fetchReplies.map((el: any) => (
               <Comment.CommentWrapper key={uuidv4()}>
-                <RecipeCommentListUIItem el={el} />
+                <RecipeCommentListUIItem
+                  el={el}
+                  fetchUserId={props.fetchUser?.fetchUser.user_id}
+                  onClickDelete={props.onClickDelete}
+                />
               </Comment.CommentWrapper>
             )) || <div></div>}
           </InfiniteScroll>

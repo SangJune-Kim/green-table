@@ -7,7 +7,10 @@ export interface IRecipeCommentListUIProps {
   fetchComment: any;
   replyCount: number;
   onLoadMore: () => void;
+  onClickDelete: (data: any) => () => Promise<void>;
 }
 export interface IRecipeCommentListUIItemProps {
   el: any;
+  fetchUserId: string;
+  onClickDelete: (data: any) => () => Promise<void>;
 }

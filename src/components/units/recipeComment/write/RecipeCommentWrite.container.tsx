@@ -69,7 +69,6 @@ export default function RecipeCommentWrite(props: IRecipeCommentWriteProps) {
       if (error instanceof Error) ModalError("수정 실패", error.message);
     }
   };
-  console.log(props?.el);
 
   return (
     <RecipeCommentWriteUI
