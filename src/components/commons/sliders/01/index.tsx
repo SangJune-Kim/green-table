@@ -45,7 +45,6 @@ interface ISlider01Props {
 }
 
 export default function Slider01(props: ISlider01Props) {
-  console.log(props.mainImages);
   const settings = {
     dots: true,
     arrows: false,

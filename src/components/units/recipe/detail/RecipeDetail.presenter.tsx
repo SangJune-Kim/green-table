@@ -10,11 +10,7 @@ import { IRecipeDetailUIProps } from "./RecipeDetail.types";
 
 export default function RecipeDetailUI(props: IRecipeDetailUIProps) {
   const router = useRouter();
-  console.log(
-    props.recipeData?.fetchRecipe?.recipesMainImage
-      .map((el: any) => el.mainUrl)
-      .filter((el: any) => el !== " " || el !== "")
-  );
+
   return (
     <>
       <RecipeDetail.Container>

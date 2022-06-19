@@ -8,11 +8,15 @@ import {
 export interface IRecipeCommentWriteProps {
   isEdit?: boolean;
   setIsEdit?: Dispatch<SetStateAction<Boolean>>;
-  fetchUser: any;
-  replyCount: number;
+  el?: any;
+  fetchUser?: any;
+  replyCount?: number;
 }
 export interface IRecipeCommentWriteUIProps {
+  isEdit?: boolean | undefined;
+  el?: any;
   register: UseFormRegister<FieldValues>;
   handleSubmit: UseFormHandleSubmit<FieldValues>;
   onClickSubmit: (data: any) => Promise<void>;
+  onClickUpdate: (data: any) => Promise<void>;
 }
