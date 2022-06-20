@@ -55,3 +55,9 @@ export const CLICK_SCRAP = gql`
     }
   }
 `;
+
+export const DELETE_RECIPE = gql`
+  mutation deleteRecipe($recipe_id: String!) {
+    deleteRecipe(recipe_id: $recipe_id)
+  }
+`;

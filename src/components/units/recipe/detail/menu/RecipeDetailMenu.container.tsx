@@ -6,6 +6,9 @@ export default function RecipeDetailMenu(props: IRecipeDetailMenuProps) {
     <RecipeDetailMenuUI
       recipeData={props.recipeData}
       onClickScrap={props.onClickScrap}
+      onClickUpdateButton={props.onClickUpdateButton}
+      onClickDeleteRecipe={props.onClickDeleteRecipe}
+      isMyRecipe={props.isMyRecipe}
     />
   );
 }

@@ -3,16 +3,17 @@ import { useRouter } from "next/router";
 import { FieldValues, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import { ChangeEvent, useRef, useState } from "react";
+import { ChangeEvent, useEffect, useRef, useState } from "react";
 import { useMutation } from "@apollo/client";
-import { CREATE_RECIPE } from "./RecipeWrite.queries";
+import { CREATE_RECIPE, UPDATE_RECIPE } from "./RecipeWrite.queries";
 import { useModal } from "../../../commons/hooks/useModal";
 
 const nonSchema = yup.object({});
 
-export default function RecipeWrite() {
+export default function RecipeWrite(props) {
   const router = useRouter();
   const [createRecipe] = useMutation(CREATE_RECIPE);
+  const [updateRecipe] = useMutation(UPDATE_RECIPE);
   const { Success, ModalError } = useModal();
   // 탭 Ref
   const ingredientTabRef = useRef<HTMLDivElement>(null);
@@ -64,7 +65,10 @@ export default function RecipeWrite() {
   // 요리순서 이미지 업로드
   const [descImage, setDescImage] = useState<string>("");
   // useForm
-  const { register, handleSubmit, formState } = useForm<FieldValues, any>({
+  const { register, handleSubmit, formState, reset } = useForm<
+    FieldValues,
+    any
+  >({
     resolver: yupResolver(nonSchema),
     mode: "onChange",
   });
@@ -180,10 +184,38 @@ export default function RecipeWrite() {
         },
       });
       Success("등록 성공", "레시피 등록에 성공하였습니다.");
-      console.log(result);
       router.push(`/recipe/${result.data.createRecipe.id}`);
     } catch (error) {
       if (error instanceof Error) ModalError("등록 실패", error.message);
+    }
+  };
+
+  const onClickUpdate = async (data: any) => {
+    try {
+      const result = await updateRecipe({
+        variables: {
+          recipe_id: String(router.query.recipeId),
+          updateRecipesInput: {
+            title: data.title,
+            summary: data.summary,
+            types: String(selectType.types),
+            mainUrl: imageUrls,
+            contentsUrl: descArr.map((el) => el.image),
+            description: descArr.map((el) => `${el.desc}`),
+            cookTime: Number(data.cookTime),
+            level: data.level,
+            serve: Number(data.serve),
+            ingredients: ingredientArr.map(
+              (el) => `${el.name} ${el.amount}${el.unit}`
+            ),
+            recipesTags: hashArr,
+          },
+        },
+      });
+      Success("수정 성공", "레시피 수정에 성공하였습니다.");
+      router.push(`/recipe/${result.data.updateRecipe.id}`);
+    } catch (error) {
+      if (error instanceof Error) ModalError("수정 실패", error.message);
     }
   };
 
@@ -199,6 +231,60 @@ export default function RecipeWrite() {
     setDescImage(fileUrl);
   };
 
+  useEffect(() => {
+    if (!props.fetchRecipe) return;
+    setImageUrls((prev) => [
+      ...props.fetchRecipe?.fetchRecipe.recipesMainImage.map(
+        (el: any) => el.mainUrl
+      ),
+    ]);
+    setIngredientArr((prev) =>
+      props.fetchRecipe?.fetchRecipe.ingredients.map((el: any) => {
+        const nameArr = el.name.split(" ");
+        return {
+          name: nameArr[0],
+          amount: nameArr[1].replace(/[^0-9]/g, ""),
+          unit: nameArr[1].replace(/[0-9]/g, ""),
+        };
+      })
+    );
+    setDescArr((prev) =>
+      props.fetchRecipe?.fetchRecipe.recipesContentsImage.map(
+        (el: any, index: number) => ({
+          step: Number(index + 1),
+          image: el.contentsUrl,
+          desc: el.description,
+        })
+      )
+    );
+    setHashArr((prev) =>
+      props.fetchRecipe?.fetchRecipe.recipesTags.map((el) => `#${el.name}`)
+    );
+    setSelectType((prev) => ({
+      types: props.fetchRecipe?.fetchRecipe.types,
+    }));
+    reset({
+      title: props.fetchRecipe?.fetchRecipe.title,
+      summary: props.fetchRecipe?.fetchRecipe.summary,
+      cookTime: props.fetchRecipe?.fetchRecipe.cookTime,
+      level: props.fetchRecipe?.fetchRecipe.level,
+      serve: props.fetchRecipe?.fetchRecipe.serve,
+    });
+  }, [props.fetchRecipe]);
+
+  console.log(
+    "imageUrls",
+    imageUrls,
+    "descArr",
+    descArr,
+    "hashArr",
+    hashArr,
+    "ingredientArr",
+    ingredientArr,
+    "selectType",
+    selectType
+  );
+
   return (
     <RecipeWriteUI
       formState={formState}
@@ -212,6 +298,8 @@ export default function RecipeWrite() {
       router={router}
       imageUrls={imageUrls}
       descImage={descImage}
+      isEdit={props.isEdit}
+      fetchRecipe={props.fetchRecipe}
       register={register}
       handleSubmit={handleSubmit}
       onClickSubmit={onClickSubmit}
@@ -228,6 +316,7 @@ export default function RecipeWrite() {
       handleChange={handleChange}
       onChangeFileUrls={onChangeFileUrls}
       onChangeDescImage={onChangeDescImage}
+      onClickUpdate={onClickUpdate}
     />
   );
 }

@@ -18,6 +18,9 @@ export default function RecipeDetailUI(props: IRecipeDetailUIProps) {
           <RecipeDetailMenu
             recipeData={props.recipeData}
             onClickScrap={props.onClickScrap}
+            onClickUpdateButton={props.onClickUpdateButton}
+            onClickDeleteRecipe={props.onClickDeleteRecipe}
+            isMyRecipe={props.isMyRecipe}
           />
         </RecipeDetail.MenuWrapper>
         <RecipeDetail.Wrapper>

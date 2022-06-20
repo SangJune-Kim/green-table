@@ -9,7 +9,11 @@ import { IRecipeWriteUIProps } from "./RecipeWrite.types";
 export default function RecipeWriteUI(props: IRecipeWriteUIProps) {
   return (
     <>
-      <form onSubmit={props.handleSubmit(props.onClickSubmit)}>
+      <form
+        onSubmit={props.handleSubmit(
+          props.isEdit ? props.onClickUpdate : props.onClickSubmit
+        )}
+      >
         <RecipeWrite.Container>
           <RecipeWrite.MenuWrapper>
             <RecipeWriteMenu
@@ -19,6 +23,7 @@ export default function RecipeWriteUI(props: IRecipeWriteUIProps) {
               hashArr={props.hashArr}
               selectType={props.selectType}
               handleChange={props.handleChange}
+              isEdit={props.isEdit}
             />
           </RecipeWrite.MenuWrapper>
           <RecipeWrite.Wrapper>
@@ -178,7 +183,9 @@ export default function RecipeWriteUI(props: IRecipeWriteUIProps) {
                 <span>STEP 추가하기</span>
               </RecipeWrite.AddStepWrapper>
               <RecipeWrite.RegisterButtonWrapper>
-                <button type="submit"> 등록하기</button>
+                <button type="submit">
+                  {props.isEdit ? "수정하기" : "등록하기"}
+                </button>
               </RecipeWrite.RegisterButtonWrapper>
             </RecipeWrite.Contents>
           </RecipeWrite.Wrapper>
