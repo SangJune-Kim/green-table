@@ -116,27 +116,27 @@ export const VeganTypeRadioWrapper = styled.div`
   }
   & > label:nth-of-type(1) {
     background: ${(props: { types: string }) =>
-      props.types === "Vegan" ? "#0FBAA3" : ""};
+      props.types === "VEGAN" ? "#0FBAA3" : ""};
   }
   & > label:nth-of-type(2) {
     background: ${(props: { types: string }) =>
-      props.types === "Ovo" ? "#FCD921" : ""};
+      props.types === "OVO" ? "#FCD921" : ""};
   }
   & > label:nth-of-type(3) {
     background: ${(props: { types: string }) =>
-      props.types === "Lacto" ? "#CEE135" : ""};
+      props.types === "LACTO" ? "#CEE135" : ""};
   }
   & > label:nth-of-type(4) {
     background: ${(props: { types: string }) =>
-      props.types === "Lacto_Ovo" ? "#B991FA" : ""};
+      props.types === "LACTO_OVO" ? "#B991FA" : ""};
   }
   & > label:nth-of-type(5) {
     background: ${(props: { types: string }) =>
-      props.types === "Pesco" ? "#EF7C90" : ""};
+      props.types === "PESCO" ? "#EF7C90" : ""};
   }
   & > label:nth-of-type(6) {
     background: ${(props: { types: string }) =>
-      props.types === "Pollo" ? "#FE974D" : ""};
+      props.types === "POLLO" ? "#FE974D" : ""};
   }
 `;
 

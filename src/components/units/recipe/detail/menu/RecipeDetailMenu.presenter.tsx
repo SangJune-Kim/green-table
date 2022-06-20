@@ -82,6 +82,22 @@ export default function RecipeDetailMenuUI(props: IRecipeDetailMenuUIProps) {
             <img src="/img/recipeDetail/icon-share.svg" alt="공유하기" />
           </DetailMenu.ShareButton>
         </DetailMenu.RecipeInfoButtons>
+        {props.isMyRecipe && (
+          <DetailMenu.IsMyRecipeButtons>
+            <DetailMenu.UpdateButton
+              type="button"
+              onClick={props.onClickUpdateButton}
+            >
+              수정하기
+            </DetailMenu.UpdateButton>
+            <DetailMenu.DeleteButton
+              type="button"
+              onClick={props.onClickDeleteRecipe}
+            >
+              삭제하기
+            </DetailMenu.DeleteButton>
+          </DetailMenu.IsMyRecipeButtons>
+        )}
       </DetailMenu.Wrapper>
     </DetailMenu.Container>
   );

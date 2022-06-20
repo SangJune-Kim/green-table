@@ -132,6 +132,51 @@ export const PickedButton = styled.button`
   }
 `;
 
+export const IsMyRecipeButtons = styled.div`
+  display: flex;
+  align-items: center;
+  padding-top: 2rem;
+`;
+
+export const UpdateButton = styled.button`
+  padding: 0 2rem;
+  margin-right: 1rem;
+  line-height: 3rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  background: #efefef;
+  color: #434343;
+  border: 1px solid #434343;
+  border-radius: 64px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  :hover {
+    background: #ffffff;
+    border: 1px solid #0fbaa3;
+    color: #0fbaa3;
+  }
+`;
+
+export const DeleteButton = styled.button`
+  padding: 0 2rem;
+  line-height: 3rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  background: #efefef;
+  color: #434343;
+  border: 1px solid #434343;
+  border-radius: 64px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  :hover {
+    background: #ffffff;
+    border: 1px solid #f05650;
+    color: #f05650;
+  }
+`;
+
 export const ShareButton = styled.button`
   display: flex;
   justify-content: center;
