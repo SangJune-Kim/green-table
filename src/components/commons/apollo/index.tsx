@@ -46,7 +46,7 @@ export default function ApolloSetting(props: ApolloProps) {
   });
 
   const uploadLink = createUploadLink({
-    uri: "https://backend.vegantable.shop/graphql",
+    uri: "https://backend2.vegantable.shop/graphql",
     headers: { Authorization: `Bearer ${accessToken}` },
     credentials: "include",
   });
