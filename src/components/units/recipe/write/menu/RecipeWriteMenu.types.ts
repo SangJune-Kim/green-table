@@ -15,6 +15,7 @@ export interface IRecipeWriteMenuProps {
   selectType: {
     types: string;
   };
+  isEdit?: boolean;
 }
 
 export interface IRecipeWriteMenuUIProps {
