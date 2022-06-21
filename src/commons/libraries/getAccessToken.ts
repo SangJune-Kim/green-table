@@ -9,7 +9,7 @@ const RESTORE_ACCESS_TOKEN = gql`
 export async function getAccessToken() {
   try {
     const graphQLClient = new GraphQLClient(
-      "https://backend.vegantable.shop/graphql",
+      "https://backend2.vegantable.shop/graphql",
       {
         credentials: "include",
       }
