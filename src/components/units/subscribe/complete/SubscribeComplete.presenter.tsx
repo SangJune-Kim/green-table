@@ -21,7 +21,6 @@ export default function SubscribeCompleteUI(props: ISubscribeCompleteUIProps) {
             <Subs.TextWrapper>
               <Subs.TextHeader>
                 <Subs.TextCategory>베이직 (주1회 정기 구독)</Subs.TextCategory>
-                <Subs.TextContents>카카오페이</Subs.TextContents>
               </Subs.TextHeader>
               <Subs.TextRow>
                 <Subs.TextCategory>결제금액</Subs.TextCategory>
@@ -54,7 +53,7 @@ export default function SubscribeCompleteUI(props: ISubscribeCompleteUIProps) {
               <Subs.TextRow>
                 <Subs.TextCategory>주소</Subs.TextCategory>
                 <Subs.TextContents>
-                  서울 중구 동호로 330 CJ제일제당 센터 (우) 04560
+                  {props.data?.fetchUser.address}
                 </Subs.TextContents>
               </Subs.TextRow>
               <Subs.DetailGuide>
