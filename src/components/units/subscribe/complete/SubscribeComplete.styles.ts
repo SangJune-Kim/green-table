@@ -43,6 +43,10 @@ export const Container = styled.div`
   background-color: #e5e5e5;
   overflow-x: hidden;
   overflow-y: hidden;
+
+  @media ${breakPoints.mobile} {
+    padding-bottom: 6rem;
+  }
 `;
 
 // 공통 내용 전체
@@ -59,21 +63,30 @@ export const HeaderWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 13rem;
+  padding-bottom: 13rem;
   transition: all 3s ease;
   animation: ${FadeIn} 3s ease;
+
+  @media ${breakPoints.mobile} {
+    padding-bottom: 10rem;
+  }
 `;
 
 export const HeaderCompleteIcon = styled.div`
   width: 2.5rem;
   height: 2.5rem;
   margin-bottom: 1rem;
+
+  @media ${breakPoints.mobile} {
+    margin-bottom: 2rem;
+  }
 `;
 
 export const HeaderCompleteNotice = styled.p`
   opacity: 1;
   font-size: 1.5rem;
   font-weight: 500;
+
   @media ${breakPoints.mobile} {
     font-size: 1.3rem;
   }
@@ -93,7 +106,9 @@ export const DeliveryMan = styled.img`
   z-index: 100;
   top: -150px;
   animation: ${MoveX} 1s ease-in-out;
+
   @media ${breakPoints.mobile} {
+    top: -100px;
     width: 16.25rem;
   }
 `;
@@ -110,9 +125,13 @@ export const Receipt = styled.div`
   background-repeat: no-repeat;
   position: relative;
   animation: ${MoveY} 1s ease;
+
   @media ${breakPoints.mobile} {
-    width: 40rem;
-    height: 53rem;
+    background-image: none;
+    background-color: #ffffff;
+    width: 30rem;
+    height: 38rem;
+    border-radius: 20px;
   }
 `;
 
@@ -122,8 +141,9 @@ export const TextWrapper = styled.div`
   align-items: center;
   width: 37rem;
   margin-top: 12rem;
+
   @media ${breakPoints.mobile} {
-    width: 32rem;
+    width: 26rem;
     margin-top: 8rem;
   }
 `;
@@ -168,5 +188,9 @@ export const DetailGuide = styled.p`
   font-size: 1rem;
   color: #c4c4c4;
   letter-spacing: -0.05em;
-  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+
+  @media ${breakPoints.mobile} {
+    padding-bottom: 4rem;
+  }
 `;

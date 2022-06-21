@@ -1,8 +1,8 @@
 import { gql } from "@apollo/client";
 
 export const FETCH_IMP_UID_WITH_USER_ID = gql`
-  query fetchImpUidWithUserId($user_id: String!) {
-    fetchImpUidWithUserId(user_id: $user_id) {
+  query fetchimpUidwithUserid($user_id: String!) {
+    fetchimpUidwithUserid(user_id: $user_id) {
       id
       impUid
       user {
@@ -12,6 +12,21 @@ export const FETCH_IMP_UID_WITH_USER_ID = gql`
         startDate
         endDate
       }
+    }
+  }
+`;
+
+export const FETCH_MY_PAYMENT = gql`
+  query fetchMyPayment {
+    id
+    impUid
+    amount
+    user {
+      address
+      addressDetail
+      type
+      startDate
+      endDate
     }
   }
 `;
