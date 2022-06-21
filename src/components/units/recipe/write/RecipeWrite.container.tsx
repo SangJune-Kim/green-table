@@ -7,10 +7,11 @@ import { ChangeEvent, useEffect, useRef, useState } from "react";
 import { useMutation } from "@apollo/client";
 import { CREATE_RECIPE, UPDATE_RECIPE } from "./RecipeWrite.queries";
 import { useModal } from "../../../commons/hooks/useModal";
+import { IRecipeWriteProps } from "./RecipeWrite.types";
 
 const nonSchema = yup.object({});
 
-export default function RecipeWrite(props) {
+export default function RecipeWrite(props: IRecipeWriteProps) {
   const router = useRouter();
   const [createRecipe] = useMutation(CREATE_RECIPE);
   const [updateRecipe] = useMutation(UPDATE_RECIPE);
@@ -258,7 +259,7 @@ export default function RecipeWrite(props) {
       )
     );
     setHashArr((prev) =>
-      props.fetchRecipe?.fetchRecipe.recipesTags.map((el) => `#${el.name}`)
+      props.fetchRecipe?.fetchRecipe.recipesTags.map((el: any) => `#${el.name}`)
     );
     setSelectType((prev) => ({
       types: props.fetchRecipe?.fetchRecipe.types,

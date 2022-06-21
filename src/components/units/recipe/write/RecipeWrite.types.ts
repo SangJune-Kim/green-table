@@ -7,6 +7,11 @@ import {
   UseFormRegister,
 } from "react-hook-form";
 
+export interface IRecipeWriteProps {
+  fetchRecipe?: any;
+  isEdit?: boolean;
+}
+
 export interface IRecipeWriteUIProps {
   formState: FormState<FieldValues>;
   hashArr: string[];
@@ -54,4 +59,7 @@ export interface IRecipeWriteUIProps {
   handleChange: (event: ChangeEvent<HTMLInputElement>) => void;
   onChangeFileUrls: (fileUrl: string, index: number) => void;
   onChangeDescImage: (fileUrl: string) => void;
+  fetchRecipe?: any;
+  isEdit?: boolean;
+  onClickUpdate: (data: any) => Promise<void>;
 }

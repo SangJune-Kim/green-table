@@ -11,4 +11,7 @@ export interface IRecipeDetailUIProps {
   onClickCookOrderTab: () => void;
   onClickReviewTab: () => void;
   onClickScrap: () => Promise<void>;
+  onClickUpdateButton: () => void;
+  onClickDeleteRecipe: () => void;
+  isMyRecipe: boolean;
 }
