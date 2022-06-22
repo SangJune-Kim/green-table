@@ -13,13 +13,18 @@ declare const window: typeof globalThis & {
 };
 
 export default function Subscribe() {
-  const { ModalError } = useModal();
+  const { ModalError, Warning } = useModal();
   const [createBasicPayment] = useMutation(CREATE_BASIC_PAYMENT);
   const [createPremiumPayment] = useMutation(CREATE_PREMIUM_PAYMENT);
   const { data: userData } = useQuery(FETCH_USER);
   const router = useRouter();
 
   const onClickPayBasic = () => {
+    if (!(userData?.fetchUser.address && userData?.fetchUser.addressDetail)) {
+      Warning("주소 정보 없음", "회원정보를 수정해주세요.");
+      return;
+    }
+
     const IMP = window.IMP;
     IMP.init("imp82070269");
     IMP.request_pay(
@@ -28,7 +33,7 @@ export default function Subscribe() {
         pay_method: "card",
         // merchant_uid: "ORD20180131-0000011"
         name: "채식한상 베이직 구독",
-        amount: 100,
+        amount: 29900,
         buyer_email: userData?.fetchUser.email,
         buyer_name: userData?.fetchUser.name,
         buyer_tel: userData?.fetchUser.phone,
@@ -40,7 +45,7 @@ export default function Subscribe() {
         if (rsp.success) {
           try {
             createBasicPayment({
-              variables: { impUid: String(rsp.imp_uid), amount: 100 },
+              variables: { impUid: String(rsp.imp_uid), amount: 29900 },
             });
             router.push("/subscribe/complete");
           } catch (error) {
@@ -55,6 +60,11 @@ export default function Subscribe() {
   };
 
   const onClickPayPremium = () => {
+    if (!(userData?.fetchUser.address && userData?.fetchUser.addressDetail)) {
+      Warning("주소 정보 없음", "회원정보를 수정해주세요.");
+      return;
+    }
+
     const IMP = window.IMP;
     IMP.init("imp82070269");
     IMP.request_pay(
@@ -63,7 +73,7 @@ export default function Subscribe() {
         pay_method: "card",
         // merchant_uid: "ORD20180131-0000011"
         name: "채식한상 프리미엄 구독",
-        amount: 200,
+        amount: 39900,
         buyer_email: userData?.fetchUser.email,
         buyer_name: userData?.fetchUser.name,
         buyer_tel: userData?.fetchUser.phone,
@@ -75,7 +85,7 @@ export default function Subscribe() {
         if (rsp.success) {
           try {
             await createPremiumPayment({
-              variables: { impUid: String(rsp.imp_uid), amount: 200 },
+              variables: { impUid: String(rsp.imp_uid), amount: 39900 },
             });
 
             router.push("/subscribe/complete");
