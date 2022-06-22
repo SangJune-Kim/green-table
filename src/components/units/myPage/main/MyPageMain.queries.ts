@@ -13,6 +13,7 @@ export const FETCH_USER = gql`
       nickname
       isPro
       isSubs
+      SubsHistory
       profilePic
       certImage
       certUrl

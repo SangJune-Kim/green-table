@@ -20,40 +20,63 @@ export default function SubscribeCompleteUI(props: ISubscribeCompleteUIProps) {
             <Subs.DeliveryMan src="/img/subscribe/img-complete-02.png" />
             <Subs.TextWrapper>
               <Subs.TextHeader>
-                <Subs.TextCategory>베이직 (주1회 정기 구독)</Subs.TextCategory>
+                <Subs.TextCategory>
+                  {props.data?.fetchMyPayment[0].amount === 29900 &&
+                    "베이직 (주 1회 정기구독)"}
+                  {props.data?.fetchMyPayment[0].amount === 39900 &&
+                    "프리미엄 (주 2회 정기구독)"}
+                </Subs.TextCategory>
               </Subs.TextHeader>
               <Subs.TextRow>
                 <Subs.TextCategory>결제금액</Subs.TextCategory>
-                <Subs.TextContents>29,900원</Subs.TextContents>
+                <Subs.TextContents>
+                  {props.data?.fetchMyPayment[0].amount.toLocaleString("ko-KR")}
+                </Subs.TextContents>
               </Subs.TextRow>
               <Subs.TextRow>
                 <Subs.TextCategory>구매일</Subs.TextCategory>
-                <Subs.TextContents>2022.05.31</Subs.TextContents>
+                <Subs.TextContents>
+                  {" "}
+                  {props.data?.fetchMyPayment[0].user.startDate}
+                </Subs.TextContents>
               </Subs.TextRow>
               <Subs.TextRow>
                 <Subs.TextCategory>이용기간</Subs.TextCategory>
-                <Subs.TextContents>2022.05.31~2022.06.30</Subs.TextContents>
+                <Subs.TextContents>
+                  {props.data?.fetchMyPayment[0].user.startDate}~
+                  {props.data?.fetchMyPayment[0].user.endDate}
+                </Subs.TextContents>
               </Subs.TextRow>
               <Subs.TextRow>
                 <Subs.TextCategory>결제예정일</Subs.TextCategory>
-                <Subs.TextContents>2022.06.30</Subs.TextContents>
+                <Subs.TextContents>
+                  {" "}
+                  {props.data?.fetchMyPayment[0].user.endDate}
+                </Subs.TextContents>
               </Subs.TextRow>
               <Subs.TextRow>
                 <Subs.TextCategory>채식타입</Subs.TextCategory>
                 <Subs.TextContents>
-                  {props.data?.fetchUser.type === "NON_Vegan" && "채린이"}
-                  {props.data?.fetchUser.type === "Vegan" && "비건"}
-                  {props.data?.fetchUser.type === "Lacto" && "락토"}
-                  {props.data?.fetchUser.type === "Ovo" && "오보"}
-                  {props.data?.fetchUser.type === "Lacto_Ovo" && "락토오보"}
-                  {props.data?.fetchUser.type === "Pesco" && "페스코"}
-                  {props.data?.fetchUser.type === "Pollo" && "폴로"}
+                  {props.data?.fetchMyPayment[0].user.type === "NON_Vegan" &&
+                    "채린이"}
+                  {props.data?.fetchMyPayment[0].user.type === "Vegan" &&
+                    "비건"}
+                  {props.data?.fetchMyPayment[0].user.type === "Lacto" &&
+                    "락토"}
+                  {props.data?.fetchMyPayment[0].user.type === "Ovo" && "오보"}
+                  {props.data?.fetchMyPayment[0].user.type === "Lacto_Ovo" &&
+                    "락토오보"}
+                  {props.data?.fetchMyPayment[0].user.type === "Pesco" &&
+                    "페스코"}
+                  {props.data?.fetchMyPayment[0].user.type === "Pollo" &&
+                    "폴로"}
                 </Subs.TextContents>
               </Subs.TextRow>
               <Subs.TextRow>
                 <Subs.TextCategory>주소</Subs.TextCategory>
                 <Subs.TextContents>
-                  {props.data?.fetchUser.address}
+                  {props.data?.fetchMyPayment[0].user.address}{" "}
+                  {props.data?.fetchMyPayment[0].user.addressDetail}
                 </Subs.TextContents>
               </Subs.TextRow>
               <Subs.DetailGuide>

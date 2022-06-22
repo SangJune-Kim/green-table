@@ -4,7 +4,7 @@ import "aos/dist/aos.css";
 import { useEffect } from "react";
 import NormalButton from "../../commons/buttons/normal";
 import { useInView } from "react-intersection-observer";
-import Head from "next/head";
+import Script from "next/script";
 import { ISubscribeUIProps } from "./Subscribe.type";
 
 export default function SubscribeUI(props: ISubscribeUIProps) {
@@ -20,16 +20,14 @@ export default function SubscribeUI(props: ISubscribeUIProps) {
 
   return (
     <>
-      <Head>
-        <script
-          type="text/javascript"
-          src="https://code.jquery.com/jquery-1.12.4.min.js"
-        ></script>
-        <script
-          type="text/javascript"
-          src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"
-        ></script>
-      </Head>
+      <Script
+        type="text/javascript"
+        src="https://code.jquery.com/jquery-1.12.4.min.js"
+      ></Script>
+      <Script
+        type="text/javascript"
+        src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"
+      ></Script>
 
       <Subs.Container>
         <Subs.Wrapper>
@@ -139,9 +137,7 @@ export default function SubscribeUI(props: ISubscribeUIProps) {
               고객들의 솔직리뷰
             </Subs.Title>
             <Subs.Contents>
-              <p>채식한상을</p>
-              <p>먼저 시작하고 계신 고객들의 </p>
-              <p>후기를 들어보세요.</p>
+              채식한상을 먼저 시작하고 계신 <br /> 고객들의 후기를 들어보세요.
             </Subs.Contents>
             <Subs.ImageWrapper>
               <img

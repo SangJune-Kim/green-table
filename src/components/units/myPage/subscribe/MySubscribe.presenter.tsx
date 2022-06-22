@@ -13,7 +13,6 @@ export default function MySubscribeUI(props: IMySubscribeUIProps) {
         <My.SubscribeWrapper>
           <My.TitleWrapper>
             <My.Title className="title01">정기 구독 관리</My.Title>
-            <My.Unsubscribe>해지하기</My.Unsubscribe>
           </My.TitleWrapper>
 
           <My.MySubscribe>
@@ -25,21 +24,24 @@ export default function MySubscribeUI(props: IMySubscribeUIProps) {
             {props.data?.fetchUser.isSubs === "NON_SUB" && (
               <>
                 <My.UserSubs>미구독</My.UserSubs>
-                {/* <p>
-                  다음 결제 예정일은 {props.data?.fetchUser.endDate} 입니다.
-                </p> */}
               </>
             )}
             {props.data?.fetchUser.isSubs === "BASIC" && (
               <>
                 <My.UserSubs>베이직 구독중</My.UserSubs>
-                {/* <p>다음 결제 예정일은 22.06.30 입니다.</p> */}
+                <p>
+                  다음 결제 예정일은{" "}
+                  {props.subsData?.fetchMyPayment[0].user.endDate} 입니다.
+                </p>
               </>
             )}
             {props.data?.fetchUser.isSubs === "PREMIUM" && (
               <>
                 <My.UserSubs>프리미엄 구독중</My.UserSubs>
-                {/* <p>다음 결제 예정일은 22.06.30 입니다.</p> */}
+                <p>
+                  다음 결제 예정일은{" "}
+                  {props.subsData?.fetchMyPayment[0].user.endDate} 입니다.
+                </p>
               </>
             )}
           </My.MySubscribe>
@@ -87,7 +89,9 @@ export default function MySubscribeUI(props: IMySubscribeUIProps) {
                   </span>
                   <p>주 1회 밀키트 정기 배송</p>
                   <Link href={"/subscribe"}>
-                    <NormalButton title={"구독하기"} color={"green"} />
+                    <a>
+                      <NormalButton title={"구독하기"} color={"green"} />
+                    </a>
                   </Link>
                 </My.Subs>
               )}
@@ -108,7 +112,9 @@ export default function MySubscribeUI(props: IMySubscribeUIProps) {
                   </span>
                   <p>주 2회 밀키트 정기 배송</p>
                   <Link href={"/subscribe"}>
-                    <NormalButton title={"구독하기"} color={"green"} />
+                    <a>
+                      <NormalButton title={"구독하기"} color={"green"} />
+                    </a>
                   </Link>
                 </My.Subs>
               )}
