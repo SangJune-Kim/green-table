@@ -86,7 +86,7 @@ export default function RecipeDetail() {
       onClickUpdateButton={onClickUpdateButton}
       onClickDeleteRecipe={onClickDeleteRecipe}
       isMyRecipe={
-        recipeData?.fetchRecipe.user.user_id === fetchUser?.fetchUser.user_id
+        recipeData?.fetchRecipe.user?.user_id === fetchUser?.fetchUser.user_id
       }
     />
   );
