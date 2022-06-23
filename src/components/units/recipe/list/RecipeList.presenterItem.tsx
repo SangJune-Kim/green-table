@@ -8,10 +8,10 @@ export default function RecipeListItem(props: IPropsRecipeListItem) {
       <List.RecipeImg
         src={
           el.recipesMainImage
-            ? el.recipesMainImage.filter((e: any) => e.mainUrl !== " ")
+            ? el.recipesMainImage.filter((e: any) => e.mainUrl !== "")
                 .length === 0
               ? "/img/bestRecipe/img-recipe-01.png"
-              : `https://storage.googleapis.com/${el.recipesMainImage[0].mainUrl}`
+              : `https://storage.googleapis.com/${el.recipesMainImage[0]?.mainUrl}`
             : "/img/bestRecipe/img-recipe-01.png"
         }
       />

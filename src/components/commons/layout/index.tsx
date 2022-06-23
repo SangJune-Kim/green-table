@@ -33,7 +33,7 @@ const HIDDEN_BANNER = [
   "/subscribe/complete",
 ];
 
-const HIDDEN_PATH_NAME = [`/recipe/[recipeId]`];
+const HIDDEN_PATH_NAME = [`/recipe/[recipeId]`, `/recipe/[recipeId]/edit`];
 const HIDDEN_LANDING_PAGE = ["/"];
 
 export default function Layout(props: LayoutProps) {
