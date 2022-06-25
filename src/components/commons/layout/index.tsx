@@ -15,25 +15,25 @@ interface LayoutProps {
 
 const HIDDEN_BANNER = [
   "/",
-  "/login",
-  "/signUp",
-  "/myPage",
-  "/myPage/info",
-  "/myPage/edit",
-  "/myPage/editPW",
-  "/myPage/recent",
-  "/myPage/wish",
-  "/myPage/myRecipe",
-  "/myPage/subscribe",
-  "/myPage/qna",
-  "/typeCheck",
-  "/recipe",
-  "/recipe/new",
-  "/subscribe",
-  "/subscribe/complete",
+  "/login/",
+  "/signUp/",
+  "/myPage/",
+  "/myPage/info/",
+  "/myPage/edit/",
+  "/myPage/editPW/",
+  "/myPage/recent/",
+  "/myPage/wish/",
+  "/myPage/myRecipe/",
+  "/myPage/subscribe/",
+  "/myPage/qna/",
+  "/typeCheck/",
+  "/recipe/",
+  "/recipe/new/",
+  "/subscribe/",
+  "/subscribe/complete/",
 ];
 
-const HIDDEN_PATH_NAME = [`/recipe/[recipeId]`, `/recipe/[recipeId]/edit`];
+const HIDDEN_PATH_NAME = [`/recipe/[recipeId]/`, `/recipe/[recipeId]/edit/`];
 const HIDDEN_LANDING_PAGE = ["/"];
 
 export default function Layout(props: LayoutProps) {
