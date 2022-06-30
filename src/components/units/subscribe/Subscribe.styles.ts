@@ -22,7 +22,7 @@ export const Title = styled.h1`
   font-size: 2.25rem;
 
   @media ${breakPoints.mobile} {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
   }
 `;
 
@@ -30,9 +30,10 @@ export const SubTitle = styled.p`
   font-size: 2.25rem;
 
   @media ${breakPoints.mobile} {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
   }
 `;
+
 export const Contents = styled.p`
   font-size: 1.2rem;
 
