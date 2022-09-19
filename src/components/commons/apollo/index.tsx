@@ -17,6 +17,8 @@ interface ApolloProps {
   children: ReactNode;
 }
 
+const APOLLO_CACHE = new InMemoryCache();
+
 export default function ApolloSetting(props: ApolloProps) {
   const [accessToken, setAccessToken] = useRecoilState(accessTokenState);
 
@@ -53,7 +55,7 @@ export default function ApolloSetting(props: ApolloProps) {
 
   const client = new ApolloClient({
     link: ApolloLink.from([errorLink, uploadLink]),
-    cache: new InMemoryCache(),
+    cache: APOLLO_CACHE,
   });
 
   return <ApolloProvider client={client}>{props.children}</ApolloProvider>;
